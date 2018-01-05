@@ -1,5 +1,5 @@
 // swift-tools-version:4.0
-
+// swift package generate-xcodeproj --xcconfig-overrides config/general.xcconfig
 import PackageDescription
 
 let package = Package(
@@ -17,9 +17,12 @@ let package = Package(
     targets: [
         .target(
             name: "PSPDFKitSwift",
-            dependencies: []),
+            dependencies: [],
+            exclude: ["Frameworks", "DerivedData", "config"]),
         .testTarget(
             name: "PSPDFKitSwiftTests",
-            dependencies: ["PSPDFKitSwift"]),
-    ]
+            dependencies: ["PSPDFKitSwift"],
+            exclude: ["Frameworks", "DerivedData", "config"])
+    ],
+    swiftLanguageVersions: [4]
 )
