@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750032621FFFD7C500D2ECA9 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750032611FFFD7C500D2ECA9 /* PSPDFKit.framework */; };
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
-		75887C8C1FFF9CEF00AEFB83 /* general.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */; };
-		75887C901FFF9EF400AEFB83 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75887C8E1FFF9EF400AEFB83 /* PSPDFKit.framework */; };
-		75887C911FFF9EF400AEFB83 /* PSPDFKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75887C8F1FFF9EF400AEFB83 /* PSPDFKitUI.framework */; };
+		75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PDFDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		750032611FFFD7C500D2ECA9 /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PSPDFKit.framework; path = Frameworks/PSPDFKit.framework; sourceTree = "<group>"; };
 		7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSPDFKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSPDFKit.swift; sourceTree = "<group>"; };
 		75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = general.xcconfig; sourceTree = "<group>"; };
-		75887C8E1FFF9EF400AEFB83 /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PSPDFKit.framework; path = Frameworks/PSPDFKit.framework; sourceTree = "<group>"; };
-		75887C8F1FFF9EF400AEFB83 /* PSPDFKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PSPDFKitUI.framework; path = Frameworks/PSPDFKitUI.framework; sourceTree = "<group>"; };
+		75BB0DD52003852E001E4AA7 /* PDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,8 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75887C901FFF9EF400AEFB83 /* PSPDFKit.framework in Frameworks */,
-				75887C911FFF9EF400AEFB83 /* PSPDFKitUI.framework in Frameworks */,
+				750032621FFFD7C500D2ECA9 /* PSPDFKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
+				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
 			);
 			name = PSPDFKitSwift;
 			path = Sources/PSPDFKitSwift;
@@ -72,8 +71,7 @@
 		75887C8D1FFF9EF400AEFB83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75887C8E1FFF9EF400AEFB83 /* PSPDFKit.framework */,
-				75887C8F1FFF9EF400AEFB83 /* PSPDFKitUI.framework */,
+				750032611FFFD7C500D2ECA9 /* PSPDFKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +144,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75887C8C1FFF9CEF00AEFB83 /* general.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
