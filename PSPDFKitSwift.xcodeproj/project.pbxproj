@@ -10,6 +10,7 @@
 		750032621FFFD7C500D2ECA9 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750032611FFFD7C500D2ECA9 /* PSPDFKit.framework */; };
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
 		75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PDFDocument.swift */; };
+		75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD720039EC8001E4AA7 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSPDFKit.swift; sourceTree = "<group>"; };
 		75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = general.xcconfig; sourceTree = "<group>"; };
 		75BB0DD52003852E001E4AA7 /* PDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocument.swift; sourceTree = "<group>"; };
+		75BB0DD720039EC8001E4AA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
 				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
+				75BB0DD720039EC8001E4AA7 /* Result.swift */,
 			);
 			name = PSPDFKitSwift;
 			path = Sources/PSPDFKitSwift;
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */,
 				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
 			);

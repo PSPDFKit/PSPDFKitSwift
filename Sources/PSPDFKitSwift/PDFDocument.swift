@@ -22,22 +22,38 @@ extension PDFDocument {
     public enum SaveOption {
         case security(SecurityOptions)
         case forceRewrite
-    }
 
-    public func save(options: SaveOption...) throws {
-        var translatedOptions:[PSPDFDocumentSaveOption: Any]? = [PSPDFDocumentSaveOption: Any]()
-        for option in options {
-            switch option {
+        internal var dictionary: [PSPDFDocumentSaveOption: Any]  {
+            switch self {
             case .security(let securityOptions):
-                translatedOptions?[.securityOptions] = securityOptions
-                break
+                return [.securityOptions: securityOptions]
             case .forceRewrite:
-                translatedOptions?[.forceRewrite] = NSNumber(value: true)
-                break
+                return [.forceRewrite: NSNumber(value: true)]
             }
         }
 
-        try super.save(options: translatedOptions)
+        internal static func mapToDictionary(options: [SaveOption]) -> [PSPDFDocumentSaveOption: Any] {
+            var optionsDictionary = [PSPDFDocumentSaveOption: Any]()
+            for option in options {
+                option.dictionary.forEach { optionsDictionary[$0.0] = $0.1 }
+            }
+            return optionsDictionary
+        }
+    }
+
+    public func save(options: SaveOption...) throws {
+        try super.save(options: SaveOption.mapToDictionary(options: options))
+    }
+
+    public func save(options: SaveOption..., completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void)  {
+        super.save(options: SaveOption.mapToDictionary(options: options), completionHandler: { (error, annotations) in
+            if let error = error {
+                completion(Result.failure(AnyError(error)))
+                return
+            }
+
+            completion(Result.success(annotations))
+        })
     }
 }
 
@@ -47,5 +63,13 @@ private class testPDFDocument {
         let document = PDFDocument()
         let securityOptions = PDFDocument.SecurityOptions(ownerPassword: "foo", userPassword: "bar", keyLength: 16, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
         try document.save(options: .security(securityOptions), .forceRewrite)
+        document.save(options: .security(securityOptions), .forceRewrite) { (result) in
+            do {
+                let annotations = try result.dematerialize()
+                print(annotations)
+            } catch {
+                print(error)
+            }
+        }
     }
 }
