@@ -7,7 +7,7 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "751687AF2004E023004A9C78"
+               BuildableName = "PSPDFKitSwiftTests.xctest"
+               BlueprintName = "PSPDFKitSwiftTests"
+               ReferencedContainer = "container:PSPDFKitSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7541B88C1FFF98F90061EAA2"
+            BuildableName = "PSPDFKitSwift.framework"
+            BlueprintName = "PSPDFKitSwift"
+            ReferencedContainer = "container:PSPDFKitSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
