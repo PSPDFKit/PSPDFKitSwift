@@ -10,9 +10,11 @@
 		751687992004C2CF004A9C78 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751687942004C2BA004A9C78 /* PSPDFKit.framework */; };
 		751687B32004E024004A9C78 /* PSPDFKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */; };
 		751687B52004E024004A9C78 /* PSPDFKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */; };
+		756A20F12005A718008CA4F8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A20F02005A718008CA4F8 /* Helpers.swift */; };
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
 		75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PDFDocument.swift */; };
 		75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD720039EC8001E4AA7 /* Result.swift */; };
+		75D4B42320053D3000182237 /* KeyedArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4B42220053D3000182237 /* KeyedArchive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +61,12 @@
 		751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitSwiftTests.swift; sourceTree = "<group>"; };
 		751687B42004E024004A9C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSPDFKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		756A20F02005A718008CA4F8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSPDFKit.swift; sourceTree = "<group>"; };
 		75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = general.xcconfig; sourceTree = "<group>"; };
 		75BB0DD52003852E001E4AA7 /* PDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocument.swift; sourceTree = "<group>"; };
 		75BB0DD720039EC8001E4AA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		75D4B42220053D3000182237 /* KeyedArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
 				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
 				75BB0DD720039EC8001E4AA7 /* Result.swift */,
+				75D4B42220053D3000182237 /* KeyedArchive.swift */,
+				756A20F02005A718008CA4F8 /* Helpers.swift */,
 			);
 			name = PSPDFKitSwift;
 			path = Sources/PSPDFKitSwift;
@@ -301,6 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */,
+				756A20F12005A718008CA4F8 /* Helpers.swift in Sources */,
+				75D4B42320053D3000182237 /* KeyedArchive.swift in Sources */,
 				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
 			);
@@ -325,6 +333,7 @@
 		751687B92004E024004A9C78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -373,7 +382,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Tests/PSPDFKitSwiftTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -392,6 +400,7 @@
 		751687BA2004E024004A9C78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -435,7 +444,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Tests/PSPDFKitSwiftTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pspdfkit.PSPDFKitSwiftTests;
@@ -446,7 +454,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};

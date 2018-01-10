@@ -4,7 +4,8 @@ import XCTest
 class PSPDFKitSwiftTests: XCTestCase {
     func test() {
         do {
-            try PDFDocumentTests.test()
+            // try PDFDocumentTests.test()
+            try KeyedArchiveTests.test()
         } catch {
             XCTFail(error.localizedDescription)
         }
