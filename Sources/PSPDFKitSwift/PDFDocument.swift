@@ -1,6 +1,6 @@
-import PSPDFKit.Private
-import Foundation
 import CoreFoundation
+import Foundation
+import PSPDFKit.Private
 
 class PDFDocument: PSPDFDocument, Codable {
     typealias FileIndex = UInt
@@ -11,13 +11,13 @@ class PDFDocument: PSPDFDocument, Codable {
 
     // Disable Directory based options in favor of typed options.
     @available(*, unavailable)
-    override func save(options: [PSPDFDocumentSaveOption : Any]? = nil, completionHandler: ((Error?, [PSPDFAnnotation]) -> Void)? = nil) { fatalError() }
+    override func save(options: [PSPDFDocumentSaveOption: Any]? = nil, completionHandler: ((Error?, [PSPDFAnnotation]) -> Void)? = nil) { fatalError() }
 
     // Disable Directory based options in favor of typed options.
     @available(*, unavailable)
-    override func save(options: [PSPDFDocumentSaveOption : Any]? = nil) throws { fatalError() }
+    override func save(options: [PSPDFDocumentSaveOption: Any]? = nil) throws { fatalError() }
 
-    //TODO: NS_SWIFT_NAME
+    // TODO: NS_SWIFT_NAME
     override func fileName(for fileIndex: FileIndex) -> String {
         return super.fileName(for: UInt(fileIndex))
     }
@@ -55,7 +55,7 @@ class PDFDocument: PSPDFDocument, Codable {
         areAnnotationsEnabled = try container.decode(Bool.self, forKey: .title)
         uid = try container.decode(String.self, forKey: .uid)
 
-        //TODO: Refine PSPDFRenderOption dictionary
+        // TODO: Refine PSPDFRenderOption dictionary
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .all)
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .page)
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForProcessor), type: .processor)
@@ -76,21 +76,13 @@ class PDFDocument: PSPDFDocument, Codable {
 
 // MARK: - Saving
 extension PDFDocument {
-    public typealias DocumentPermissions = PSPDFDocumentPermissions
-
-    public struct SecurityOptions {
-        var ownerPassword: String?
-        var userPassword: String?
-        var keyLength: Int
-        var permissions: DocumentPermissions
-        var encryptionAlgorithm: PSPDFDocumentEncryptionAlgorithm
-    }
+    public typealias SecurityOptions = PSPDFDocumentSecurityOptions
 
     public enum SaveOption {
         case security(SecurityOptions)
         case forceRewrite
 
-        internal var dictionary: [PSPDFDocumentSaveOption: Any]  {
+        internal var dictionary: [PSPDFDocumentSaveOption: Any] {
             switch self {
             case .security(let securityOptions):
                 return [.securityOptions: securityOptions]
@@ -102,13 +94,14 @@ extension PDFDocument {
         internal static func mapToDictionary(options: [SaveOption]) -> [PSPDFDocumentSaveOption: Any] {
             var optionsDictionary = [PSPDFDocumentSaveOption: Any]()
             for option in options {
-                option.dictionary.forEach { optionsDictionary[$0.0] = $0.1 }
+                option.dictionary.forEach { (entry) in
+                    optionsDictionary[entry.key] = entry.value
+                }
             }
             return optionsDictionary
         }
     }
 
-    
     ///  Saves the document and all of its linked data, including bookmarks and
     ///  annotations, synchronously.
     ///
@@ -124,8 +117,8 @@ extension PDFDocument {
     /// - Parameters:
     ///   - options: See `SaveOption` documentation for more details.
     ///   - completion: Called on the *main thread* after the save operation finishes.
-    public func save(options: SaveOption..., completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void)  {
-        super.save(options: SaveOption.mapToDictionary(options: options), completionHandler: { (error, annotations) in
+    public func save(options: SaveOption..., completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void) {
+        super.save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
             if let error = error {
                 completion(Result.failure(AnyError(error)))
                 return
@@ -139,16 +132,10 @@ extension PDFDocument {
 internal class PDFDocumentTests {
     static func test() throws {
         let document = PDFDocument()
-        document.title = "lambada"
-        let securityOptions = PDFDocument.SecurityOptions(ownerPassword: "foo", userPassword: "bar", keyLength: 16, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
+        let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
         try document.save(options: .security(securityOptions), .forceRewrite)
         document.save(options: .security(securityOptions), .forceRewrite) { (result) in
-            do {
-                let annotations = try result.dematerialize()
-                print(annotations)
-            } catch {
-                print(error)
-            }
+            _ = try! result.dematerialize()
         }
     }
 }

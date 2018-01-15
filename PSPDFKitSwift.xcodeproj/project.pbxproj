@@ -10,11 +10,11 @@
 		751687992004C2CF004A9C78 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751687942004C2BA004A9C78 /* PSPDFKit.framework */; };
 		751687B32004E024004A9C78 /* PSPDFKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */; };
 		751687B52004E024004A9C78 /* PSPDFKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */; };
+		7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */; };
 		756A20F12005A718008CA4F8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A20F02005A718008CA4F8 /* Helpers.swift */; };
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
 		75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PDFDocument.swift */; };
 		75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD720039EC8001E4AA7 /* Result.swift */; };
-		75D4B42320053D3000182237 /* KeyedArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4B42220053D3000182237 /* KeyedArchive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +61,12 @@
 		751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitSwiftTests.swift; sourceTree = "<group>"; };
 		751687B42004E024004A9C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSPDFKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitObject.swift; sourceTree = "<group>"; };
 		756A20F02005A718008CA4F8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSPDFKit.swift; sourceTree = "<group>"; };
 		75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = general.xcconfig; sourceTree = "<group>"; };
 		75BB0DD52003852E001E4AA7 /* PDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocument.swift; sourceTree = "<group>"; };
 		75BB0DD720039EC8001E4AA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		75D4B42220053D3000182237 /* KeyedArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
+				7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */,
 				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
 				75BB0DD720039EC8001E4AA7 /* Result.swift */,
-				75D4B42220053D3000182237 /* KeyedArchive.swift */,
 				756A20F02005A718008CA4F8 /* Helpers.swift */,
 			);
 			name = PSPDFKitSwift;
@@ -308,7 +308,7 @@
 			files = (
 				75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */,
 				756A20F12005A718008CA4F8 /* Helpers.swift in Sources */,
-				75D4B42320053D3000182237 /* KeyedArchive.swift in Sources */,
+				7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */,
 				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
 			);

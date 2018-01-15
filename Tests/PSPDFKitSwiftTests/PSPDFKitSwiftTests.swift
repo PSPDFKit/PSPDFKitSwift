@@ -2,18 +2,20 @@ import XCTest
 @testable import PSPDFKitSwift
 
 class PSPDFKitSwiftTests: XCTestCase {
-    func test() {
+    func testDocument() {
         do {
-            // try PDFDocumentTests.test()
-            try KeyedArchiveTests.test()
+            try PDFDocumentTests.test()
         } catch {
             XCTFail(error.localizedDescription)
         }
-
     }
 
+    func testPSPDFKit() throws {
+        try PSPDFKitObjectTests.test()
+    }
 
     static var allTests = [
-        ("test", test),
+        ("documentTests", testDocument),
+        ("pspdfkitObjectTests", testPSPDFKit),
     ]
 }
