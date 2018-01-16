@@ -32,7 +32,7 @@ extension PSPDFKitObject {
 
     private var logHandler: ((_ level: PSPDFLogLevelMask, _ tag: String, _ message: @escaping () -> String, _ file: String, _ function: String, _ line: Int) -> Void) {
         get {
-            return { (level: PSPDFLogLevelMask, tag: String, message: @escaping () -> String, file: String, function: String, line: Int) in
+            return { [unowned self] (level: PSPDFLogLevelMask, tag: String, message: @escaping () -> String, file: String, function: String, line: Int) in
                 tag.withCString { tagPointer in
                     file.withCString { filePointer in
                         function.withCString { functionPointer in

@@ -9,11 +9,6 @@ public class PDFDocument: PSPDFDocument, Codable {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
     }
 
-    // TODO: NS_SWIFT_NAME
-    public override func fileName(for fileIndex: FileIndex) -> String {
-        return super.fileName(for: UInt(fileIndex))
-    }
-
     // MARK: - Codable, NSCoding
 
     public required init?(coder aDecoder: NSCoder) {
