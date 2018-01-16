@@ -2,33 +2,25 @@ import CoreFoundation
 import Foundation
 import PSPDFKit.Private
 
-class PDFDocument: PSPDFDocument, Codable {
-    typealias FileIndex = UInt
+public class PDFDocument: PSPDFDocument, Codable {
+    public typealias FileIndex = UInt
 
     override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool) {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
     }
 
-    // Disable Directory based options in favor of typed options.
-    @available(*, unavailable)
-    override func save(options: [PSPDFDocumentSaveOption: Any]? = nil, completionHandler: ((Error?, [PSPDFAnnotation]) -> Void)? = nil) { fatalError() }
-
-    // Disable Directory based options in favor of typed options.
-    @available(*, unavailable)
-    override func save(options: [PSPDFDocumentSaveOption: Any]? = nil) throws { fatalError() }
-
     // TODO: NS_SWIFT_NAME
-    override func fileName(for fileIndex: FileIndex) -> String {
+    public override func fileName(for fileIndex: FileIndex) -> String {
         return super.fileName(for: UInt(fileIndex))
     }
 
     // MARK: - Codable, NSCoding
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override func encode(with aCoder: NSCoder) {
+    public override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
     }
 
@@ -43,7 +35,7 @@ class PDFDocument: PSPDFDocument, Codable {
         case renderOptionsForProcessor
     }
 
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let dataProviders = try container.decode(Array<PSPDFDataProviding>.self, forKey: .dataProviders)
@@ -94,7 +86,7 @@ extension PDFDocument {
         internal static func mapToDictionary(options: [SaveOption]) -> [PSPDFDocumentSaveOption: Any] {
             var optionsDictionary = [PSPDFDocumentSaveOption: Any]()
             for option in options {
-                option.dictionary.forEach { (entry) in
+                option.dictionary.forEach { entry in
                     optionsDictionary[entry.key] = entry.value
                 }
             }
@@ -108,7 +100,7 @@ extension PDFDocument {
     /// - Parameter options: See `SaveOption` documentation for more details.
     /// - Throws: NSInternalInconsistencyException if save options are not valid.
     public func save(options: SaveOption...) throws {
-        try super.save(options: SaveOption.mapToDictionary(options: options))
+        try __save(options: SaveOption.mapToDictionary(options: options))
     }
 
     /// Saves the document and all of its linked data, including bookmarks and
@@ -118,7 +110,7 @@ extension PDFDocument {
     ///   - options: See `SaveOption` documentation for more details.
     ///   - completion: Called on the *main thread* after the save operation finishes.
     public func save(options: SaveOption..., completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void) {
-        super.save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
+        __save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
             if let error = error {
                 completion(Result.failure(AnyError(error)))
                 return
@@ -134,7 +126,7 @@ internal class PDFDocumentTests {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
         try document.save(options: .security(securityOptions), .forceRewrite)
-        document.save(options: .security(securityOptions), .forceRewrite) { (result) in
+        document.save(options: .security(securityOptions), .forceRewrite) { result in
             _ = try! result.dematerialize()
         }
     }
