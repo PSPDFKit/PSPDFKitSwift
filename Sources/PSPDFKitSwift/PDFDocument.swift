@@ -9,6 +9,17 @@ public class PDFDocument: PSPDFDocument, Codable {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
     }
 
+    convenience init(url: URL) {
+        let dataProvider: PSPDFDataProviding
+        if PSPDFKit.bool(forKey: PSPDFFileCoordinationEnabledKey) {
+            dataProvider = PSPDFCoordinatedFileDataProvider(fileURL: url, progress: nil)
+        } else {
+            dataProvider = PSPDFFileDataProvider(fileURL: url, progress: nil)
+        }
+
+        self.init(dataProviders: [dataProvider], loadCheckpointIfAvailable: false)
+    }
+
     // MARK: - Codable, NSCoding
 
     public required init?(coder aDecoder: NSCoder) {
