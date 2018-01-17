@@ -2,17 +2,6 @@ import PSPDFKit
 
 extension PSPDFKitObject {
 
-    /// Allow direct dictionary-like access.
-    public subscript(key: String) -> Any? {
-        get {
-            return __objectForKeyedSubscript(key as NSString)
-        }
-        set {
-            guard let newValue = newValue else { return }
-            __setObject(newValue, forKeyedSubscript: key as NSString)
-        }
-    }
-
     /**
      Custom log handler to forward logging to a different system.
 
@@ -58,8 +47,10 @@ internal class PSPDFKitObjectTests {
         PSPDFKit.sharedInstance.setLogHandler { (level: PSPDFLogLevelMask, tag: String, message: @escaping () -> String, file: String, function: String, line: Int) in
             print("PSPDFKit says from \(function): \(message())");
         }
+        PSPDFKit.sharedInstance["abc"] = "abc"
         PSPDFKit.sharedInstance["abc"] = 1
         let value = PSPDFKit.sharedInstance["abc"] as? Int
         guard value == 1 else { throw NSError.pspdf_error(withCode: 0, description: "Invalid value") }
+        PSPDFKit.sharedInstance["abc"] = nil
     }
 }
