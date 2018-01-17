@@ -72,6 +72,96 @@ public class PDFDocument: PSPDFDocument, Codable {
     }
 }
 
+// MARK: - Annotations
+extension PDFDocument {
+
+    public enum AnnotationOption: RawRepresentable {
+        case animateViewKey(Bool)
+        case suppressNotificationsKey(Bool)
+
+        public typealias RawValue = [PSPDFAnnotationOption: Any]
+
+        public init?(rawValue: RawValue) {
+            for (key, value) in rawValue {
+                switch key {
+                case PSPDFAnnotationOption.animateViewKey:
+                    self = .animateViewKey((value as? NSNumber)?.boolValue ?? false)
+                case PSPDFAnnotationOption.suppressNotificationsKey:
+                    self = .suppressNotificationsKey((value as? NSNumber)?.boolValue ?? false)
+                default:
+                    return nil
+                }
+            }
+            return nil
+        }
+
+        public var rawValue: RawValue {
+            switch self {
+            case .animateViewKey(let value):
+                return [PSPDFAnnotationOption.animateViewKey: NSNumber(value: value)]
+            case .suppressNotificationsKey(let value):
+                return [PSPDFAnnotationOption.suppressNotificationsKey: NSNumber(value: value)]
+            }
+        }
+    }
+
+
+    /**
+     Allows control over what annotation should get an AP stream.
+     AP (Appearance Stream) generation takes more time but will maximize compatibility with PDF Viewers that don't implement the complete spec for annotations.
+     The default value for this dict is `[.generateAppearanceStreamForTypeKey: [.freeText, .ink, .polygon, .polyLine, .line, .square, .circle, .stamp, .widget]]`
+     */
+    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions : PSPDFAnnotationType]? {
+        get {
+            return __annotationWritingOptions?.mapValues { PSPDFAnnotationType(rawValue: UInt(truncating: $0)) }
+        }
+        set {
+            __annotationWritingOptions = newValue?.mapValues { $0.rawValue as NSNumber }
+        }
+    }
+
+    /**
+     Add `annotations` to the current document (and the backing store `PSPDFAnnotationProvider`)
+     @param annotations An array of PSPDFAnnotation objects to be inserted.
+     @param options Insertion options (see the `PSPDFAnnotationOption...` constants in `PSPDFAnnotationManager.h`).
+     @note For each, the `absolutePage` property of the annotation is used.
+     @warning Might change the `page` property if multiple documentProviders are set.
+     */
+    @discardableResult
+    public func add(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
+        var internalOptions = [PSPDFAnnotationOption : Any]()
+        options.forEach { option in
+            let rawOptions = option.rawValue
+            rawOptions.keys.forEach({ key in
+                internalOptions[key] = rawOptions[key]
+            })
+        }
+
+        return __add(annotations, options: internalOptions)
+    }
+
+
+    /**
+     Remove `annotations` from the backing `PSPDFAnnotationProvider` object(s).
+     @param annotations An array of PSPDFAnnotation objects to be removed.
+     @param options Deletion options (see the `PSPDFAnnotationOption...` constants in `PSPDFAnnotationManager.h`).
+     @note Might return NO if one or multiple annotations couldn't be deleted.
+     This might be the case for form annotations or other objects that return NO for `isDeletable`.
+     */
+    @discardableResult
+    public func remove(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
+        var internalOptions = [PSPDFAnnotationOption : Any]()
+        options.forEach { option in
+            let rawOptions = option.rawValue
+            rawOptions.keys.forEach({ key in
+                internalOptions[key] = rawOptions[key]
+            })
+        }
+
+        return __remove(annotations, options: internalOptions)
+    }
+}
+
 // MARK: - Saving
 extension PDFDocument {
     public typealias SecurityOptions = PSPDFDocumentSecurityOptions
@@ -105,7 +195,7 @@ extension PDFDocument {
     ///
     /// - Parameter options: See `SaveOption` documentation for more details.
     /// - Throws: NSInternalInconsistencyException if save options are not valid.
-    public func save(options: SaveOption...) throws {
+    public func save(options: [SaveOption]) throws {
         try __save(options: SaveOption.mapToDictionary(options: options))
     }
 
@@ -115,7 +205,7 @@ extension PDFDocument {
     /// - Parameters:
     ///   - options: See `SaveOption` documentation for more details.
     ///   - completion: Called on the *main thread* after the save operation finishes.
-    public func save(options: SaveOption..., completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void) {
+    public func save(options: [SaveOption], completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void) {
         __save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
             if let error = error {
                 completion(Result.failure(AnyError(error)))
@@ -131,8 +221,9 @@ internal class PDFDocumentTests {
     static func test() throws {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
-        try document.save(options: .security(securityOptions), .forceRewrite)
-        document.save(options: .security(securityOptions), .forceRewrite) { result in
+        document.add([/* TODO */], options: [.animateViewKey(true), .suppressNotificationsKey(false)])
+        try document.save(options: [.security(securityOptions), .forceRewrite])
+        document.save(options: [.security(securityOptions), .forceRewrite]) { result in
             _ = try! result.dematerialize()
         }
     }
