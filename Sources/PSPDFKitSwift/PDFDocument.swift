@@ -105,13 +105,12 @@ extension PDFDocument {
         }
     }
 
-
     /**
      Allows control over what annotation should get an AP stream.
      AP (Appearance Stream) generation takes more time but will maximize compatibility with PDF Viewers that don't implement the complete spec for annotations.
      The default value for this dict is `[.generateAppearanceStreamForTypeKey: [.freeText, .ink, .polygon, .polyLine, .line, .square, .circle, .stamp, .widget]]`
      */
-    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions : PSPDFAnnotationType]? {
+    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions: PSPDFAnnotationType]? {
         get {
             return __annotationWritingOptions?.mapValues { PSPDFAnnotationType(rawValue: UInt(truncating: $0)) }
         }
@@ -129,7 +128,7 @@ extension PDFDocument {
      */
     @discardableResult
     public func add(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
-        var internalOptions = [PSPDFAnnotationOption : Any]()
+        var internalOptions = [PSPDFAnnotationOption: Any]()
         options.forEach { option in
             let rawOptions = option.rawValue
             rawOptions.keys.forEach({ key in
@@ -140,7 +139,6 @@ extension PDFDocument {
         return __add(annotations, options: internalOptions)
     }
 
-
     /**
      Remove `annotations` from the backing `PSPDFAnnotationProvider` object(s).
      @param annotations An array of PSPDFAnnotation objects to be removed.
@@ -150,7 +148,7 @@ extension PDFDocument {
      */
     @discardableResult
     public func remove(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
-        var internalOptions = [PSPDFAnnotationOption : Any]()
+        var internalOptions = [PSPDFAnnotationOption: Any]()
         options.forEach { option in
             let rawOptions = option.rawValue
             rawOptions.keys.forEach({ key in
@@ -221,7 +219,7 @@ internal class PDFDocumentTests {
     static func test() throws {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
-        document.add([/* TODO */], options: [.animateViewKey(true), .suppressNotificationsKey(false)])
+        document.add([ /* TODO: */ ], options: [.animateViewKey(true), .suppressNotificationsKey(false)])
         try document.save(options: [.security(securityOptions), .forceRewrite])
         document.save(options: [.security(securityOptions), .forceRewrite]) { result in
             _ = try! result.dematerialize()

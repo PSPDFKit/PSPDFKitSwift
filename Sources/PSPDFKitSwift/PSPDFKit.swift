@@ -15,7 +15,7 @@ extension PSPDFKitObject {
      }
      ```
      */
-    public func setLogHandler(handler: @escaping (_ level: PSPDFLogLevelMask, _ tag: String, _ message: @escaping () -> String, _ file: String, _ function: String, _ line: Int) -> Void) -> Void {
+    public func setLogHandler(handler: @escaping (_ level: PSPDFLogLevelMask, _ tag: String, _ message: @escaping () -> String, _ file: String, _ function: String, _ line: Int) -> Void) {
         self.logHandler = handler
     }
 
@@ -45,7 +45,7 @@ internal class PSPDFKitObjectTests {
         // PSPDFKitOrigin.shared.setObject(1 as NSNumber, forKeyedSubscript: "foo" as NSCopying)
         // PSPDFKit.sharedInstance.logLevel = [.debug]
         PSPDFKit.sharedInstance.setLogHandler { (level: PSPDFLogLevelMask, tag: String, message: @escaping () -> String, file: String, function: String, line: Int) in
-            print("PSPDFKit says from \(function): \(message())");
+            print("[\(file):\(line)]PSPDFKit says from \(function): \(message()) \(level) \(tag)")
         }
         PSPDFKit.sharedInstance["abc"] = "abc"
         PSPDFKit.sharedInstance["abc"] = 1

@@ -10,6 +10,8 @@
 		751687992004C2CF004A9C78 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751687942004C2BA004A9C78 /* PSPDFKit.framework */; };
 		751687B32004E024004A9C78 /* PSPDFKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */; };
 		751687B52004E024004A9C78 /* PSPDFKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */; };
+		7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536547D200F7348009516C3 /* PSPDFAnnotation.swift */; };
+		7536548E200F7EB2009516C3 /* PSPDFKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7536548B200F7DAD009516C3 /* PSPDFKitUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */; };
 		756A20F12005A718008CA4F8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A20F02005A718008CA4F8 /* Helpers.swift */; };
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
@@ -53,6 +55,34 @@
 			remoteGlobalIDString = 7541B88C1FFF98F90061EAA2;
 			remoteInfo = PSPDFKitSwift;
 		};
+		75365486200F7DAD009516C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 780B4169146E7DAB00DF07F1;
+			remoteInfo = PSPDFKitUI;
+		};
+		75365488200F7DAD009516C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 430F37FD1B69118500A00793;
+			remoteInfo = "PSPDFKitUI-No-Public-Headers";
+		};
+		7536548A200F7DAD009516C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B81D1AA619A79F6C00BFA32E;
+			remoteInfo = PSPDFKitUI.framework;
+		};
+		7536548C200F7EA4009516C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B81D1AA519A79F6C00BFA32E;
+			remoteInfo = PSPDFKitUI.framework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +90,8 @@
 		751687B02004E023004A9C78 /* PSPDFKitSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSPDFKitSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitSwiftTests.swift; sourceTree = "<group>"; };
 		751687B42004E024004A9C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7536547D200F7348009516C3 /* PSPDFAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFAnnotation.swift; sourceTree = "<group>"; };
+		7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PSPDFKitUI.xcodeproj; path = Frameworks/PSPDFKit/iOS/PSPDFKitUI/PSPDFKitUI.xcodeproj; sourceTree = "<group>"; };
 		7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSPDFKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitObject.swift; sourceTree = "<group>"; };
 		756A20F02005A718008CA4F8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -82,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7536548E200F7EB2009516C3 /* PSPDFKitUI.framework in Frameworks */,
 				751687992004C2CF004A9C78 /* PSPDFKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +140,16 @@
 			);
 			name = Tests;
 			path = Tests/PSPDFKitSwiftTests;
+			sourceTree = "<group>";
+		};
+		75365480200F7DAC009516C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75365487200F7DAD009516C3 /* libPSPDFKitUI.a */,
+				75365489200F7DAD009516C3 /* libPSPDFKitUI.a */,
+				7536548B200F7DAD009516C3 /* PSPDFKitUI.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7541B8811FFF98320061EAA2 = {
@@ -135,6 +178,7 @@
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
 				7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */,
 				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
+				7536547D200F7348009516C3 /* PSPDFAnnotation.swift */,
 				75BB0DD720039EC8001E4AA7 /* Result.swift */,
 				756A20F02005A718008CA4F8 /* Helpers.swift */,
 			);
@@ -153,6 +197,7 @@
 		75887C8D1FFF9EF400AEFB83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */,
 				751687772004C2B8004A9C78 /* PSPDFKit.xcodeproj */,
 			);
 			name = Frameworks;
@@ -202,6 +247,7 @@
 			);
 			dependencies = (
 				751687982004C2C2004A9C78 /* PBXTargetDependency */,
+				7536548D200F7EA4009516C3 /* PBXTargetDependency */,
 			);
 			name = PSPDFKitSwift;
 			productName = PSPDFKitSwift;
@@ -243,6 +289,10 @@
 					ProductGroup = 751687782004C2B8004A9C78 /* Products */;
 					ProjectRef = 751687772004C2B8004A9C78 /* PSPDFKit.xcodeproj */;
 				},
+				{
+					ProductGroup = 75365480200F7DAC009516C3 /* Products */;
+					ProjectRef = 7536547F200F7DAC009516C3 /* PSPDFKitUI.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -272,6 +322,27 @@
 			fileType = wrapper.framework;
 			path = PSPDFKit.framework;
 			remoteRef = 751687952004C2BA004A9C78 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		75365487200F7DAD009516C3 /* libPSPDFKitUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPSPDFKitUI.a;
+			remoteRef = 75365486200F7DAD009516C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		75365489200F7DAD009516C3 /* libPSPDFKitUI.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPSPDFKitUI.a;
+			remoteRef = 75365488200F7DAD009516C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7536548B200F7DAD009516C3 /* PSPDFKitUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PSPDFKitUI.framework;
+			remoteRef = 7536548A200F7DAD009516C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -310,6 +381,7 @@
 				756A20F12005A718008CA4F8 /* Helpers.swift in Sources */,
 				7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */,
 				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
+				7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +398,11 @@
 			isa = PBXTargetDependency;
 			target = 7541B88C1FFF98F90061EAA2 /* PSPDFKitSwift */;
 			targetProxy = 751687B62004E024004A9C78 /* PBXContainerItemProxy */;
+		};
+		7536548D200F7EA4009516C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PSPDFKitUI.framework;
+			targetProxy = 7536548C200F7EA4009516C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
