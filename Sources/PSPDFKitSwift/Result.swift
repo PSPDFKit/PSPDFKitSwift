@@ -97,7 +97,7 @@ public struct AnyError: Swift.Error, CustomStringConvertible {
     }
 
     public var description: String {
-        return String(describing: underlyingError)
+        return String(describing: self.underlyingError)
     }
 }
 

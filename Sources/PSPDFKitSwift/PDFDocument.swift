@@ -73,7 +73,7 @@ public class PDFDocument: PSPDFDocument, Codable {
 }
 
 // MARK: - Annotations
-extension PDFDocument {
+extension PSPDFDocument {
 
     public enum AnnotationOption: RawRepresentable {
         case animateViewKey(Bool)
@@ -161,7 +161,7 @@ extension PDFDocument {
 }
 
 // MARK: - Saving
-extension PDFDocument {
+extension PSPDFDocument {
     public typealias SecurityOptions = PSPDFDocumentSecurityOptions
 
     public enum SaveOption {
@@ -213,6 +213,10 @@ extension PDFDocument {
             completion(Result.success(annotations))
         })
     }
+}
+
+extension PSPDFDocument {
+    // func imageForPage(at pageIndex: UInt, size: CGSize, clippedTo clipRect: CGRect, annotations: [PSPDFAnnotation]?, options: [String : Any]? = nil) throws -> UIImage
 }
 
 internal class PDFDocumentTests {
