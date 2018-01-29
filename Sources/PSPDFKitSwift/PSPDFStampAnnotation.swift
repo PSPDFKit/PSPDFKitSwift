@@ -1,5 +1,7 @@
 import PSPDFKit
 
+public typealias StampAnnotation = PSPDFStampAnnotation
+
 extension PSPDFStampAnnotation {
 
     /// Parses the AP stream, searches for an image and loads it.

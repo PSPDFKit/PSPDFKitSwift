@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750BB06F201F2CBC00CFCB56 /* PSPDFRenderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BB06E201F2CBC00CFCB56 /* PSPDFRenderRequest.swift */; };
+		750BB076201F307800CFCB56 /* PSPDFKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */; };
 		751687992004C2CF004A9C78 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751687942004C2BA004A9C78 /* PSPDFKit.framework */; };
-		751687B32004E024004A9C78 /* PSPDFKitSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */; };
 		751687B52004E024004A9C78 /* PSPDFKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7541B88D1FFF98F90061EAA2 /* PSPDFKitSwift.framework */; };
 		7528E9D9201681370040D8C0 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528E9D8201681370040D8C0 /* Exported.swift */; };
 		7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536547D200F7348009516C3 /* PSPDFAnnotation.swift */; };
@@ -19,7 +20,7 @@
 		75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */; };
 		7592CE88201B2C4F007640E4 /* PSPDFInkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7592CE87201B2C4F007640E4 /* PSPDFInkAnnotation.swift */; };
 		7592CE93201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */; };
-		75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PDFDocument.swift */; };
+		75BB0DD62003852E001E4AA7 /* PSPDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PSPDFDocument.swift */; };
 		75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD720039EC8001E4AA7 /* Result.swift */; };
 		75D9394D201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9394C201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift */; };
 		75ED2958201B67810030E6BA /* PSPDFPointArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED2957201B67810030E6BA /* PSPDFPointArray.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		750BB06E201F2CBC00CFCB56 /* PSPDFRenderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFRenderRequest.swift; sourceTree = "<group>"; };
 		751687772004C2B8004A9C78 /* PSPDFKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PSPDFKit.xcodeproj; path = Frameworks/PSPDFKit/iOS/PSPDFKit/PSPDFKit.xcodeproj; sourceTree = "<group>"; };
 		751687B02004E023004A9C78 /* PSPDFKitSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSPDFKitSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		751687B22004E024004A9C78 /* PSPDFKitSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFKitSwiftTests.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 		75887C8B1FFF9CEF00AEFB83 /* general.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = general.xcconfig; sourceTree = "<group>"; };
 		7592CE87201B2C4F007640E4 /* PSPDFInkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFInkAnnotation.swift; sourceTree = "<group>"; };
 		7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFAbstractShapeAnnotation.swift; sourceTree = "<group>"; };
-		75BB0DD52003852E001E4AA7 /* PDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocument.swift; sourceTree = "<group>"; };
+		75BB0DD52003852E001E4AA7 /* PSPDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFDocument.swift; sourceTree = "<group>"; };
 		75BB0DD720039EC8001E4AA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		75D9394C201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFInstantAnnotationProvider.swift; sourceTree = "<group>"; };
 		75ED2957201B67810030E6BA /* PSPDFPointArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFPointArray.swift; sourceTree = "<group>"; };
@@ -193,7 +195,7 @@
 			children = (
 				75887C881FFF9BFD00AEFB83 /* PSPDFKit.swift */,
 				7566299E200CC79D006ADDB8 /* PSPDFKitObject.swift */,
-				75BB0DD52003852E001E4AA7 /* PDFDocument.swift */,
+				75BB0DD52003852E001E4AA7 /* PSPDFDocument.swift */,
 				7536547D200F7348009516C3 /* PSPDFAnnotation.swift */,
 				75562812201A418800F80A91 /* PSPDFAbstractLineAnnotation.swift */,
 				7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */,
@@ -202,6 +204,7 @@
 				7592CE87201B2C4F007640E4 /* PSPDFInkAnnotation.swift */,
 				75ED2960201B872D0030E6BA /* PSPDFStampAnnotation.swift */,
 				75ED2957201B67810030E6BA /* PSPDFPointArray.swift */,
+				750BB06E201F2CBC00CFCB56 /* PSPDFRenderRequest.swift */,
 				75BB0DD720039EC8001E4AA7 /* Result.swift */,
 				756A20F02005A718008CA4F8 /* Helpers.swift */,
 				7528E9D8201681370040D8C0 /* Exported.swift */,
@@ -393,7 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751687B32004E024004A9C78 /* PSPDFKitSwiftTests.swift in Sources */,
+				750BB076201F307800CFCB56 /* PSPDFKitSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +410,11 @@
 				75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */,
 				75ED2958201B67810030E6BA /* PSPDFPointArray.swift in Sources */,
 				756A20F12005A718008CA4F8 /* Helpers.swift in Sources */,
+				750BB06F201F2CBC00CFCB56 /* PSPDFRenderRequest.swift in Sources */,
 				7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */,
 				75D9394D201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift in Sources */,
 				7592CE93201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift in Sources */,
-				75BB0DD62003852E001E4AA7 /* PDFDocument.swift in Sources */,
+				75BB0DD62003852E001E4AA7 /* PSPDFDocument.swift in Sources */,
 				7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */,
 				7592CE88201B2C4F007640E4 /* PSPDFInkAnnotation.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,

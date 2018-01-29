@@ -1,6 +1,8 @@
 import Foundation
 import PSPDFKit
 
+public typealias PDFAnnotation = PSPDFAnnotation
+
 extension PSPDFAnnotation {
 
     public var additionalActions: [PSPDFAnnotationTriggerEvent: PSPDFAction]? {

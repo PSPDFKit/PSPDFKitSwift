@@ -53,7 +53,6 @@ public class PDFDocument: PSPDFDocument, Codable {
         areAnnotationsEnabled = try container.decode(Bool.self, forKey: .title)
         uid = try container.decode(String.self, forKey: .uid)
 
-        // TODO: Refine PSPDFRenderOption dictionary
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .all)
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .page)
         setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForProcessor), type: .processor)
@@ -216,7 +215,15 @@ extension PSPDFDocument {
 }
 
 extension PSPDFDocument {
-    // func imageForPage(at pageIndex: UInt, size: CGSize, clippedTo clipRect: CGRect, annotations: [PSPDFAnnotation]?, options: [String : Any]? = nil) throws -> UIImage
+
+    public func updateRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
+        var optionsDictionary = RenderOption.RawValue()
+        for option in options {
+            optionsDictionary.merge(option.rawValue) { (_, new) in new }
+        }
+        self.updateRenderOptions(optionsDictionary, type: type)
+    }
+
 }
 
 internal class PDFDocumentTests {

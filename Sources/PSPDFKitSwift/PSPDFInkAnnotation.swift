@@ -1,5 +1,7 @@
 import PSPDFKit
 
+public typealias InkAnnotation = PSPDFInkAnnotation
+
 extension PSPDFInkAnnotation {
     public convenience init(lines: [PSPDFDrawingPoint]) {
         self.init(__lines: lines.map { value in
