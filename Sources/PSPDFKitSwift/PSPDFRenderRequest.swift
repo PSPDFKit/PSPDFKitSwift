@@ -3,7 +3,7 @@ import PSPDFKit
 public typealias RenderRequest = PSPDFRenderRequest
 public typealias RenderType = PSPDFRenderType
 
-public enum RenderOption: RawRepresentable {
+public enum RenderOption: RawRepresentable, Codable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
     case none
@@ -118,6 +118,15 @@ public enum RenderOption: RawRepresentable {
         }
     }
 
+    public init(from decoder: Decoder) throws {
+        var unkeyedContainer = try decoder.unkeyedContainer()
+        self.init(rawValue: try unkeyedContainer.decode(RawValue.self))!
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var unkeyedContainer = encoder.unkeyedContainer()
+        try unkeyedContainer.encode(self.rawValue)
+    }
 }
 
 internal class RenderRequestTests {
@@ -131,8 +140,6 @@ internal class RenderRequestTests {
             text.draw(with: cropBox, context: stringDrawingContext)
         }
 
-        document.updateRenderOptions([PSPDFRenderOption.drawBlockKey: drawClosure], type: PSPDFRenderType.all)
         document.updateRenderOptions([.draw(drawClosure), .drawSignHereOverlay(true)], type: .all)
     }
 }
-

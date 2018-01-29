@@ -53,9 +53,9 @@ public class PDFDocument: PSPDFDocument, Codable {
         areAnnotationsEnabled = try container.decode(Bool.self, forKey: .title)
         uid = try container.decode(String.self, forKey: .uid)
 
-        setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .all)
-        setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForAll), type: .page)
-        setRenderOptions(try container.decode([PSPDFRenderOption: Any]?.self, forKey: .renderOptionsForProcessor), type: .processor)
+        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForAll), type: .all)
+        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForAll), type: .page)
+        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForProcessor), type: .processor)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -216,12 +216,52 @@ extension PSPDFDocument {
 
 extension PSPDFDocument {
 
+    /**
+     *  Set custom render options. See  PSPDFRenderManager.h for a list of available keys.
+     *
+     *  @param options The render options to set. Will reset to defaults if set to nil.
+     *  @param type    The type you want to change. There are different render operation types.
+     *
+     *  @note There are certain default render options set, such as `PSPDFRenderInteractiveFormFillColorKey` which you most likely want to preserve.
+     *
+     *  The typical access pattern is:
+     *    1) get existing render options
+     *    2) customize the dictionary,
+     *    3) and set the new merged render options.
+     *
+     *  If you are working with primarily dark documents, consider setting
+     *  `PSPDFRenderBackgroundFillColorKey` to `UIColor.blackColor` to work around
+     *  white/gray hairlines at document borders.
+     */
+    public func setRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
+        let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
+        self.__setRenderOptions(optionsDict, type: type)
+    }
+
+    /**
+     *  Updates render options. Overrides new settings but does not destroy existing settings.
+     *
+     *  @param options Settings to add/replace in the renderOptions dictionary.
+     *  @param type    The type you want to change.
+     */
     public func updateRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
-        var optionsDictionary = RenderOption.RawValue()
-        for option in options {
-            optionsDictionary.merge(option.rawValue) { (_, new) in new }
-        }
-        self.updateRenderOptions(optionsDictionary, type: type)
+        let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
+        self.__updateRenderOptions(optionsDict, type: type)
+    }
+
+    /**
+     *  Returns the render options for a specific type of operation.
+     *
+     *  @param type    The specific operation type.
+     *  @param context An optional context matching the operation type.
+     *                 For `PSPDFRenderTypePage` this is an `NSNumber` of the page.
+     *
+     *  @return The render dictionary. Guaranteed to always return a dictionary.
+     */
+    public func renderOptions(for type: RenderType, context: Any?) -> [RenderOption] {
+        return self.__renderOptions(for: type, context: context).map({ (entry) -> RenderOption in
+            RenderOption(rawValue: [entry.key: entry.value]) ?? .none
+        })
     }
 
 }
