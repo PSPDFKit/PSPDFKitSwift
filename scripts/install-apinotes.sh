@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 CURRENT_PWD="$PWD"
 PROJECT_DIR=`cd "../../"; pwd`
