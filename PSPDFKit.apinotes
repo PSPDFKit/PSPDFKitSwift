@@ -1,0 +1,98 @@
+# https://github.com/apple/swift-clang/blob/swift-4.0-branch/lib/APINotes/APINotesYAMLCompiler.cpp
+---
+Name: PSPDFKit
+Typedefs:
+- Name: "PSPDFRenderDrawBlock"
+  SwiftPrivate: true
+# - Name: "PSPDFAnnotationString"
+#   AvailabilityMsg: "Use PSPDFAnnotationType"
+#   SwiftPrivate: true
+Functions:
+- Name: "PSPDFConvertViewLinesToPDFLines"
+  SwiftPrivate: true
+- Name: "PSPDFConvertViewLineToPDFLines"
+  SwiftPrivate: true
+- Name: "PSPDFBoundingBoxFromLines"
+  SwiftPrivate: true
+Classes:
+- Name: PSPDFDocument
+  Properties:
+  - Name: annotationWritingOptions
+    SwiftPrivate: true
+  Methods:
+  - Selector: "saveWithOptions:error:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "saveWithOptions:completionHandler:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "addAnnotations:options:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "removeAnnotations:options:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "updateRenderOptions:type:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "setRenderOptions:type:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "renderOptionsForType:context:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+- Name: PSPDFAnnotation
+  Properties:
+  - Name: additionalActions
+    SwiftPrivate: true
+  - Name: dashArray
+    SwiftPrivate: true
+  - Name: rects
+    SwiftPrivate: true
+  - Name: points
+    SwiftPrivate: true
+- Name: PSPDFAbstractShapeAnnotation
+  Properties:
+  - Name: pointSequences
+    SwiftPrivate: true
+- Name: PSPDFAbstractLineAnnotation
+  Methods:
+  - Selector: "initWithPoints:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+- Name: PSPDFPolygonAnnotation
+  Methods:
+  - Selector: "initWithPoints:intentType:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+- Name: PSPDFInkAnnotation
+  Methods:
+  - Selector: "initWithLines:"
+    MethodKind: "Instance"
+    SwiftPrivate: true    
+- Name: PSPDFSoundAnnotation
+  Methods:
+  - Selector: "initRecorderWithOptions:"
+    MethodKind: "Instance"
+    SwiftPrivate: true    
+- Name: PSPDFStampAnnotation
+  Methods:
+  - Selector: "loadImageWithTransform:error:"
+    MethodKind: "Instance"
+    SwiftPrivate: true    
+- Name: PSPDFPointArray
+  Properties:
+  - Name: points
+    SwiftPrivate: true
+  Methods:
+  - Selector: "initWithPoints:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+  - Selector: "objectAtIndexedSubscript:"
+    MethodKind: "Instance"
+    SwiftPrivate: true    
+- Name: PSPDFInstantAnnotationProvider
+  Methods:
+  - Selector: "needsLocking_refreshCachedAnnotationsForPagesAtIndices:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
