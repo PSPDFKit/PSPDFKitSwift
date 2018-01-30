@@ -1,6 +1,5 @@
 import CoreFoundation
 import Foundation
-import PSPDFKit.Private
 
 public class PDFDocument: PSPDFDocument, Codable {
     public typealias FileIndex = UInt
