@@ -1,4 +1,15 @@
+#
+# Copyright (c) 2018 PSPDFKit GmbH. All rights reserved.
+#
+# The PSPDFKitSwift is licensed with a modified BSD license. Please see License for
+# details. This notice may not be removed from this file.
+#
+
+platform :ios, '11.0'
+
 target 'PSPDFKitExample' do
   use_frameworks!
-  pod 'PSPDFKit', :git => 'git@github.com:PSPDFKit/PSPDFKit.git', :branch => 'marcin/pspdfkitswift/general'
+  
+  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
+  pod 'PSPDFKitSwift', :git => 'git@github.com:PSPDFKit/PSPDFKit.swift.git'
 end
