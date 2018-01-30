@@ -32,4 +32,7 @@ Pod::Spec.new do |spec|
 
   spec.module_name = 'PSPDFKitSwift'
   spec.dependency "PSPDFKit"
+  
+  # Inject API Notes
+  spec.prepare_command = 'scripts/install-apinotes.sh'
 end
