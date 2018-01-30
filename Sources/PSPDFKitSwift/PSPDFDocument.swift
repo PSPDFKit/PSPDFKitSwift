@@ -1,5 +1,5 @@
-import CoreFoundation
 import Foundation
+import PSPDFKit
 
 public class PDFDocument: PSPDFDocument, Codable {
     public typealias FileIndex = UInt
@@ -10,7 +10,7 @@ public class PDFDocument: PSPDFDocument, Codable {
 
     convenience init(url: URL) {
         let dataProvider: PSPDFDataProviding
-        if PSPDFKit.bool(forKey: PSPDFFileCoordinationEnabledKey) {
+        if PSPDFKit.sharedInstance.bool(forKey: PSPDFFileCoordinationEnabledKey) {
             dataProvider = PSPDFCoordinatedFileDataProvider(fileURL: url, progress: nil)
         } else {
             dataProvider = PSPDFFileDataProvider(fileURL: url, progress: nil)
