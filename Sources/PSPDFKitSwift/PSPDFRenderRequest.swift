@@ -2,7 +2,13 @@ import PSPDFKit
 
 public typealias RenderRequest = PSPDFRenderRequest
 public typealias RenderType = PSPDFRenderType
+public typealias RenderFilter = PSPDFRenderFilter
 
+// Replaces original Objective-C `PSPDFRenderDrawBlock`. See https://bugs.swift.org/browse/SR-6873
+public typealias PSPDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void
+public typealias RenderDrawHandler = PSPDFRenderDrawBlock
+
+/// Rendering options. Parameters of how an image should be rendered.
 public enum RenderOption: RawRepresentable, Codable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
@@ -22,7 +28,7 @@ public enum RenderOption: RawRepresentable, Codable {
     case textRenderingUseCoreGraphics(Bool)
     case textRenderingClearTypeEnabled(Bool)
     case interactiveFormFillColor(UIColor)
-    case draw((_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void)
+    case draw(RenderDrawHandler)
     case drawSignHereOverlay(Bool)
     case ciFilters([CIFilter])
 
@@ -62,7 +68,7 @@ public enum RenderOption: RawRepresentable, Codable {
             case .interactiveFormFillColorKey:
                 self = .interactiveFormFillColor(value as? UIColor ?? .black)
             case .drawBlockKey:
-                let closure = value as! PSPDFRenderDrawBlock
+                let closure: PSPDFRenderDrawBlock = unsafeBitCast(value, to: PSPDFRenderDrawBlock.self)
                 self = .draw(closure)
             case .drawSignHereOverlay:
                 self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
@@ -110,7 +116,7 @@ public enum RenderOption: RawRepresentable, Codable {
         case .interactiveFormFillColor(let color):
             return [.interactiveFormFillColorKey: color]
         case .draw(let closure):
-            return [.drawBlockKey: closure]
+            return [.drawBlockKey: unsafeBitCast(closure, to: AnyObject.self)]
         case .drawSignHereOverlay(let value):
             return [.drawSignHereOverlay: NSNumber(value: value)]
         case .ciFilters(let filters):
