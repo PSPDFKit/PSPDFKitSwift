@@ -6,15 +6,14 @@
 #
 
 Pod::Spec.new do |spec|
-  spec.name = "PSPDFKit.swift"
+  spec.name = "PSPDFKitSwift"
   spec.version = "1.0.0"
-  spec.summary = ""
-  spec.documentation_url = ""
+  spec.summary = "lorem ipsum"
 
-  spec.description = ""
+  spec.description = "lorem ipsum"
 
   spec.homepage = "http://github.com/PSPDFKit/PSPDFKit.swift"
-  spec.license = { :type => "BSD (modified)", :file => "LICENSE.md" }
+#  spec.license = { :type => "BSD (modified)", :file => "LICENSE.md" }
 
   spec.author = { "PSPDFKit GmbH" => "info@pspdfkit.com" }
   spec.social_media_url = "http://twitter.com/pspdfkit"
@@ -31,6 +30,6 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
-  spec.module_name = 'PSPDFKitSwift'
-  spec.dependency "PSPDFKit"
+   spec.module_name = 'PSPDFKitSwift'
+   spec.dependency "PSPDFKit"
 end
