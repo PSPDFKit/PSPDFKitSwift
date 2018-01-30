@@ -1,3 +1,4 @@
+import Foundation
 import PSPDFKit
 
 public typealias StampAnnotation = PSPDFStampAnnotation
