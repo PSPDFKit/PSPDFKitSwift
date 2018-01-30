@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "4.0"
   spec.cocoapods_version = '>= 1.4.0'
 
-  spec.source = { :git => "git@github.com:PSPDFKit/PSPDFKit.swift.git", :branch => "master" }
+  spec.source = { :git => "git@github.com:PSPDFKit/PSPDFKit.swift.git", :branch => "cocoapods" }
   spec.source_files = "Sources", "Sources/**/*.{h,m,swift}"
   spec.public_header_files = "Sources/**/*.{h,apinotes}"
 
