@@ -1,0 +1,4 @@
+target 'PSPDFKitExample' do
+  use_frameworks!
+  pod 'PSPDFKit', :git => 'git@github.com:PSPDFKit/PSPDFKit.git', :branch => 'marcin/pspdfkitswift/general'
+end
