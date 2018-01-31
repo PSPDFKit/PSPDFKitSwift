@@ -14,8 +14,7 @@ a [free trial](https://pspdfkit.com/try/).
 ### Using CocoaPods
 
 We assume you are familiar with [CocoaPods](https://cocoapods.org), otherwise
-please consult the documentation first. You'll have to add PSPDFKitSwift as well as
-PSPDFKit as a dependency to your `Podfile`.
+please consult the documentation first. You'll have to add PSPDFKitSwift and PSPDFKit as a dependency to your `Podfile`. You need to add `post_install` action to install additional resources.
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
@@ -86,6 +85,8 @@ Please [sign our CLA agreement](https://pspdfkit.com/guides/web/current/miscella
 Technical notes:
 
 * All PSPDFKitSwift source files live in the `Sources` directory.
+* PSPDFKit and PSPDFKitUI modules are re-exported automatically.
+* PSPDFKit.apinotes is a textile file that adjust the API visibility.
 
 ## Known Issues
 
