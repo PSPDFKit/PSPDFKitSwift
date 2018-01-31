@@ -9,7 +9,12 @@ platform :ios, '11.0'
 
 target 'PSPDFKitExample' do
   use_frameworks!
-  
+
   pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
   pod 'PSPDFKitSwift', :git => 'git@github.com:PSPDFKit/PSPDFKit.swift.git'
+end
+
+post_install do |installer|
+  puts "Install PSPDFKit.apinotes"
+  `curl -s -f -L https://raw.githubusercontent.com/PSPDFKit/PSPDFKit.swift/master/PSPDFKit.apinotes -o Pods/PSPDFKit/PSPDFKit.framework/Headers/PSPDFKit.apinotes`
 end
