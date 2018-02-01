@@ -81,6 +81,8 @@ the `PSPDFKit.framework`,`PSPDFKitUI.framework` and `PDFFKitSwift.framework` to 
 
 You should now be able to build & run your app.
 
+**Notice:** Link against frameworks from the `Frameworks` directory as those are updated frameworks.
+
 ## Limitations
 
 PSPDFKitSwift is beta software, many parts aren't implemented yet.
@@ -100,7 +102,7 @@ Technical notes:
 
 * All PSPDFKitSwift source files live in the `Sources` directory.
 * PSPDFKit and PSPDFKitUI modules are re-exported automatically.
-* PSPDFKit.apinotes is a textile file that adjust the API visibility.
+* `PSPDFKit.apinotes` is a textile file that adjust the API visibility.
 
 ## Known Issues
 
@@ -110,15 +112,8 @@ Carthage build folder to the "Framework Search Paths". When building without
 Carthage, this produces the following warning:
 
 ```
-ld: warning: directory not found for option '-F/Users/konstantinbe/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
+ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
 ```
-
---------------------------------------------------------------------------------
-
-**Conflicting gesture recognizers**. Your gesture recognizers might be in
-conflict with some of PSPDFKit's recognizers. If so, implement the
-`gestureRecognizer(_:shouldRecognizeSimultaneouslyWith:)` delegate method
-for the conflicting gesture recognizer and return `true`.
 
 ## License
 
