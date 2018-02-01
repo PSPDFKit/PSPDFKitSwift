@@ -5,6 +5,7 @@ public typealias PDFAnnotation = PSPDFAnnotation
 
 extension PSPDFAnnotation {
 
+    /// Additional action types.
     public var additionalActions: [PSPDFAnnotationTriggerEvent: PSPDFAction]? {
         get {
             var dictionary = [PSPDFAnnotationTriggerEvent: PSPDFAction]()

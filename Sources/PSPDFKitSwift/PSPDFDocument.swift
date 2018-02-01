@@ -73,8 +73,11 @@ public class PDFDocument: PSPDFDocument, Codable {
 // MARK: - Annotations
 extension PSPDFDocument {
 
+    /// Annotation option.
     public enum AnnotationOption: RawRepresentable {
+        /// Controls if overlay annotations should be animated. Only applies to overlay.
         case animateViewKey(Bool)
+        /// Prevents the insertion or removal notifications from being sent.
         case suppressNotificationsKey(Bool)
 
         public typealias RawValue = [PSPDFAnnotationOption: Any]
@@ -160,10 +163,21 @@ extension PSPDFDocument {
 
 // MARK: - Saving
 extension PSPDFDocument {
+
+    /// See `PSPDFDocumentSecurityOptions`
     public typealias SecurityOptions = PSPDFDocumentSecurityOptions
 
+    /// When saving a document, you can provide various save options.
     public enum SaveOption {
+        /// Forces a full rewrite of the document.
+        /// By default, a document is saved incrementally if possible. This means
+        /// that only the changed parts of a document are appended while their previously
+        /// persisted state is kept (but ignored). This is faster but uses increasingly more
+        /// space over time. Forcing a rewrite means the whole document file is rewritten
+        /// from scratch leaving out all the outdated and unused parts.
         case security(SecurityOptions)
+        /// A `SecurityOptions` instance, specifies the security options to
+        /// use when saving the document.
         case forceRewrite
 
         internal var dictionary: [PSPDFDocumentSaveOption: Any] {

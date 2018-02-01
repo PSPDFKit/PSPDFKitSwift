@@ -13,7 +13,7 @@
     <a title="PSPDFKitSwift  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">PSPDFKitSwift Docs</a> (63% documented)</p>
+        <p><a href="index.html">PSPDFKitSwift Docs</a> (91% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -128,7 +128,7 @@ to receive an evaluation license if you haven&rsquo;t a production license yet.<
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PSPDFKitSwift</span>
 </code></pre>
 
-<p>From now on you can work with the PSPDFKit framwework like you use to be. You&rsquo;ll notice several improvements to the Swift API that due to external constraints couldn&rsquo;t be made on the Objective-C side. Check the documentation to find new wrappers you may want to use since now.</p>
+<p>From now on you can work with the PSPDFKit framwework like you use to be. You&rsquo;ll notice several improvements to the Swift API that due to external constraints couldn&rsquo;t be made on the Objective-C side. Check the <a href="./docs">documentation</a> to discover the wrappers you may want to use since now.</p>
 
 <p><strong>Note:</strong> There is no need to import PSPDFKit module separately.</p>
 <h2 id='getting-started' class='heading'>Getting Started</h2>
@@ -189,6 +189,8 @@ may also want to set up your <a href="https://pspdfkit.com/guides/ios/current/ge
 </ul>
 
 <p>You should now be able to build &amp; run your app.</p>
+
+<p><strong>Notice:</strong> Link against frameworks from the <code>Frameworks</code> directory as those are updated frameworks.</p>
 <h2 id='limitations' class='heading'>Limitations</h2>
 
 <p>PSPDFKitSwift is beta software, many parts aren&rsquo;t implemented yet.</p>
@@ -210,7 +212,7 @@ may also want to set up your <a href="https://pspdfkit.com/guides/ios/current/ge
 <ul>
 <li>All PSPDFKitSwift source files live in the <code>Sources</code> directory.</li>
 <li>PSPDFKit and PSPDFKitUI modules are re-exported automatically.</li>
-<li>PSPDFKit.apinotes is a textile file that adjust the API visibility.</li>
+<li><code>PSPDFKit.apinotes</code> is a textile file that adjust the API visibility.</li>
 </ul>
 <h2 id='known-issues' class='heading'>Known Issues</h2>
 
@@ -218,15 +220,8 @@ may also want to set up your <a href="https://pspdfkit.com/guides/ios/current/ge
 out-of-the-box with per-customer PSPDFKit URL, we&rsquo;ve added the <em>parent</em>
 Carthage build folder to the <q>Framework Search Paths</q>. When building without
 Carthage, this produces the following warning:</p>
-<pre class="highlight plaintext"><code>ld: warning: directory not found for option '-F/Users/konstantinbe/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
+<pre class="highlight plaintext"><code>ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
 </code></pre>
-
-<hr>
-
-<p><strong>Conflicting gesture recognizers</strong>. Your gesture recognizers might be in
-conflict with some of PSPDFKit&rsquo;s recognizers. If so, implement the
-<code>gestureRecognizer(_:shouldRecognizeSimultaneouslyWith:)</code> delegate method
-for the conflicting gesture recognizer and return <code>true</code>.</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>The PSPDFKitSwift wrapper is released under a modified version of the BSD license, see

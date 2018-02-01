@@ -1,0 +1,187 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFAbstractLineAnnotation.swift",
+      "line": 5,
+      "symbol": "PSPDFAbstractLineAnnotation.init(points:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 4,
+      "symbol": "PDFDocument",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 24,
+      "symbol": "PDFDocument.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 28,
+      "symbol": "PDFDocument.encode(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFInkAnnotation.swift",
+      "line": 8,
+      "symbol": "PSPDFInkAnnotation.init(lines:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFKitObject.swift",
+      "line": null,
+      "symbol": "PSPDFKitObject",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 16,
+      "symbol": "RenderOption.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 17,
+      "symbol": "RenderOption.preserveAspectRatio",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 18,
+      "symbol": "RenderOption.ignoreDisplaySettings",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 19,
+      "symbol": "RenderOption.pageColor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 20,
+      "symbol": "RenderOption.inverted",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 21,
+      "symbol": "RenderOption.filters",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 22,
+      "symbol": "RenderOption.interpolationQuality",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 23,
+      "symbol": "RenderOption.skipPageContent",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 24,
+      "symbol": "RenderOption.overlayAnnotations",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 25,
+      "symbol": "RenderOption.skipAnnotations",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 26,
+      "symbol": "RenderOption.ignorePageClip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 27,
+      "symbol": "RenderOption.allowAntiAliasing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 28,
+      "symbol": "RenderOption.backgroundFillColor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 29,
+      "symbol": "RenderOption.textRenderingUseCoreGraphics",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 30,
+      "symbol": "RenderOption.textRenderingClearTypeEnabled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 31,
+      "symbol": "RenderOption.interactiveFormFillColor",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 32,
+      "symbol": "RenderOption.draw",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 33,
+      "symbol": "RenderOption.drawSignHereOverlay",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 34,
+      "symbol": "RenderOption.ciFilters",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/Result.swift",
+      "line": 90,
+      "symbol": "AnyError.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift"
+}

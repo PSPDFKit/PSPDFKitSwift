@@ -14,23 +14,55 @@ public enum RenderOption: RawRepresentable, Codable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
     case none
+    /// Changes the rendering to preserve the aspect ratio of the image.
     case preserveAspectRatio(Bool)
+    /// Controls whether the image is forced to render with a scale of 1.0.
     case ignoreDisplaySettings(Bool)
+    /// Multiplies a color used to color a page.
     case pageColor(UIColor)
+    /// Inverts the rendering output.
     case inverted(Bool)
+    /// Filters to be applied. Defaults to 0. Filters will increase rendering time.
     case filters(RenderFilter)
+    /// Set custom interpolation quality.
     case interpolationQuality(CGInterpolationQuality)
+    /// Set to true to NOT draw page content. (Use to just draw an annotation)
     case skipPageContent(Bool)
+    /// Set to true to render annotations that have isOverlay = true set.
     case overlayAnnotations(Bool)
+    /// Skip rendering of any annotations that are in this array.
     case skipAnnotations([PDFAnnotation])
+    /// If true, will draw outside of page area.
     case ignorePageClip(Bool)
+    /// Enabled/Disables antialiasing.
     case allowAntiAliasing(Bool)
+    /// Allows custom render color. Default is white.
     case backgroundFillColor(UIColor)
+    /// Controls if native text rendering via Core Graphics should be used.
+    /// Native text rendering usually yields better results but is slower.
     case textRenderingUseCoreGraphics(Bool)
+    /// Controls if ClearType is used for text rendering. Only works if
+    /// `textRenderingUseCoreGraphics(Bool)` is set to false.
     case textRenderingClearTypeEnabled(Bool)
+    /**
+     Sets the interactive fill color, which will override the fill color for all newly
+     rendered form elements that are editable.
+
+     The interactive fill color is used if a form element is editable by the user to
+     indicate that the user can interact with this form element.
+
+     If this value is set, it will always be used if the element is editable and the
+     `fillColor` specified by the PDF is ignored. Remove this key to use the fill color
+     specified in the PDF.
+
+     Defaults to a non-nil, light blue color.
+     */
     case interactiveFormFillColor(UIColor)
+    /// Allows custom content rendering after the PDF. The value for this key needs to be of type `RenderDrawHandler`.
     case draw(RenderDrawHandler)
+    /// Controls if the "Sign here" overlay should be shown on unsigned signature fields.
     case drawSignHereOverlay(Bool)
+    /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
     case ciFilters([CIFilter])
 
     public init?(rawValue: RawValue) {
