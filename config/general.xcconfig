@@ -1,16 +1,40 @@
-SDKROOT = iphoneos
+// We support macOS, iOS, watchOS and tvOS by default.
+SUPPORTED_PLATFORMS = macosx iphoneos appletvos watchos appletvsimulator iphonesimulator watchsimulator
+
+// http://promisekit.org/news/2016/08/Multiplatform-Single-Scheme-Xcode-Projects/
+// watchOS build fails if we do not set it exactly like that
+TARGETED_DEVICE_FAMILY = 1,2,3,4
+
+// Deployment targets
+MACOSX_DEPLOYMENT_TARGET = 10.12
 IPHONEOS_DEPLOYMENT_TARGET = 9.0
-TARGETED_DEVICE_FAMILY = 1,2
+TVOS_DEPLOYMENT_TARGET = 9.0
+WATCHOS_DEPLOYMENT_TARGET = 3.0
+
+// Toolchain
+SDKROOT = iphoneos
+
+// Generating dSYM files is super slow, so skip during debug builds.
+DEBUG_INFORMATION_FORMAT = dwarf;
+
+
 INFOPLIST_FILE = $(PROJECT_DIR)/Sources/PSPDFKitSwift/Info.plist
+
+// Swift
 SWIFT_VERSION = "4.0"
 SWIFT_INSTALL_OBJC_HEADER = NO
+
 CLANG_ENABLE_MODULE_DEBUGGING = YES
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+
 CODE_SIGN_IDENTITY =
 DEVELOPMENT_TEAM =
+
 PRODUCT_BUNDLE_IDENTIFIER = com.pspdfkit.PSPDFKitSwift
 PRODUCT_NAME = PSPDFKitSwift
 PRODUCT_MODULE_NAME = PSPDFKitSwift
-FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Frameworks
+
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(CONFIGURATION_BUILD_DIR) $(PROJECT_DIR)/Frameworks
+
 DEFINES_MODULE = NO
 
