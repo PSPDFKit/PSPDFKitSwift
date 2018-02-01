@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PSPDFDocument Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/PSPDFDocument" class="dashAnchor"></a>
+    <a title="PSPDFDocument Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">PSPDFKitSwift Docs</a> (63% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">PSPDFKitSwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PSPDFDocument Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PDFDocument.html">PDFDocument</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RenderOption.html">RenderOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Result.html">Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFAbstractLineAnnotation.html">PSPDFAbstractLineAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFAbstractShapeAnnotation.html">PSPDFAbstractShapeAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFAnnotation.html">PSPDFAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFDocument.html">PSPDFDocument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFDocument/AnnotationOption.html">– AnnotationOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFDocument/SaveOption.html">– SaveOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFInkAnnotation.html">PSPDFInkAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFKitObject.html">PSPDFKitObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFPointArray.html">PSPDFPointArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFPolygonAnnotation.html">PSPDFPolygonAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/PSPDFStampAnnotation.html">PSPDFStampAnnotation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySaySC17PSPDFDrawingPointVGG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySo15PSPDFPointArrayCG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:13PSPDFKitSwift16ConvertToPDFLineSaySC17PSPDFDrawingPointVGAE8viewLine_SC6CGRectV7cropBoxSi8rotationAH6boundstF">ConvertToPDFLine(viewLine:cropBox:rotation:bounds:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:13PSPDFKitSwift17ConvertToPDFLinesSaySaySC17PSPDFDrawingPointVGGAF9viewLines_SC6CGRectV7cropBoxSi8rotationAI6boundstF">ConvertToPDFLines(viewLines:cropBox:rotation:bounds:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AnyError.html">AnyError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PSPDFDocument</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PSPDFDocument</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">PSPDFDocumentProviderDelegate</span><span class="p">,</span> <span class="kt">PSPDFOverridable</span><span class="p">,</span> <span class="kt">NSCopying</span><span class="p">,</span> <span class="kt">NSSecureCoding</span><span class="p">,</span> <span class="kt">NSFastEnumeration</span><span class="p">,</span> <span class="kt">PSPDFFileCoordinationDelegate</span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE16AnnotationOptionO"></a>
+                    <a name="//apple_ref/swift/Enum/AnnotationOption" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE16AnnotationOptionO">AnnotationOption</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Extensions/PSPDFDocument/AnnotationOption.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AnnotationOption</span><span class="p">:</span> <span class="kt">RawRepresentable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE24annotationWritingOptionss10DictionaryVySC020PSPDFAnnotationWriteF0VSC0H4TypeVGSgv"></a>
+                    <a name="//apple_ref/swift/Property/annotationWritingOptions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE24annotationWritingOptionss10DictionaryVySC020PSPDFAnnotationWriteF0VSC0H4TypeVGSgv">annotationWritingOptions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows control over what annotation should get an AP stream.
+AP (Appearance Stream) generation takes more time but will maximize compatibility with PDF Viewers that don&rsquo;t implement the complete spec for annotations.
+The default value for this dict is <code>[.generateAppearanceStreamForTypeKey: [.freeText, .ink, .polygon, .polyLine, .line, .square, .circle, .stamp, .widget]]</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">annotationWritingOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">PSPDFAnnotationWriteOptions</span><span class="p">:</span> <span class="kt">PSPDFAnnotationType</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE3addSbSaySo15PSPDFAnnotationCG_SayAbCE16AnnotationOptionOG7optionstF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE3addSbSaySo15PSPDFAnnotationCG_SayAbCE16AnnotationOptionOG7optionstF">add(_:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add <code>annotations</code> to the current document (and the backing store <code>PSPDFAnnotationProvider</code>)
+@param annotations An array of PSPDFAnnotation objects to be inserted.
+@param options Insertion options (see the <code>PSPDFAnnotationOption...</code> constants in <code>PSPDFAnnotationManager.h</code>).
+@note For each, the <code>absolutePage</code> property of the annotation is used.
+@warning Might change the <code>page</code> property if multiple documentProviders are set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">annotations</span><span class="p">:</span> <span class="p">[</span><span class="kt">PSPDFAnnotation</span><span class="p">],</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Extensions/PSPDFDocument/AnnotationOption.html">AnnotationOption</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE6removeSbSaySo15PSPDFAnnotationCG_SayAbCE16AnnotationOptionOG7optionstF"></a>
+                    <a name="//apple_ref/swift/Method/remove(_:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE6removeSbSaySo15PSPDFAnnotationCG_SayAbCE16AnnotationOptionOG7optionstF">remove(_:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove <code>annotations</code> from the backing <code>PSPDFAnnotationProvider</code> object(s).
+@param annotations An array of PSPDFAnnotation objects to be removed.
+@param options Deletion options (see the <code>PSPDFAnnotationOption...</code> constants in <code>PSPDFAnnotationManager.h</code>).
+@note Might return NO if one or multiple annotations couldn&rsquo;t be deleted.
+This might be the case for form annotations or other objects that return NO for <code>isDeletable</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">_</span> <span class="nv">annotations</span><span class="p">:</span> <span class="p">[</span><span class="kt">PSPDFAnnotation</span><span class="p">],</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Extensions/PSPDFDocument/AnnotationOption.html">AnnotationOption</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE10SaveOptionO"></a>
+                    <a name="//apple_ref/swift/Enum/SaveOption" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE10SaveOptionO">SaveOption</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Extensions/PSPDFDocument/SaveOption.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SaveOption</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE4saveySayAbCE10SaveOptionOG7options_tKF"></a>
+                    <a name="//apple_ref/swift/Method/save(options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE4saveySayAbCE10SaveOptionOG7options_tKF">save(options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Saves the document and all of its linked data, including bookmarks and
+ annotations, synchronously.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    NSInternalInconsistencyException if save options are not valid.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">save</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Extensions/PSPDFDocument/SaveOption.html">SaveOption</a></span><span class="p">])</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>See <code><a href="../Extensions/PSPDFDocument/SaveOption.html">SaveOption</a></code> documentation for more details.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE4saveySayAbCE10SaveOptionOG7options_yAC6ResultOySaySo15PSPDFAnnotationCGAC8AnyErrorVGc10completiontF"></a>
+                    <a name="//apple_ref/swift/Method/save(options:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE4saveySayAbCE10SaveOptionOG7options_yAC6ResultOySaySo15PSPDFAnnotationCGAC8AnyErrorVGc10completiontF">save(options:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Saves the document and all of its linked data, including bookmarks and
+annotations, asynchronously. Does not block the calling thread.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">save</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Extensions/PSPDFDocument/SaveOption.html">SaveOption</a></span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Result.html">Result</a></span><span class="o">&lt;</span><span class="p">[</span><span class="kt">PSPDFAnnotation</span><span class="p">],</span> <span class="kt"><a href="../Structs/AnyError.html">AnyError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>See <code><a href="../Extensions/PSPDFDocument/SaveOption.html">SaveOption</a></code> documentation for more details.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Called on the <em>main thread</em> after the save operation finishes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE16setRenderOptionsySayAC0E6OptionOG_SC15PSPDFRenderTypeO4typetF"></a>
+                    <a name="//apple_ref/swift/Method/setRenderOptions(_:type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE16setRenderOptionsySayAC0E6OptionOG_SC15PSPDFRenderTypeO4typetF">setRenderOptions(_:type:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set custom render options. See  PSPDFRenderManager.h for a list of available keys.</p>
+
+<p>@param options The render options to set. Will reset to defaults if set to nil.
+  @param type    The type you want to change. There are different render operation types.</p>
+
+<p>@note There are certain default render options set, such as <code>PSPDFRenderInteractiveFormFillColorKey</code> which you most likely want to preserve.</p>
+
+<p>The typical access pattern is:
+    1) get existing render options
+    2) customize the dictionary,
+    3) and set the new merged render options.</p>
+
+<p>If you are working with primarily dark documents, consider setting
+  <code>PSPDFRenderBackgroundFillColorKey</code> to <code>UIColor.blackColor</code> to work around
+  white/gray hairlines at document borders.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setRenderOptions</span><span class="p">(</span><span class="n">_</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/RenderOption.html">RenderOption</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">RenderType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE19updateRenderOptionsySayAC0E6OptionOG_SC15PSPDFRenderTypeO4typetF"></a>
+                    <a name="//apple_ref/swift/Method/updateRenderOptions(_:type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE19updateRenderOptionsySayAC0E6OptionOG_SC15PSPDFRenderTypeO4typetF">updateRenderOptions(_:type:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates render options. Overrides new settings but does not destroy existing settings.</p>
+
+<p>@param options Settings to add/replace in the renderOptions dictionary.
+  @param type    The type you want to change.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateRenderOptions</span><span class="p">(</span><span class="n">_</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/RenderOption.html">RenderOption</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">RenderType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So13PSPDFDocumentC13PSPDFKitSwiftE13renderOptionsSayAC12RenderOptionOGSC15PSPDFRenderTypeO3for_ypSg7contexttF"></a>
+                    <a name="//apple_ref/swift/Method/renderOptions(for:context:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So13PSPDFDocumentC13PSPDFKitSwiftE13renderOptionsSayAC12RenderOptionOGSC15PSPDFRenderTypeO3for_ypSg7contexttF">renderOptions(for:context:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the render options for a specific type of operation.</p>
+
+<p>@param type    The specific operation type.
+  @param context An optional context matching the operation type.
+                 For <code>PSPDFRenderTypePage</code> this is an <code>NSNumber</code> of the page.</p>
+
+<p>@return The render dictionary. Guaranteed to always return a dictionary.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">renderOptions</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">RenderType</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Enums/RenderOption.html">RenderOption</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://github.com/PSPDFKit/PSPDFKit.swift" target="_blank" rel="external">PSPDFKit GmbH</a>. All rights reserved. (Last updated: 2018-02-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

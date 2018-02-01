@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PSPDFKitSwift  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="PSPDFKitSwift  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">PSPDFKitSwift Docs</a> (63% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">PSPDFKitSwift Reference</a>
+        <img id="carat" src="img/carat.png" />
+        PSPDFKitSwift  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/PDFDocument.html">PDFDocument</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/RenderOption.html">RenderOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Result.html">Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFAbstractLineAnnotation.html">PSPDFAbstractLineAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFAbstractShapeAnnotation.html">PSPDFAbstractShapeAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFAnnotation.html">PSPDFAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFDocument.html">PSPDFDocument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFDocument/AnnotationOption.html">– AnnotationOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFDocument/SaveOption.html">– SaveOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFInkAnnotation.html">PSPDFInkAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFKitObject.html">PSPDFKitObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFPointArray.html">PSPDFPointArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFPolygonAnnotation.html">PSPDFPolygonAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/PSPDFStampAnnotation.html">PSPDFStampAnnotation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySaySC17PSPDFDrawingPointVGG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySo15PSPDFPointArrayCG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:13PSPDFKitSwift16ConvertToPDFLineSaySC17PSPDFDrawingPointVGAE8viewLine_SC6CGRectV7cropBoxSi8rotationAH6boundstF">ConvertToPDFLine(viewLine:cropBox:rotation:bounds:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:13PSPDFKitSwift17ConvertToPDFLinesSaySaySC17PSPDFDrawingPointVGGAF9viewLines_SC6CGRectV7cropBoxSi8rotationAI6boundstF">ConvertToPDFLines(viewLines:cropBox:rotation:bounds:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/AnyError.html">AnyError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='pspdfkitswift' class='heading'>PSPDFKitSwift</h1>
+
+<p><strong>Note</strong>: <a href="http://pspdfkit.com">PSPDFKit</a> is a <em>commercial</em> product and requires
+a <a href="https://pspdfkit.com/sales/">paid license</a>. Please sign up for a <a href="http://pspdfkit.com/try">free trial</a>
+to receive an evaluation license if you haven&rsquo;t a production license yet.</p>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p><code>PSPDFKitSwift.framework</code> is a set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>To use the Swift wrappers, you have to import PSPDFKitSwift module</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PSPDFKitSwift</span>
+</code></pre>
+
+<p>From now on you can work with the PSPDFKit framwework like you use to be. You&rsquo;ll notice several improvements to the Swift API that due to external constraints couldn&rsquo;t be made on the Objective-C side. Check the documentation to find new wrappers you may want to use since now.</p>
+
+<p><strong>Note:</strong> There is no need to import PSPDFKit module separately.</p>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+
+<p>Make sure you have access to PSPDFKit either as a customer or by signing up for
+a <a href="https://pspdfkit.com/try/">free trial</a>.</p>
+<h3 id='using-cocoapods' class='heading'>Using CocoaPods</h3>
+
+<p>We assume you are familiar with <a href="https://cocoapods.org">CocoaPods</a>, otherwise
+please consult the documentation first. You&rsquo;ll have to add PSPDFKitSwift and PSPDFKit as a dependency to your <code>Podfile</code>. You need to add <code>post_install</code> action to install additional resources.</p>
+<pre class="highlight plaintext"><code># Replace `YourAppName` with your app's target name.
+target :YourAppName do
+  use_frameworks!
+
+  # Replace `YOUR_COCOAPODS_KEY` with your own.
+  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
+  pod 'PSPDFKitSwift', :git =&gt; "git@github.com:PSPDFKit/PDFKitSwift.git", :branch =&gt; "master"
+end
+
+post_install do |installer|
+  puts "Install PSPDFKit.apinotes"
+  `curl -s -f -L https://raw.githubusercontent.com/PSPDFKit/PSPDFKitSwift/master/PSPDFKit.apinotes -o Pods/PSPDFKit/PSPDFKit.framework/Headers/PSPDFKit.apinotes`
+end
+</code></pre>
+
+<p><strong>Note:</strong> make sure to replace <code>YourAppName</code> with your app name and
+<code>YOUR_COCOAPODS_KEY</code> with your own key provided by PSPDFKit GmbH. You can find
+your key either in <a href="https://customers.pspdfkit.com/">customer portal</a> or by
+requesting an <a href="https://pspdfkit.com/try/">evaluation license</a>.</p>
+
+<p>Now run <code>pod install</code>. Afterwards you should be able to build &amp; run your project
+without errors.</p>
+<h3 id='manual-set-up' class='heading'>Manual Set-Up</h3>
+
+<p><strong>Note:</strong> manual set-up is only for experts, we assume you know what you are
+doing. If you are unsure, please use CocoaPods or Carthage instead.</p>
+
+<p>First, build the PSPDFKitSwift framework:</p>
+
+<ul>
+<li>Clone <code>git@github.com:PSPDFKit/PDFKitSwift.git</code></li>
+<li>Copy <code>PSPDFKit.framework</code> into <code>PSPDFKitSwift/Frameworks</code></li>
+<li>Copy <code>PSPDFKitUI.framework</code> into <code>PSPDFKitSwift/Frameworks</code></li>
+<li>Open the terminal and <code>cd</code> into the <code>PSPDFKitSwift</code> directory</li>
+<li>Run <code>rake compile</code></li>
+</ul>
+
+<p>You should now have the <code>PDFFKitSwift.framework</code> in the <code>Build</code> folder. Next, add
+the <code>PSPDFKit.framework</code>,<code>PSPDFKitUI.framework</code> and <code>PDFFKitSwift.framework</code> to your project:</p>
+
+<ul>
+<li><p>Follow the <a href="https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/"><em>Getting Started</em></a> instructions for PSPDFKit.</p></li>
+<li><p>Perform steps (1) and (2) from the above <em>Getting Started</em> guide, Section
+<a href="https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_integrating-the-dynamic-framework">Integrating the Dynamic Framework</a>,
+and add PSPDFKitSwift to your app similar to how you did it with PSPDFKit above. You
+may also want to set up your <a href="https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_test-targets">test targets</a> accordingly.
+<strong>Note:</strong> make sure to adapt the path for the <q>Run Script</q> build phase for PSPDFKitSwift.</p></li>
+</ul>
+
+<p>You should now be able to build &amp; run your app.</p>
+<h2 id='limitations' class='heading'>Limitations</h2>
+
+<p>PSPDFKitSwift is beta software, many parts aren&rsquo;t implemented yet.</p>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>If you want to work on PSPDFKitSwift, perform the following steps:</p>
+
+<ul>
+<li>Clone <code>git@github.com:PSPDFKit/PSPDFKitSwift.git</code></li>
+<li>Copy <code>PSPDFKit.framework</code> into <code>PSPDFKitSwift/Frameworks</code></li>
+<li>Copy <code>PSPDFKitUI.framework</code> into <code>PSPDFKitSwift/Frameworks</code></li>
+<li>Open <code>PSPDFKitSwift.xcodeproj</code> in Xcode &gt;= 9</li>
+</ul>
+
+<p>Please <a href="https://pspdfkit.com/guides/web/current/miscellaneous/contributing/">sign our CLA agreement</a> so we can accept your pull requests.</p>
+
+<p>Technical notes:</p>
+
+<ul>
+<li>All PSPDFKitSwift source files live in the <code>Sources</code> directory.</li>
+<li>PSPDFKit and PSPDFKitUI modules are re-exported automatically.</li>
+<li>PSPDFKit.apinotes is a textile file that adjust the API visibility.</li>
+</ul>
+<h2 id='known-issues' class='heading'>Known Issues</h2>
+
+<p><strong>Linker warning when building without Carthage</strong>. In order to support Carthage
+out-of-the-box with per-customer PSPDFKit URL, we&rsquo;ve added the <em>parent</em>
+Carthage build folder to the <q>Framework Search Paths</q>. When building without
+Carthage, this produces the following warning:</p>
+<pre class="highlight plaintext"><code>ld: warning: directory not found for option '-F/Users/konstantinbe/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
+</code></pre>
+
+<hr>
+
+<p><strong>Conflicting gesture recognizers</strong>. Your gesture recognizers might be in
+conflict with some of PSPDFKit&rsquo;s recognizers. If so, implement the
+<code>gestureRecognizer(_:shouldRecognizeSimultaneouslyWith:)</code> delegate method
+for the conflicting gesture recognizer and return <code>true</code>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>The PSPDFKitSwift wrapper is released under a modified version of the BSD license, see
+<a href="LICENSE.md">LICENSE.md</a> found at the root of this git repo.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="http://github.com/PSPDFKit/PSPDFKit.swift" target="_blank" rel="external">PSPDFKit GmbH</a>. All rights reserved. (Last updated: 2018-02-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

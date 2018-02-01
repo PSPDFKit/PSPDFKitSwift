@@ -6,6 +6,20 @@ to receive an evaluation license if you haven't a production license yet.
 
 ## Introduction
 
+`PSPDFKitSwift.framework` is a set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience.
+
+## Usage
+
+To use the Swift wrappers, you have to import PSPDFKitSwift module
+
+```swift
+import PSPDFKitSwift
+```
+
+From now on you can work with the PSPDFKit framwework like you use to be. You'll notice several improvements to the Swift API that due to external constraints couldn't be made on the Objective-C side. Check the [documentation](./docs) to discover the wrappers you may want to use since now.
+
+**Note:** There is no need to import PSPDFKit module separately.
+
 ## Getting Started
 
 Make sure you have access to PSPDFKit either as a customer or by signing up for
@@ -55,7 +69,7 @@ First, build the PSPDFKitSwift framework:
 * Run `rake compile`
 
 You should now have the `PDFFKitSwift.framework` in the `Build` folder. Next, add
-the `PSPDFKit.framework`,`PSPDFKitUI.framework` and  `PDFFKitSwift.framework` to your project:
+the `PSPDFKit.framework`,`PSPDFKitUI.framework` and `PDFFKitSwift.framework` to your project:
 
 * Follow the [*Getting Started*](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/) instructions for PSPDFKit.
 
