@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PSPDFKit
+import PSPDFKitSwift
 
 class ViewController: UIViewController {
 
