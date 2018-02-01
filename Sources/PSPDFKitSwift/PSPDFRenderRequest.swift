@@ -168,6 +168,163 @@ public enum RenderOption: RawRepresentable, Codable {
     }
 }
 
+/// Covenience helpers to get values out of [RenderOption]
+extension Array where Element == RenderOption {
+
+    public var preserveAspectRatio: Bool {
+        for option in self {
+            if case .preserveAspectRatio(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var ignoreDisplaySettings: Bool {
+        for option in self {
+            if case .ignoreDisplaySettings(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var pageColor: UIColor? {
+        for option in self {
+            if case .pageColor(let color) = option {
+                return color
+            }
+        }
+        return nil
+    }
+
+    public var inverted: Bool {
+        for option in self {
+            if case .inverted(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var filters: RenderFilter? {
+        for option in self {
+            if case .filters(let value) = option {
+                return value
+            }
+        }
+        return nil
+    }
+
+    public var interpolationQuality: CGInterpolationQuality? {
+        for option in self {
+            if case .interpolationQuality(let value) = option {
+                return value
+            }
+        }
+        return nil
+    }
+
+    public var skipPageContent: Bool {
+        for option in self {
+            if case .skipPageContent(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var overlayAnnotations: Bool {
+        for option in self {
+            if case .overlayAnnotations(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var ignorePageClip: Bool {
+        for option in self {
+            if case .ignorePageClip(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var allowAntiAliasing: Bool {
+        for option in self {
+            if case .allowAntiAliasing(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var backgroundFillColor: UIColor? {
+        for option in self {
+            if case .backgroundFillColor(let color) = option {
+                return color
+            }
+        }
+        return nil
+    }
+
+    public var textRenderingUseCoreGraphics: Bool {
+        for option in self {
+            if case .textRenderingUseCoreGraphics(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var textRenderingClearTypeEnabled: Bool {
+        for option in self {
+            if case .textRenderingClearTypeEnabled(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var interactiveFormFillColor: UIColor? {
+        for option in self {
+            if case .interactiveFormFillColor(let color) = option {
+                return color
+            }
+        }
+        return nil
+    }
+
+    public var draw: RenderDrawHandler? {
+        for option in self {
+            if case .draw(let handler) = option {
+                return handler
+            }
+        }
+        return nil
+    }
+
+    public var drawSignHereOverlay: Bool {
+        for option in self {
+            if case .drawSignHereOverlay(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
+    public var ciFilters: [CIFilter] {
+        for option in self {
+            if case .ciFilters(let filters) = option {
+                return filters
+            }
+        }
+        return []
+    }
+}
+
 internal class RenderRequestTests {
     static func test() throws {
         let document = PDFDocument()
