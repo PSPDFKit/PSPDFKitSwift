@@ -51,10 +51,11 @@ VERBOSE = ENV['verbose'] || false
 
 # ------------------------------------------------------------- Constants ------
 
+CONFIGURATION = "Release"
 DERIVED_DATA = "#{DIRECTORY}/Xcode"
 SDK_SIM = "iphonesimulator11.2"
 SDK_IOS = "iphoneos11.2"
-XCODE_FLAGS = "-configuration Release -scheme PSPDFKitSwift -derivedDataPath \"#{DERIVED_DATA}\""
+XCODE_FLAGS = "-configuration #{CONFIGURATION} -scheme PSPDFKitSwift -derivedDataPath \"#{DERIVED_DATA}\""
 
 # ---------------------------------------------------------------- Colors ------
 
@@ -104,16 +105,23 @@ task 'compile:device' => [:prepare, :check] do
   run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS}", :time => true, :quiet => true
 end
 
-desc "Compile univeral PSPDFKitSwift framework"
-task :compile => ['compile:simulator', 'compile:device'] do
-  # TODO: also create universal dSYM file (either by stripping after lipo or
-  # combining both dSYM files).
-  tell "Compiling PSPDFKitSwift framework (universal)"
+desc "Copying univeral PSPDFKitSwift framework"
+task 'install:simulator' => ['compile:simulator'] do
   run "rm -rf #{DIRECTORY}/PSPDFKitSwift.framework"
-  run "cp -R #{DERIVED_DATA}/Build/Products/Release-iphoneos/PSPDFKitSwift.framework #{DIRECTORY}/"
-  run "cp -R #{DERIVED_DATA}/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/Modules/ #{DIRECTORY}/PSPDFKitSwift.framework/Modules/"
-  run %{lipo -create -output "#{DIRECTORY}/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/Release-iphoneosPSPDFKitSwift.framework/PSPDFKitSwift"}
+  run "cp -R #{DERIVED_DATA}/Build/Products/#{CONFIGURATION}-iphonesimulator/PSPDFKitSwift.framework #{DIRECTORY}/PSPDFKitSwift.framework/"
 end
+
+task 'install:device' => ['compile:device'] do
+  run "cp -R #{DERIVED_DATA}/Build/Products/#{CONFIGURATION}-iphoneos/PSPDFKitSwift.framework #{DIRECTORY}/"
+  run %{lipo -create -output "#{DIRECTORY}/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/#{CONFIGURATION}-iphonesimulator/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/#{CONFIGURATION}-iphoneos/PSPDFKitSwift.framework/PSPDFKitSwift"}
+end
+
+desc "Compile univeral PSPDFKitSwift framework"
+task :compile => ['compile:simulator', 'compile:device', 'install:simulator', 'install:device'] do
+  tell "Framework is ready at Frameworks/PSPDFKitSwift.framework"
+  run "cp -R #{DIRECTORY}/PSPDFKitSwift.framework Frameworks/"
+end
+
 
 desc "show help"
 task :help do
@@ -128,6 +136,8 @@ end
 task :prepare do
   tell "Preparing"
   run "mkdir -p #{DIRECTORY}", :log => false
+  tell "Copying API Notes"
+  run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
 end
 
 # ----------------------------------------------------------- Functions ------
