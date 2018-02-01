@@ -51,9 +51,10 @@ VERBOSE = ENV['verbose'] || false
 
 # ------------------------------------------------------------- Constants ------
 
-SDK_SIM = "iphonesimulator11.0"
-SDK_IOS = "iphoneos11.0"
-XCODE_FLAGS = "-configuration Release -scheme PSPDFKitSwift -derivedDataPath \"#{DIRECTORY}/Xcode\""
+DERIVED_DATA = "#{DIRECTORY}/Xcode"
+SDK_SIM = "iphonesimulator11.2"
+SDK_IOS = "iphoneos11.2"
+XCODE_FLAGS = "-configuration Release -scheme PSPDFKitSwift -derivedDataPath \"#{DERIVED_DATA}\""
 
 # ---------------------------------------------------------------- Colors ------
 
@@ -93,13 +94,13 @@ end
 
 desc "Compile PSPDFKitSwift framework (simulator)"
 task 'compile:simulator' => [:prepare, :check] do
-  tell "Compiling PSPDFKit framework (simulator)"
+  tell "Compiling PSPDFKitSwift framework (simulator)"
   run "xcrun xcodebuild -sdk #{SDK_SIM} #{XCODE_FLAGS}", :time => true, :quiet => true
 end
 
 desc "Compile PSPDFKitSwift framework (device)"
 task 'compile:device' => [:prepare, :check] do
-  tell "Compiling PSPDFKit framework (device)"
+  tell "Compiling PSPDFKitSwift framework (device)"
   run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS}", :time => true, :quiet => true
 end
 
@@ -107,11 +108,11 @@ desc "Compile univeral PSPDFKitSwift framework"
 task :compile => ['compile:simulator', 'compile:device'] do
   # TODO: also create universal dSYM file (either by stripping after lipo or
   # combining both dSYM files).
-  tell "Compiling PSPDFKit framework (universal)"
+  tell "Compiling PSPDFKitSwift framework (universal)"
   run "rm -rf #{DIRECTORY}/PSPDFKitSwift.framework"
-  run "cp -R #{DIRECTORY}/Xcode/Build/Products/Release-iphoneos/PSPDFKitSwift.framework #{DIRECTORY}/"
-  run "cp -R #{DIRECTORY}/Xcode/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/Modules/ #{DIRECTORY}/PSPDFKitSwift.framework/Modules/"
-  run %{lipo -create -output "#{DIRECTORY}/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DIRECTORY}/Xcode/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DIRECTORY}/Xcode/Build/Products/Release-iphoneosPSPDFKitSwift.framework/PSPDFKitSwift"}
+  run "cp -R #{DERIVED_DATA}/Build/Products/Release-iphoneos/PSPDFKitSwift.framework #{DIRECTORY}/"
+  run "cp -R #{DERIVED_DATA}/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/Modules/ #{DIRECTORY}/PSPDFKitSwift.framework/Modules/"
+  run %{lipo -create -output "#{DIRECTORY}/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/Release-iphonesimulator/PSPDFKitSwift.framework/PSPDFKitSwift" "#{DERIVED_DATA}/Build/Products/Release-iphoneosPSPDFKitSwift.framework/PSPDFKitSwift"}
 end
 
 desc "show help"
