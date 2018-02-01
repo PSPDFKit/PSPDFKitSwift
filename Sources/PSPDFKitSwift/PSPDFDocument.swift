@@ -10,7 +10,7 @@ public class PDFDocument: PSPDFDocument, Codable {
 
     convenience init(url: URL) {
         let dataProvider: PSPDFDataProviding
-        if PSPDFKit.sharedInstance.bool(forKey: PSPDFFileCoordinationEnabledKey) {
+        if PSPDFKit.sharedInstance.bool(forKey: .fileCoordinationEnabledKey) {
             dataProvider = PSPDFCoordinatedFileDataProvider(fileURL: url, progress: nil)
         } else {
             dataProvider = PSPDFFileDataProvider(fileURL: url, progress: nil)
