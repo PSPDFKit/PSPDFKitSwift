@@ -1,14 +1,14 @@
 import Foundation
 import PSPDFKit
 
-public class PDFDocument: PSPDFDocument, Codable {
+open class PDFDocument: PSPDFDocument, Codable {
     public typealias FileIndex = UInt
 
-    override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool) {
+    public override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool) {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
     }
 
-    convenience init(url: URL) {
+    public convenience init(url: URL, loadCheckpointIfAvailable loadCheckpoint: Bool = false) {
         let dataProvider: PSPDFDataProviding
         if PSPDFKit.sharedInstance.bool(forKey: .fileCoordinationEnabledKey) {
             dataProvider = PSPDFCoordinatedFileDataProvider(fileURL: url, progress: nil)
@@ -16,7 +16,7 @@ public class PDFDocument: PSPDFDocument, Codable {
             dataProvider = PSPDFFileDataProvider(fileURL: url, progress: nil)
         }
 
-        self.init(dataProviders: [dataProvider], loadCheckpointIfAvailable: false)
+        self.init(dataProviders: [dataProvider], loadCheckpointIfAvailable: loadCheckpoint)
     }
 
     // MARK: - Codable, NSCoding
@@ -25,7 +25,7 @@ public class PDFDocument: PSPDFDocument, Codable {
         super.init(coder: aDecoder)
     }
 
-    public override func encode(with aCoder: NSCoder) {
+    open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
     }
 
