@@ -10,7 +10,7 @@ public typealias PSPDFRenderDrawBlock = @convention(block) (_ context: CGContext
 public typealias RenderDrawHandler = PSPDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
-public enum RenderOption: RawRepresentable, Codable {
+public enum RenderOption: RawRepresentable, Codable, Equatable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
     case none
@@ -165,6 +165,51 @@ public enum RenderOption: RawRepresentable, Codable {
     public func encode(to encoder: Encoder) throws {
         var unkeyedContainer = encoder.unkeyedContainer()
         try unkeyedContainer.encode(self.rawValue)
+    }
+
+    public static func ==(lhs: RenderOption, rhs: RenderOption) -> Bool {
+        switch (lhs, rhs) {
+        case (.preserveAspectRatio(let l), .preserveAspectRatio(let r)):
+            return l == r
+        case (.ignoreDisplaySettings(let l), .ignoreDisplaySettings(let r)):
+            return l == r
+        case (.pageColor(let l), .pageColor(let r)):
+            return l == r
+        case (.inverted(let l), .inverted(let r)):
+            return l == r
+        case (.filters(let l), .filters(let r)):
+            return l == r
+        case (.interpolationQuality(let l), .interpolationQuality(let r)):
+            return l == r
+        case (.skipPageContent(let l), .skipPageContent(let r)):
+            return l == r
+        case (.overlayAnnotations(let l), .overlayAnnotations(let r)):
+            return l == r
+        case (.skipAnnotations(let l), .skipAnnotations(let r)):
+            return l == r
+        case (.ignorePageClip(let l), .ignorePageClip(let r)):
+            return l == r
+        case (.allowAntiAliasing(let l), .allowAntiAliasing(let r)):
+            return l == r
+        case (.backgroundFillColor(let l), .backgroundFillColor(let r)):
+            return l == r
+        case (.textRenderingUseCoreGraphics(let l), .textRenderingUseCoreGraphics(let r)):
+            return l == r
+        case (.textRenderingClearTypeEnabled(let l), .textRenderingClearTypeEnabled(let r)):
+            return l == r
+        case (.interactiveFormFillColor(let l), .interactiveFormFillColor(let r)):
+            return l == r
+        case (.draw(_), .draw(_)):
+            // Can't check if the closure is equal,
+            // instead just check if draw closure is set
+            return true
+        case (.drawSignHereOverlay(let l), .drawSignHereOverlay(let r)):
+            return l == r
+        case (.ciFilters(let l), .ciFilters(let r)):
+            return l == r
+        default:
+            return false
+        }
     }
 }
 
