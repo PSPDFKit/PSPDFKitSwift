@@ -16,6 +16,20 @@
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 7,
+      "symbol": "PDFDocument.init(dataProviders:loadCheckpointIfAvailable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 11,
+      "symbol": "PDFDocument.init(url:loadCheckpointIfAvailable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
       "line": 24,
       "symbol": "PDFDocument.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
@@ -51,128 +65,121 @@
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 17,
-      "symbol": "RenderOption.preserveAspectRatio",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 219,
+      "symbol": "Array.preserveAspectRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 18,
-      "symbol": "RenderOption.ignoreDisplaySettings",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 228,
+      "symbol": "Array.ignoreDisplaySettings",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 19,
-      "symbol": "RenderOption.pageColor",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 237,
+      "symbol": "Array.pageColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 20,
-      "symbol": "RenderOption.inverted",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 246,
+      "symbol": "Array.inverted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 21,
-      "symbol": "RenderOption.filters",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 255,
+      "symbol": "Array.filters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 22,
-      "symbol": "RenderOption.interpolationQuality",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 264,
+      "symbol": "Array.interpolationQuality",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 23,
-      "symbol": "RenderOption.skipPageContent",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 273,
+      "symbol": "Array.skipPageContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 24,
-      "symbol": "RenderOption.overlayAnnotations",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 282,
+      "symbol": "Array.overlayAnnotations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 25,
-      "symbol": "RenderOption.skipAnnotations",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 291,
+      "symbol": "Array.ignorePageClip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 26,
-      "symbol": "RenderOption.ignorePageClip",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 300,
+      "symbol": "Array.allowAntiAliasing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 27,
-      "symbol": "RenderOption.allowAntiAliasing",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 309,
+      "symbol": "Array.backgroundFillColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 28,
-      "symbol": "RenderOption.backgroundFillColor",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 318,
+      "symbol": "Array.textRenderingUseCoreGraphics",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 29,
-      "symbol": "RenderOption.textRenderingUseCoreGraphics",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 327,
+      "symbol": "Array.textRenderingClearTypeEnabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 30,
-      "symbol": "RenderOption.textRenderingClearTypeEnabled",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 336,
+      "symbol": "Array.interactiveFormFillColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 31,
-      "symbol": "RenderOption.interactiveFormFillColor",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 345,
+      "symbol": "Array.draw",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 32,
-      "symbol": "RenderOption.draw",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 354,
+      "symbol": "Array.drawSignHereOverlay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 33,
-      "symbol": "RenderOption.drawSignHereOverlay",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
-      "line": 34,
-      "symbol": "RenderOption.ciFilters",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "line": 363,
+      "symbol": "Array.ciFilters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {

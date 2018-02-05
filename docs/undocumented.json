@@ -16,6 +16,20 @@
     },
     {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 7,
+      "symbol": "PDFDocument.init(dataProviders:loadCheckpointIfAvailable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
+      "line": 11,
+      "symbol": "PDFDocument.init(url:loadCheckpointIfAvailable:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
       "line": 24,
       "symbol": "PDFDocument.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
@@ -47,6 +61,125 @@
       "line": 16,
       "symbol": "RenderOption.none",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 219,
+      "symbol": "Array.preserveAspectRatio",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 228,
+      "symbol": "Array.ignoreDisplaySettings",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 237,
+      "symbol": "Array.pageColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 246,
+      "symbol": "Array.inverted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 255,
+      "symbol": "Array.filters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 264,
+      "symbol": "Array.interpolationQuality",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 273,
+      "symbol": "Array.skipPageContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 282,
+      "symbol": "Array.overlayAnnotations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 291,
+      "symbol": "Array.ignorePageClip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 300,
+      "symbol": "Array.allowAntiAliasing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 309,
+      "symbol": "Array.backgroundFillColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 318,
+      "symbol": "Array.textRenderingUseCoreGraphics",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 327,
+      "symbol": "Array.textRenderingClearTypeEnabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 336,
+      "symbol": "Array.interactiveFormFillColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 345,
+      "symbol": "Array.draw",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 354,
+      "symbol": "Array.drawSignHereOverlay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/PSPDFKit.swift/Sources/PSPDFKitSwift/PSPDFRenderRequest.swift",
+      "line": 363,
+      "symbol": "Array.ciFilters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
