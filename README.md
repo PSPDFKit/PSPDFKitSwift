@@ -35,14 +35,8 @@ please consult the documentation first. You'll have to add PSPDFKitSwift and PSP
 target :YourAppName do
   use_frameworks!
 
-  # Replace `YOUR_COCOAPODS_KEY` with your own.
-  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
-  pod 'PSPDFKitSwift', :git => "git@github.com:PSPDFKit/PDFKitSwift.git", :branch => "master"
-end
-
-post_install do |installer|
-  puts "Install PSPDFKit.apinotes"
-  `curl -s -f -L https://raw.githubusercontent.com/PSPDFKit/PSPDFKitSwift/master/PSPDFKit.apinotes -o Pods/PSPDFKit/PSPDFKit.framework/Headers/PSPDFKit.apinotes`
+  # Replace `_YOUR_COCOAPODS_KEY_` with your own.
+  pod 'PSPDFKit/Swift', podspec: 'https://customers.pspdfkit.com/cocoapods/_YOUR_COCOAPODS_KEY_/latest.podspec
 end
 ```
 

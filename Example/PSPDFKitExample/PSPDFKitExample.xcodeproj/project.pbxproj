@@ -12,9 +12,6 @@
 		75727C4A2020AB65008F281F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75727C482020AB65008F281F /* Main.storyboard */; };
 		75727C4C2020AB65008F281F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75727C4B2020AB65008F281F /* Assets.xcassets */; };
 		75727C4F2020AB65008F281F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75727C4D2020AB65008F281F /* LaunchScreen.storyboard */; };
-		7587782A20231C5000DC1288 /* PSPDFKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7587782420231C3600DC1288 /* PSPDFKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7587782B20231C5000DC1288 /* PSPDFKitSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7587782520231C3600DC1288 /* PSPDFKitSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7587782C20231C5000DC1288 /* PSPDFKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7587782620231C3600DC1288 /* PSPDFKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7587782A20231C5000DC1288 /* PSPDFKit.framework in Embed Frameworks */,
-				7587782B20231C5000DC1288 /* PSPDFKitSwift.framework in Embed Frameworks */,
-				7587782C20231C5000DC1288 /* PSPDFKitUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,9 +35,6 @@
 		75727C4B2020AB65008F281F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75727C4E2020AB65008F281F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75727C502020AB65008F281F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7587782420231C3600DC1288 /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKit.framework; sourceTree = "<group>"; };
-		7587782520231C3600DC1288 /* PSPDFKitSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKitSwift.framework; sourceTree = "<group>"; };
-		7587782620231C3600DC1288 /* PSPDFKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKitUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				75727C432020AB65008F281F /* PSPDFKitExample */,
-				7587782320231C2000DC1288 /* Frameworks */,
 				75727C422020AB65008F281F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,16 +75,6 @@
 				75727C502020AB65008F281F /* Info.plist */,
 			);
 			path = PSPDFKitExample;
-			sourceTree = "<group>";
-		};
-		7587782320231C2000DC1288 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7587782420231C3600DC1288 /* PSPDFKit.framework */,
-				7587782520231C3600DC1288 /* PSPDFKitSwift.framework */,
-				7587782620231C3600DC1288 /* PSPDFKitUI.framework */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,13 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = PSPDFKitExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krzyzanowskim.PSPDFKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -328,13 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
 				INFOPLIST_FILE = PSPDFKitExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.krzyzanowskim.PSPDFKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
