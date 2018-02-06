@@ -94,13 +94,13 @@ task :check do
 end
 
 desc "Compile PSPDFKitSwift framework (simulator)"
-task 'compile:simulator' => [:prepare, :check] do
+task 'compile:simulator' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (simulator)"
   run "xcrun xcodebuild -sdk #{SDK_SIM} #{XCODE_FLAGS}", :time => true, :quiet => true
 end
 
 desc "Compile PSPDFKitSwift framework (device)"
-task 'compile:device' => [:prepare, :check] do
+task 'compile:device' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (device)"
   run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS}", :time => true, :quiet => true
 end

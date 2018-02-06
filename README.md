@@ -10,7 +10,7 @@ to receive an evaluation license if you haven't a production license yet.
 
 ## Usage
 
-To use the Swift wrappers, you have to import PSPDFKitSwift module
+To use the Swift wrappers and extensions, you should import **PSPDFKitSwift** module.
 
 ```swift
 import PSPDFKitSwift
@@ -35,8 +35,8 @@ please consult the documentation first. You'll have to add PSPDFKitSwift and PSP
 target :YourAppName do
   use_frameworks!
 
-  # Replace `_YOUR_COCOAPODS_KEY_` with your own.
-  pod 'PSPDFKit/Swift', podspec: 'https://customers.pspdfkit.com/cocoapods/_YOUR_COCOAPODS_KEY_/latest.podspec
+  # Replace `YOUR_COCOAPODS_KEY` with your own.
+  pod 'PSPDFKit/Swift', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
 end
 ```
 
@@ -75,7 +75,7 @@ the `PSPDFKit.framework`,`PSPDFKitUI.framework` and `PDFFKitSwift.framework` to 
 
 You should now be able to build & run your app.
 
-**Notice:** Link against frameworks from the `Frameworks` directory as those are updated frameworks.
+**Important:** Link against frameworks from the `Frameworks` directory as those are patched bundles.
 
 ## Limitations
 
