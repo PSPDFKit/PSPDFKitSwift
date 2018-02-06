@@ -48,8 +48,8 @@ internal class PSPDFKitObjectTests {
         PSPDFKit.sharedInstance.setLogHandler { (level: PSPDFLogLevelMask, tag: String, message: @escaping () -> String, file: String, function: String, line: Int) in
             print("[\(file):\(line)]PSPDFKit says from \(function): \(message()) \(level) \(tag)")
         }
-        PSPDFKit.sharedInstance[.debugScrollViewsKey] = true
-        let value = PSPDFKit.sharedInstance[.debugScrollViewsKey] as? Bool
+        PSPDFKit.sharedInstance[.fileCoordinationEnabledKey] = true
+        let value = PSPDFKit.sharedInstance[.fileCoordinationEnabledKey] as? Bool
         guard value == true else { throw NSError.pspdf_error(withCode: 0, description: "Invalid value") }
     }
 }

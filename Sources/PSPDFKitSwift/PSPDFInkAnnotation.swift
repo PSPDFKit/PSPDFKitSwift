@@ -33,12 +33,6 @@ public func ConvertToPDFLine(viewLine: ViewLine, cropBox: CGRect, rotation: Int,
 }
 
 ///// Calculates the bounding box from lines.
-///// @param lines Either an `NSArray<PSPDFPointArray *>` or `NSArray<NSArray<NSValue *> *>`.
-public func BoundingBoxFromLines(_ lines: [PSPDFPointArray], width: Double) {
+public func BoundingBoxFromLines(_ lines: [PSPDFDrawingPoint], width: Double) {
     __PSPDFBoundingBoxFromLines(lines, CGFloat(width))
-}
-
-///// Calculates the bounding box from lines.
-public func BoundingBoxFromLines(_ lines: [[PSPDFDrawingPoint]], width: Double) {
-    __PSPDFBoundingBoxFromLines(lines.map({ $0.map({ NSValue.pspdf_value(with: $0) }) }), CGFloat(width))
 }
