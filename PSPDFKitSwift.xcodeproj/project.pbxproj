@@ -22,8 +22,6 @@
 		7592CE93201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */; };
 		75BB0DD62003852E001E4AA7 /* PSPDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD52003852E001E4AA7 /* PSPDFDocument.swift */; };
 		75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BB0DD720039EC8001E4AA7 /* Result.swift */; };
-		75D9394D201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9394C201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift */; };
-		75ED2958201B67810030E6BA /* PSPDFPointArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED2957201B67810030E6BA /* PSPDFPointArray.swift */; };
 		75ED295F201B6B130030E6BA /* PSPDFPolygonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED295E201B6B130030E6BA /* PSPDFPolygonAnnotation.swift */; };
 		75ED2961201B872D0030E6BA /* PSPDFStampAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ED2960201B872D0030E6BA /* PSPDFStampAnnotation.swift */; };
 /* End PBXBuildFile section */
@@ -57,8 +55,6 @@
 		7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFAbstractShapeAnnotation.swift; sourceTree = "<group>"; };
 		75BB0DD52003852E001E4AA7 /* PSPDFDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFDocument.swift; sourceTree = "<group>"; };
 		75BB0DD720039EC8001E4AA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		75D9394C201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFInstantAnnotationProvider.swift; sourceTree = "<group>"; };
-		75ED2957201B67810030E6BA /* PSPDFPointArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFPointArray.swift; sourceTree = "<group>"; };
 		75ED295E201B6B130030E6BA /* PSPDFPolygonAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFPolygonAnnotation.swift; sourceTree = "<group>"; };
 		75ED2960201B872D0030E6BA /* PSPDFStampAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSPDFStampAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,11 +120,9 @@
 				7536547D200F7348009516C3 /* PSPDFAnnotation.swift */,
 				75562812201A418800F80A91 /* PSPDFAbstractLineAnnotation.swift */,
 				7592CE92201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift */,
-				75D9394C201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift */,
 				75ED295E201B6B130030E6BA /* PSPDFPolygonAnnotation.swift */,
 				7592CE87201B2C4F007640E4 /* PSPDFInkAnnotation.swift */,
 				75ED2960201B872D0030E6BA /* PSPDFStampAnnotation.swift */,
-				75ED2957201B67810030E6BA /* PSPDFPointArray.swift */,
 				750BB06E201F2CBC00CFCB56 /* PSPDFRenderRequest.swift */,
 				75BB0DD720039EC8001E4AA7 /* Result.swift */,
 				756A20F02005A718008CA4F8 /* Helpers.swift */,
@@ -275,11 +269,9 @@
 				75562813201A418800F80A91 /* PSPDFAbstractLineAnnotation.swift in Sources */,
 				75ED295F201B6B130030E6BA /* PSPDFPolygonAnnotation.swift in Sources */,
 				75BB0DD820039EC8001E4AA7 /* Result.swift in Sources */,
-				75ED2958201B67810030E6BA /* PSPDFPointArray.swift in Sources */,
 				756A20F12005A718008CA4F8 /* Helpers.swift in Sources */,
 				750BB06F201F2CBC00CFCB56 /* PSPDFRenderRequest.swift in Sources */,
 				7566299F200CC79D006ADDB8 /* PSPDFKitObject.swift in Sources */,
-				75D9394D201A24C600169CBF /* PSPDFInstantAnnotationProvider.swift in Sources */,
 				7592CE93201B39C3007640E4 /* PSPDFAbstractShapeAnnotation.swift in Sources */,
 				75BB0DD62003852E001E4AA7 /* PSPDFDocument.swift in Sources */,
 				7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */,
