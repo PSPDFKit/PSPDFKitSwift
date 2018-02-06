@@ -85,6 +85,13 @@ task :check do
     https://pspdfkit.com
   """
 
+  tell "Checking whether PSPDFKitUI.framework present"
+  assert File.directory?("Frameworks/PSPDFKitUI.framework"), """
+    #{ERROR} couldn't find #{BOLD}PSPDFKitUI.framework#{RESET}. Please download the
+    PSPDFKit framework and copy it into the #{BOLD}Frameworks/#{RESET} folder.
+    https://pspdfkit.com
+  """
+
   tell "Checking whether iOS SDK 11 present"
   assert `xcrun xcodebuild -showsdks | grep iphoneos11`.to_s.strip.length > 0, """
   #{ERROR} couldn't find iOS 11 SDK. Please make sure you have the appropriate
@@ -138,6 +145,7 @@ task :prepare do
   run "mkdir -p #{DIRECTORY}", :log => false
   tell "Copying API Notes"
   run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
+  run "cp PSPDFKitUI.apinotes Frameworks/PSPDFKitUI.framework/Headers/"
 end
 
 # ----------------------------------------------------------- Functions ------

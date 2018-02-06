@@ -1,0 +1,8 @@
+# # https://github.com/apple/swift-clang/blob/swift-4.0-branch/lib/APINotes/APINotesYAMLCompiler.cpp
+# ---
+# Name: PSPDFKitUI
+# Classes:
+# - Name: PSPDFMultiDocumentViewController
+#   Properties:
+#   - Name: documents
+#     SwiftPrivate: true
