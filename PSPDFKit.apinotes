@@ -20,6 +20,9 @@ Classes:
   - Name: annotationWritingOptions
     SwiftPrivate: true
   Methods:
+  # - Selector: "defaultRenderOptionsForType:"
+  #   MethodKind: "Class"
+  #   SwiftPrivate: true
   - Selector: "saveWithOptions:error:"
     MethodKind: "Instance"
     SwiftPrivate: true

@@ -1,6 +1,9 @@
 import Foundation
 import PSPDFKit
 
+public protocol PDFDocumentType: class {}
+extension PSPDFDocument: PDFDocumentType {}
+
 open class PDFDocument: PSPDFDocument, Codable {
     public typealias FileIndex = UInt
 
