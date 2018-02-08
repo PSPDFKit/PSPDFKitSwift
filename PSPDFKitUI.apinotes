@@ -1,4 +1,12 @@
-# # https://github.com/apple/swift-clang/blob/swift-4.0-branch/lib/APINotes/APINotesYAMLCompiler.cpp
+#
+#  Copyright (c) 2018 PSPDFKit GmbH. All rights reserved.
+#
+#  The PSPDFKit Sample applications are licensed with a modified BSD license.
+#  Please see License for details. This notice may not be removed from
+#  this file.
+#
+#
+# https://github.com/apple/swift-clang/blob/swift-4.0-branch/lib/APINotes/APINotesYAMLCompiler.cpp
 ---
 Name: PSPDFKitUI
 Classes:
