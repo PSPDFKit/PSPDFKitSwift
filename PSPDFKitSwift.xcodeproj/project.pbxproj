@@ -268,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7528E9D9201681370040D8C0 /* ReExportedModules.swift in Sources */,
 				75ED2961201B872D0030E6BA /* PSPDFStampAnnotation.swift in Sources */,
 				75562813201A418800F80A91 /* PSPDFAbstractLineAnnotation.swift in Sources */,
 				75ED295F201B6B130030E6BA /* PSPDFPolygonAnnotation.swift in Sources */,
@@ -281,7 +282,6 @@
 				7536547E200F7348009516C3 /* PSPDFAnnotation.swift in Sources */,
 				7592CE88201B2C4F007640E4 /* PSPDFInkAnnotation.swift in Sources */,
 				75887C891FFF9BFD00AEFB83 /* PSPDFKit.swift in Sources */,
-				7528E9D9201681370040D8C0 /* ReExportedModules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -504,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

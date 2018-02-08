@@ -9,6 +9,7 @@
 import Foundation
 @_exported import PSPDFKit // Clang module
 
+/// Protocol common for all provided PSPDFDocument subclasses.
 public protocol PDFDocumentType: class {
     var isValid: Bool { get }
     var dataProviders: [PSPDFDataProviding] { get }
@@ -22,9 +23,8 @@ public protocol PDFDocumentType: class {
 extension PSPDFDocument: PDFDocumentType {}
 
 open class PDFDocument: PSPDFDocument, Codable {
-    public typealias FileIndex = UInt
 
-    public override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool) {
+    public override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool = false) {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
     }
 

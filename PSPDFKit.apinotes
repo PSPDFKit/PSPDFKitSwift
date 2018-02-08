@@ -12,9 +12,6 @@ Name: PSPDFKit
 Typedefs:
 - Name: "PSPDFRenderDrawBlock"
   SwiftPrivate: true
-# - Name: "PSPDFAnnotationString"
-#   AvailabilityMsg: "Use PSPDFAnnotationType"
-#   SwiftPrivate: true
 Functions:
 - Name: "PSPDFConvertViewLinesToPDFLines"
   SwiftPrivate: true
@@ -28,9 +25,9 @@ Classes:
   - Name: annotationWritingOptions
     SwiftPrivate: true
   Methods:
-  # - Selector: "defaultRenderOptionsForType:"
-  #   MethodKind: "Class"
-  #   SwiftPrivate: true
+  - Selector: "initWithDataProviders:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
   - Selector: "saveWithOptions:error:"
     MethodKind: "Instance"
     SwiftPrivate: true
@@ -50,6 +47,11 @@ Classes:
     MethodKind: "Instance"
     SwiftPrivate: true
   - Selector: "renderOptionsForType:context:"
+    MethodKind: "Instance"
+    SwiftPrivate: true
+- Name: PSPDFDocumentProvider
+  Methods:
+  - Selector: "saveAnnotationsWithOptions:error:"
     MethodKind: "Instance"
     SwiftPrivate: true
 - Name: PSPDFAnnotation
