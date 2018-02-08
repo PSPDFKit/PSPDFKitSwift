@@ -7,9 +7,18 @@
 //
 
 import Foundation
-@_exported import PSPDFKit //Clang module
+@_exported import PSPDFKit // Clang module
 
-public protocol PDFDocumentType: class {}
+public protocol PDFDocumentType: class {
+    var isValid: Bool { get }
+    var dataProviders: [PSPDFDataProviding] { get }
+    var documentId: Data? { get }
+    var documentIdString: String? { get }
+    var uid: String! { get }
+    var pageCount: UInt { get }
+    var fileURL: URL? { get }
+}
+
 extension PSPDFDocument: PDFDocumentType {}
 
 open class PDFDocument: PSPDFDocument, Codable {
