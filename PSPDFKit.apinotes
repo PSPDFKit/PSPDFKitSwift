@@ -12,6 +12,8 @@ Name: PSPDFKit
 Typedefs:
 - Name: "PSPDFRenderDrawBlock"
   SwiftPrivate: true
+- Name: PSPDFPageIndex
+  SwiftBridge: "Swift.UInt"
 Functions:
 - Name: "PSPDFConvertViewLinesToPDFLines"
   SwiftPrivate: true
