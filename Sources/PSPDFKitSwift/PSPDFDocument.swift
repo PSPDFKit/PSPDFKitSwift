@@ -16,7 +16,7 @@ public protocol PDFDocumentType: class {
     var documentId: Data? { get }
     var documentIdString: String? { get }
     var uid: String! { get }
-    var pageCount: UInt { get }
+    var pageCount: PageCount { get }
     var fileURL: URL? { get }
 }
 
