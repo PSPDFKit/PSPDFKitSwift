@@ -28,6 +28,7 @@ extension PSPDFMultiDocumentViewController {
         }
     }
 
+    /// Currently visible document.
     @objc
     public var visibleDocument: PDFDocument? {
         // Workaround to still use the #keyPath

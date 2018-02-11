@@ -14,7 +14,7 @@
     <a title="PSPDFAnnotation Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">PSPDFKitSwift Docs</a> (76% documented)</p>
+        <p><a href="../index.html">PSPDFKitSwift Docs</a> (65% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -77,7 +77,7 @@
                 <a href="../Extensions/PSPDFKitObject.html">PSPDFKitObject</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/PSPDFPointArray.html">PSPDFPointArray</a>
+                <a href="../Extensions/PSPDFMultiDocumentViewController.html">PSPDFMultiDocumentViewController</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/PSPDFPolygonAnnotation.html">PSPDFPolygonAnnotation</a>
@@ -85,22 +85,30 @@
               <li class="nav-group-task">
                 <a href="../Extensions/PSPDFStampAnnotation.html">PSPDFStampAnnotation</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Rotation.html">Rotation</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySaySC17PSPDFDrawingPointVGG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+                <a href="../Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesXeXeF">BoundingBoxFromLines(_:width:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:13PSPDFKitSwift20BoundingBoxFromLinesySaySo15PSPDFPointArrayCG_Sd5widthtF">BoundingBoxFromLines(_:width:)</a>
+                <a href="../Functions.html#/s:13PSPDFKitSwift16ConvertToPDFLineXeXeF">ConvertToPDFLine(viewLine:cropBox:rotation:bounds:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:13PSPDFKitSwift16ConvertToPDFLineSaySC17PSPDFDrawingPointVGAE8viewLine_SC6CGRectV7cropBoxSi8rotationAH6boundstF">ConvertToPDFLine(viewLine:cropBox:rotation:bounds:)</a>
+                <a href="../Functions.html#/s:13PSPDFKitSwift17ConvertToPDFLinesXeXeF">ConvertToPDFLines(viewLines:cropBox:rotation:bounds:)</a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:13PSPDFKitSwift17ConvertToPDFLinesSaySaySC17PSPDFDrawingPointVGGAF9viewLines_SC6CGRectV7cropBoxSi8rotationAI6boundstF">ConvertToPDFLines(viewLines:cropBox:rotation:bounds:)</a>
+                <a href="../Protocols/PDFDocumentType.html">PDFDocumentType</a>
               </li>
             </ul>
           </li>
@@ -118,12 +126,6 @@
         <section>
           <section class="section">
             <h1>PSPDFAnnotation</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PSPDFAnnotation</span> <span class="p">:</span> <span class="kt">PSPDFModel</span><span class="p">,</span> <span class="kt">PSPDFUndoSupport</span></code></pre>
-
-                </div>
-              </div>
             
           </section>
           <section class="section task-group-section">
@@ -132,9 +134,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15PSPDFAnnotationC13PSPDFKitSwiftE17additionalActionss10DictionaryVySC0A12TriggerEventOSo11PSPDFActionCGSgv"></a>
+                    <a name="/s:13PSPDFKitSwift17additionalActionsXev"></a>
                     <a name="//apple_ref/swift/Property/additionalActions" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15PSPDFAnnotationC13PSPDFKitSwiftE17additionalActionss10DictionaryVySC0A12TriggerEventOSo11PSPDFActionCGSgv">additionalActions</a>
+                    <a class="token" href="#/s:13PSPDFKitSwift17additionalActionsXev">additionalActions</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -159,9 +161,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15PSPDFAnnotationC13PSPDFKitSwiftE9dashArraySaySiGSgv"></a>
+                    <a name="/s:13PSPDFKitSwift9dashArraySaySiGSgv"></a>
                     <a name="//apple_ref/swift/Property/dashArray" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15PSPDFAnnotationC13PSPDFKitSwiftE9dashArraySaySiGSgv">dashArray</a>
+                    <a class="token" href="#/s:13PSPDFKitSwift9dashArraySaySiGSgv">dashArray</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -195,9 +197,9 @@ Array of boxed integer-values defining the dash style.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15PSPDFAnnotationC13PSPDFKitSwiftE5rectsSaySC6CGRectVGSgv"></a>
+                    <a name="/s:13PSPDFKitSwift5rectsXev"></a>
                     <a name="//apple_ref/swift/Property/rects" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15PSPDFAnnotationC13PSPDFKitSwiftE5rectsSaySC6CGRectVGSgv">rects</a>
+                    <a class="token" href="#/s:13PSPDFKitSwift5rectsXev">rects</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -222,9 +224,9 @@ Array of boxed integer-values defining the dash style.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So15PSPDFAnnotationC13PSPDFKitSwiftE6pointsSaySC7CGPointVGSgv"></a>
+                    <a name="/s:13PSPDFKitSwift6pointsXev"></a>
                     <a name="//apple_ref/swift/Property/points" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So15PSPDFAnnotationC13PSPDFKitSwiftE6pointsSaySC7CGPointVGSgv">points</a>
+                    <a class="token" href="#/s:13PSPDFKitSwift6pointsXev">points</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -254,7 +256,7 @@ Contains <code>NSValue</code> objects that box a <code>CGPoint</code>.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://github.com/PSPDFKit/PSPDFKit.swift" target="_blank" rel="external">PSPDFKit GmbH</a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>&copy; 2018 <a class="link" href="http://github.com/PSPDFKit/PSPDFKit.swift" target="_blank" rel="external">PSPDFKit GmbH</a>. All rights reserved. (Last updated: 2018-02-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Enumerations  Reference</title>
+    <title>Protocols  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Enumerations  Reference"></a>
+    <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">PSPDFKitSwift Docs</a> (65% documented)</p>
@@ -20,7 +20,7 @@
       <p id="breadcrumbs">
         <a href="index.html">PSPDFKitSwift Reference</a>
         <img id="carat" src="img/carat.png" />
-        Enumerations  Reference
+        Protocols  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -124,8 +124,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Enumerations</h1>
-            <p>The following enumerations are available globally.</p>
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -134,9 +134,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13PSPDFKitSwift6ResultO"></a>
-                    <a name="//apple_ref/swift/Enum/Result" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13PSPDFKitSwift6ResultO">Result</a>
+                    <a name="/s:13PSPDFKitSwift15PDFDocumentTypeP"></a>
+                    <a name="//apple_ref/swift/Protocol/PDFDocumentType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13PSPDFKitSwift15PDFDocumentTypeP">PDFDocumentType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,49 +144,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An simple enum which is either a value or an error.
-It can be used for error handling in situations where try catch is
-problematic to use, for eg: asynchronous APIs.</p>
+                        <p>Protocol common for all provided PSPDFDocument subclasses.</p>
 
-                        <a href="Enums/Result.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/PDFDocumentType.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Value</span><span class="p">,</span> <span class="kt">ErrorType</span><span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13PSPDFKitSwift12RenderOptionO"></a>
-                    <a name="//apple_ref/swift/Enum/RenderOption" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13PSPDFKitSwift12RenderOptionO">RenderOption</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Rendering options. Parameters of how an image should be rendered.</p>
-
-                        <a href="Enums/RenderOption.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RenderOption</span><span class="p">:</span> <span class="kt">RawRepresentable</span><span class="p">,</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PDFDocumentType</span><span class="p">:</span> <span class="kd">class</span></code></pre>
 
                         </div>
                       </div>
