@@ -8,6 +8,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/PSPDFAnnotationString.swift",
+      "line": 12,
+      "symbol": "AnnotationString.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/PSPDFAnnotationString.swift",
+      "line": 16,
+      "symbol": "AnnotationString.init(stringLiteral:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/PSPDFAnnotationType.swift",
+      "line": 13,
+      "symbol": "AnnotationType.init(stringLiteral:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/PSPDFAnnotationType.swift",
+      "line": 17,
+      "symbol": "AnnotationType.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/PSPDFDocument.swift",
       "line": 14,
       "symbol": "PDFDocumentType.isValid",
@@ -263,6 +291,20 @@
       "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/Result.swift",
       "line": 90,
       "symbol": "AnyError.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/String+PSPDFKit.swift",
+      "line": 12,
+      "symbol": "String.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/marcinkrzyzanowski/Devel/pspdfkit/Viewer-iOS/Viewer/Vendor/PSPDFKitSwift/Sources/PSPDFKitSwift/String+PSPDFKit.swift",
+      "line": 16,
+      "symbol": "String.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PSPDFKit
+@_exported import PSPDFKit //Clang module
 
 extension Rotation: ExpressibleByIntegerLiteral {
     public init(integerLiteral: IntegerLiteralType) {

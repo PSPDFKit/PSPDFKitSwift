@@ -131,9 +131,9 @@ extension PSPDFDocument {
      AP (Appearance Stream) generation takes more time but will maximize compatibility with PDF Viewers that don't implement the complete spec for annotations.
      The default value for this dict is `[.generateAppearanceStreamForTypeKey: [.freeText, .ink, .polygon, .polyLine, .line, .square, .circle, .stamp, .widget]]`
      */
-    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions: PSPDFAnnotationType]? {
+    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions: AnnotationType]? {
         get {
-            return __annotationWritingOptions?.mapValues { PSPDFAnnotationType(rawValue: UInt(truncating: $0)) }
+            return __annotationWritingOptions?.mapValues { AnnotationType(rawValue: UInt(truncating: $0)) }
         }
         set {
             __annotationWritingOptions = newValue?.mapValues { $0.rawValue as NSNumber }
