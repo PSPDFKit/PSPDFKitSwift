@@ -41,7 +41,7 @@ extension PSPDFKitObject {
             }
         }
         set {
-            __logHandler = { (type: PSPDFLogLevelMask, tag: UnsafePointer<Int8>?, message: () -> String, file: UnsafePointer<Int8>, function: UnsafePointer<Int8>, line: UInt) in
+            __logHandler = { (type: PSPDFLogLevelMask, tag: UnsafePointer<Int8>?, message: @escaping () -> String, file: UnsafePointer<Int8>, function: UnsafePointer<Int8>, line: UInt) in
                 newValue(type, tag == nil ? "" : String(cString: tag!), message, String(cString: file), String(cString: function), Int(line))
             }
         }

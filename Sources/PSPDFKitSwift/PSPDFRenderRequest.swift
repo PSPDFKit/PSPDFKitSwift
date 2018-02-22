@@ -18,7 +18,7 @@ public typealias PSPDFRenderDrawBlock = @convention(block) (_ context: CGContext
 public typealias RenderDrawHandler = PSPDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
-public enum RenderOption: RawRepresentable, Codable, Equatable {
+public enum RenderOption: RawRepresentable, Equatable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
     case none
@@ -163,16 +163,6 @@ public enum RenderOption: RawRepresentable, Codable, Equatable {
         case .ciFilters(let filters):
             return [.ciFilterKey: filters]
         }
-    }
-
-    public init(from decoder: Decoder) throws {
-        var unkeyedContainer = try decoder.unkeyedContainer()
-        self.init(rawValue: try unkeyedContainer.decode(RawValue.self))!
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var unkeyedContainer = encoder.unkeyedContainer()
-        try unkeyedContainer.encode(self.rawValue)
     }
 
     public static func ==(lhs: RenderOption, rhs: RenderOption) -> Bool {

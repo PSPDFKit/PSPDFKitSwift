@@ -22,7 +22,7 @@ public protocol PDFDocumentType: class {
 
 extension PSPDFDocument: PDFDocumentType {}
 
-open class PDFDocument: PSPDFDocument, Codable {
+open class PDFDocument: PSPDFDocument {
 
     public override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool = false) {
         super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: loadCheckpoint)
@@ -47,46 +47,6 @@ open class PDFDocument: PSPDFDocument, Codable {
 
     open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case uid
-        case title
-        case areAnnotationsEnabled
-        case dataProviders
-        case shouldLoadCheckpoint
-        case renderOptionsForAll
-        case renderOptionsForPage
-        case renderOptionsForProcessor
-    }
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        let dataProviders = try container.decode(Array<PSPDFDataProviding>.self, forKey: .dataProviders)
-        let enableCheckpoints = try container.decode(Bool.self, forKey: .shouldLoadCheckpoint)
-
-        super.init(dataProviders: dataProviders, loadCheckpointIfAvailable: enableCheckpoints)
-
-        title = try container.decode(String.self, forKey: .title)
-        areAnnotationsEnabled = try container.decode(Bool.self, forKey: .title)
-        uid = try container.decode(String.self, forKey: .uid)
-
-        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForAll), type: .all)
-        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForAll), type: .page)
-        setRenderOptions(try container.decode([RenderOption].self, forKey: .renderOptionsForProcessor), type: .processor)
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(dataProviders, forKey: .dataProviders)
-        try container.encode(title, forKey: .title)
-        try container.encode(areAnnotationsEnabled, forKey: .areAnnotationsEnabled)
-        try container.encode(uid, forKey: .uid)
-        try container.encode(checkpointer.checkpointExists, forKey: .shouldLoadCheckpoint)
-        try container.encode(renderOptions(for: .all, context: nil), forKey: .renderOptionsForAll)
-        try container.encode(renderOptions(for: .page, context: nil), forKey: .renderOptionsForPage)
-        try container.encode(renderOptions(for: .processor, context: nil), forKey: .renderOptionsForProcessor)
     }
 }
 
