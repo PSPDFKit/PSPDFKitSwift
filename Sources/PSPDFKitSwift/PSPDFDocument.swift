@@ -252,8 +252,8 @@ extension PSPDFDocument {
      *  @return The render dictionary. Guaranteed to always return a dictionary.
      */
     public func renderOptions(for type: RenderType, context: Any?) -> [RenderOption] {
-        return self.__renderOptions(for: type, context: context).map({ (entry) -> RenderOption in
-            RenderOption(rawValue: [entry.key: entry.value]) ?? .none
+        return self.__renderOptions(for: type, context: context).flatMap({ (entry) -> RenderOption? in
+            RenderOption(rawValue: [entry.key: entry.value])
         })
     }
 

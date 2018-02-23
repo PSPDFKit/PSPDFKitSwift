@@ -21,7 +21,6 @@ public typealias RenderDrawHandler = PSPDFRenderDrawBlock
 public enum RenderOption: RawRepresentable, Equatable {
     public typealias RawValue = [PSPDFRenderOption: Any]
 
-    case none
     /// Changes the rendering to preserve the aspect ratio of the image.
     case preserveAspectRatio(Bool)
     /// Controls whether the image is forced to render with a scale of 1.0.
@@ -119,13 +118,11 @@ public enum RenderOption: RawRepresentable, Equatable {
                 fatalError("Unknown option")
             }
         }
-        self = .none
+        return nil
     }
 
     public var rawValue: RawValue {
         switch self {
-        case .none:
-            return [:]
         case .preserveAspectRatio(let value):
             return [.preserveAspectRatioKey: NSNumber(value: value)]
         case .ignoreDisplaySettings(let value):
