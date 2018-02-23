@@ -9,19 +9,6 @@
 import Foundation
 @_exported import PSPDFKit // Clang module
 
-/// Protocol common for all provided PSPDFDocument subclasses.
-public protocol PDFDocumentType: class {
-    var isValid: Bool { get }
-    var dataProviders: [PSPDFDataProviding] { get }
-    var documentId: Data? { get }
-    var documentIdString: String? { get }
-    var uid: String! { get }
-    var pageCount: PageCount { get }
-    var fileURL: URL? { get }
-}
-
-extension PSPDFDocument: PDFDocumentType {}
-
 open class PDFDocument: PSPDFDocument {
 
     public override init(dataProviders: [PSPDFDataProviding], loadCheckpointIfAvailable loadCheckpoint: Bool = false) {

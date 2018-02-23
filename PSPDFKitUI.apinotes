@@ -10,12 +10,6 @@
 ---
 Name: PSPDFKitUI
 Classes:
-- Name: PSPDFMultiDocumentViewController
-  Properties:
-  - Name: documents
-    SwiftPrivate: true
-  - Name: visibleDocument
-    SwiftPrivate: true
 - Name: PSPDFTabbedViewController
   Methods:
   - Selector: "addDocument:makeVisible:animated:"
