@@ -176,7 +176,7 @@ extension PSPDFDocument {
     ///
     /// - Parameter options: See `SaveOption` documentation for more details.
     /// - Throws: NSInternalInconsistencyException if save options are not valid.
-    public func save(options: [SaveOption]) throws {
+    public func save(options: [SaveOption] = []) throws {
         try __save(options: SaveOption.mapToDictionary(options: options))
     }
 
