@@ -28,14 +28,14 @@ public typealias ViewLine = [CGPoint]
 /// Get the `cropBox` and rotation from `PSPDFPageInfo`.
 /// bounds should be the size of the view.
 public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: Int, bounds: CGRect) -> [PDFLine] {
-    let lines = viewLines.map { $0.map({ NSValue.pspdf_value(with: $0) }) }
+    let lines = viewLines.map { $0.map({ NSValue(cgPoint: $0) }) }
 
     return __PSPDFConvertViewLinesToPDFLines(lines, cropBox, UInt(rotation), bounds).map { $0.map({ $0.pspdf_drawingPointValue }) }
 }
 
-/// Converts a single line of boxed `PSPDFDrawingPoints`.
+/// Converts a single line of boxed `CGPoint`.
 public func ConvertToPDFLine(viewLine: ViewLine, cropBox: CGRect, rotation: Int, bounds: CGRect) -> PDFLine {
-    let line = viewLine.map { NSValue.pspdf_value(with: $0) }
+    let line = viewLine.map { NSValue(cgPoint: $0) }
 
     return __PSPDFConvertViewLineToPDFLines(line, cropBox, UInt(rotation), bounds).map { $0.pspdf_drawingPointValue }
 }
