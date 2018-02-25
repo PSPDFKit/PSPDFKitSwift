@@ -45,9 +45,7 @@ extension PSPDFDocument {
         /// Controls if overlay annotations should be animated. Only applies to overlay.
         case animateView(Bool)
         /// Prevents the insertion or removal notifications from being sent.
-        case )suppressNotifications(Bool)
-        /// Marks the inserted annotations as being user created.
-        case userCreated(Bool)
+        case suppressNotifications(Bool)
 
         public typealias RawValue = [PSPDFAnnotationOption: Any]
 
@@ -58,8 +56,6 @@ extension PSPDFDocument {
                     self = .animateView((value as? NSNumber)?.boolValue ?? false)
                 case PSPDFAnnotationOption.suppressNotificationsKey:
                     self = .suppressNotifications((value as? NSNumber)?.boolValue ?? false)
-                case PSPDFAnnotationOption.userCreatedKey:
-                    self =
                 default:
                     return nil
                 }
