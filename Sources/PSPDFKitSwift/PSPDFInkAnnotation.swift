@@ -22,7 +22,7 @@ extension PSPDFInkAnnotation {
 }
 
 public typealias PDFLine = [PSPDFDrawingPoint]
-public typealias ViewLine = [PSPDFDrawingPoint]
+public typealias ViewLine = [CGPoint]
 
 /// Will convert view lines to PDF lines (operates on every point)
 /// Get the `cropBox` and rotation from `PSPDFPageInfo`.
