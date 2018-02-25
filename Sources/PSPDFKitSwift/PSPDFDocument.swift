@@ -43,9 +43,11 @@ extension PSPDFDocument {
     /// Annotation option.
     public enum AnnotationOption: RawRepresentable {
         /// Controls if overlay annotations should be animated. Only applies to overlay.
-        case animateViewKey(Bool)
+        case animateView(Bool)
         /// Prevents the insertion or removal notifications from being sent.
-        case suppressNotificationsKey(Bool)
+        case )suppressNotifications(Bool)
+        /// Marks the inserted annotations as being user created.
+        case userCreated(Bool)
 
         public typealias RawValue = [PSPDFAnnotationOption: Any]
 
@@ -53,9 +55,11 @@ extension PSPDFDocument {
             for (key, value) in rawValue {
                 switch key {
                 case PSPDFAnnotationOption.animateViewKey:
-                    self = .animateViewKey((value as? NSNumber)?.boolValue ?? false)
+                    self = .animateView((value as? NSNumber)?.boolValue ?? false)
                 case PSPDFAnnotationOption.suppressNotificationsKey:
-                    self = .suppressNotificationsKey((value as? NSNumber)?.boolValue ?? false)
+                    self = .suppressNotifications((value as? NSNumber)?.boolValue ?? false)
+                case PSPDFAnnotationOption.userCreatedKey:
+                    self =
                 default:
                     return nil
                 }
@@ -65,9 +69,9 @@ extension PSPDFDocument {
 
         public var rawValue: RawValue {
             switch self {
-            case .animateViewKey(let value):
+            case .animateView(let value):
                 return [PSPDFAnnotationOption.animateViewKey: NSNumber(value: value)]
-            case .suppressNotificationsKey(let value):
+            case .suppressNotifications(let value):
                 return [PSPDFAnnotationOption.suppressNotificationsKey: NSNumber(value: value)]
             }
         }
@@ -250,7 +254,7 @@ internal class PDFDocumentTests {
     static func test() throws {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
-        document.add([ /* TODO: */ ], options: [.animateViewKey(true), .suppressNotificationsKey(false)])
+        document.add([ /* TODO: */ ], options: [.animateView(true), .suppressNotifications(false)])
         try document.save(options: [.security(securityOptions), .forceRewrite])
         document.save(options: [.security(securityOptions), .forceRewrite]) { result in
             _ = try! result.dematerialize()
