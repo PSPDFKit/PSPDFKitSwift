@@ -82,7 +82,10 @@ Classes:
   Methods:
   - Selector: "initWithLines:"
     MethodKind: "Instance"
-    SwiftPrivate: true    
+    SwiftPrivate: true
+  Properties:
+  - Name: lines
+    SwiftPrivate: true
 - Name: PSPDFSoundAnnotation
   Methods:
   - Selector: "initRecorderWithOptions:"
