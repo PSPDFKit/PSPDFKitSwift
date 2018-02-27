@@ -12,7 +12,7 @@ import Foundation
 public typealias PolygonAnnotation = PSPDFPolygonAnnotation
 
 extension PSPDFPolygonAnnotation {
-    
+
     /// Initializer
     ///
     /// - Parameters:

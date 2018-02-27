@@ -72,6 +72,7 @@ public enum RenderOption: RawRepresentable, Equatable {
     /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
     case ciFilters([CIFilter])
 
+    // swiftlint:disable:next function_body_length cyclomatic_complexity
     public init?(rawValue: RawValue) {
         for (key, value) in rawValue {
             switch key {
@@ -162,7 +163,8 @@ public enum RenderOption: RawRepresentable, Equatable {
         }
     }
 
-    public static func ==(lhs: RenderOption, rhs: RenderOption) -> Bool {
+    // swiftlint:disable:next cyclomatic_complexity
+    public static func == (lhs: RenderOption, rhs: RenderOption) -> Bool {
         switch (lhs, rhs) {
         case (.preserveAspectRatio(let l), .preserveAspectRatio(let r)):
             return l == r
@@ -194,6 +196,7 @@ public enum RenderOption: RawRepresentable, Equatable {
             return l == r
         case (.interactiveFormFillColor(let l), .interactiveFormFillColor(let r)):
             return l == r
+        // swiftlint:disable:next empty_enum_arguments
         case (.draw(_), .draw(_)):
             // Can't check if the closure is equal,
             // instead just check if draw closure is set

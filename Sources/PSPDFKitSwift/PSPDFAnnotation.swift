@@ -20,14 +20,14 @@ extension PSPDFAnnotation {
             for (key, value) in __additionalActions ?? [:] {
                 dictionary[PSPDFAnnotationTriggerEvent(rawValue: key.uint8Value)!] = value
             }
-            return dictionary.count > 0 ? dictionary : nil
+            return dictionary.isEmpty ? nil : dictionary
         }
         set {
             var intenalDictionary = [NSNumber: PSPDFAction]()
             for (key, value) in newValue ?? [:] {
                 intenalDictionary[NSNumber(value: key.rawValue)] = value
             }
-            __additionalActions = intenalDictionary.count > 0 ? intenalDictionary : nil
+            __additionalActions = intenalDictionary.isEmpty ? nil : intenalDictionary
         }
     }
 
