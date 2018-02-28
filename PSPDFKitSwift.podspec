@@ -9,9 +9,9 @@
 Pod::Spec.new do |spec|
   spec.name = "PSPDFKitSwift"
   spec.version = "1.0.0"
-  spec.summary = "lorem ipsum"
+  spec.summary = "A set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience."
 
-  spec.description = "lorem ipsum"
+  spec.description = "A set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience."
 
   spec.homepage = "http://github.com/PSPDFKit/PSPDFKit.swift"
   spec.license = { :type => "BSD (modified)", :file => "LICENSE.md" }
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "4.0"
   spec.cocoapods_version = '>= 1.4.0'
 
-  spec.source = { :git => "git@github.com:PSPDFKit/PSPDFKit.swift.git" }
+  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git" }
   spec.source_files = "Sources", "Sources/**/*.{h,m,swift}"
   spec.public_header_files = "Sources/**/*.h"
 
