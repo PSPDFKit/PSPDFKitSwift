@@ -3,7 +3,7 @@
 # PSPDFKitSwift
 
 `PSPDFKitSwift.framework` is a set of wrappers and extensions which improve the Swift experience with PSPDFKit for iOS.
-Our blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits and methods we use.
+Our blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits and methods used in this project.
 
 **Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires
 a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try)
