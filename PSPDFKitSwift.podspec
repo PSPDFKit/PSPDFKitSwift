@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "4.0.3"
   spec.cocoapods_version = '>= 1.4.0'
 
-  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git" }
+  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git", :tag => '1.0.0' }
   spec.source_files = "Sources", "Sources/**/*.swift"
 
   spec.requires_arc = true
