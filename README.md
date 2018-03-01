@@ -79,7 +79,7 @@ You should now be able to build & run your app.
 
 ## Limitations
 
-PSPDFKitSwift is beta software, many parts aren't implemented yet.
+We plan to further evolve PSPDFKitSwift and do not yet guarantee API stability. This shouldn't stop you from using it, as changes will usually be easy to adopt.
 
 ## Contributing
 
