@@ -2,13 +2,11 @@
 
 # PSPDFKitSwift
 
+`PSPDFKitSwift.framework` is a set of wrappers and extensions which improve the Swift experience with PSPDFKit for iOS.
+
 **Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires
 a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try)
 to receive an evaluation license if you haven't a production license yet.
-
-## Introduction
-
-`PSPDFKitSwift.framework` is a set of wrappers and extensions which improve the Swift experience with PSPDFKit for iOS.
 
 ## Usage
 
