@@ -32,6 +32,9 @@ All it takes is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you h
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
+
+pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.0.0'
+
 target :YourAppName do
   use_frameworks!
 
