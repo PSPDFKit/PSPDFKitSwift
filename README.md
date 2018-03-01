@@ -1,4 +1,4 @@
-<img src="art/pspdfkit-swift.png" width="200">
+<img src="art/pspdfkit-swift.png" width="100">
 
 # PSPDFKitSwift
 
