@@ -43,6 +43,8 @@ target :YourAppName do
 end
 ```
 
+**Note:** `PSPDFKitSwift` is not published in public [the CocoaPods specs](https://github.com/CocoaPods/Specs), you have to reference the pod with the git repository: `pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.0.0'`
+
 **Note:** make sure to replace `YourAppName` with your app name and
 `YOUR_COCOAPODS_KEY` with your own key provided by PSPDFKit GmbH. You can find
 your key either in [customer portal](https://customers.pspdfkit.com/) or by
