@@ -58,6 +58,6 @@ internal class PSPDFKitObjectTests {
         }
         PSPDFKit.sharedInstance[.fileCoordinationEnabledKey] = true
         let value = PSPDFKit.sharedInstance[.fileCoordinationEnabledKey] as? Bool
-        guard value == true else { throw NSError.pspdf_error(withCode: 0, description: "Invalid value") }
+        guard value == true else { throw NSError(domain: "PSPDFKitSwiftErrorDomain", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid value."]) }
     }
 }
