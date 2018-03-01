@@ -11,6 +11,6 @@ use_frameworks!
 target 'PSPDFKitExample' do
 
   # Replace `_YOUR_COCOAPODS_KEY_` with your own.
+  pod 'PSPDFKitSwift', podspec: 'https://raw.githubusercontent.com/PSPDFKit/PSPDFKit.swift/master/PSPDFKitSwift.podspec'
   pod 'PSPDFKit/Swift', podspec: 'https://customers.pspdfkit.com/cocoapods/_YOUR_COCOAPODS_KEY_/latest.podspec'
-
 end
