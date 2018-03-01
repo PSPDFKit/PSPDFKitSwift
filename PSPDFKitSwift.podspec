@@ -9,9 +9,7 @@
 Pod::Spec.new do |spec|
   spec.name = "PSPDFKitSwift"
   spec.version = "1.0.0"
-  spec.summary = "A set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience."
-
-  spec.description = "A set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience."
+  spec.summary = "A set of wrappers and extensions to the PSPDFKit frameworks to improve the Swift experience."
 
   spec.homepage = "http://github.com/PSPDFKit/PSPDFKit.swift"
   spec.license = { :type => "BSD (modified)", :file => "LICENSE.md" }
