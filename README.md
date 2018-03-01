@@ -6,29 +6,28 @@ to receive an evaluation license if you haven't a production license yet.
 
 ## Introduction
 
-`PSPDFKitSwift.framework` is a set of wrappers and extensions for PSPDFKit for iOS to improve the Swift experience.
+`PSPDFKitSwift.framework` is a set of wrappers and extensions which improve the Swift experience with PSPDFKit for iOS.
 
 ## Usage
 
-To use the Swift wrappers and extensions, you should import **PSPDFKitSwift** module.
+To use the Swift wrappers and extensions, you need to import the `PSPDFKitSwift` module.
 
 ```swift
 import PSPDFKitSwift
 ```
 
-From now on you can work with the PSPDFKit framwework like you use to be. You'll notice several improvements to the Swift API that due to external constraints couldn't be made on the Objective-C side. Check the [documentation](./docs) to discover the wrappers you may want to use since now.
+From now on you can work with the PSPDFKit and PSPDFKitUI frameworks like usually. The only change you will notice are several improvements to the framework APIs when working from Swift. Check the [documentation](./docs) to discover all the wrapped APIs you may want to adopt in your code.
 
-**Note:** There is no need to import PSPDFKit module separately.
+**Note:** There is no need to import the `PSPDFKit` module separately.
 
 ## Getting Started
 
-Make sure you have access to PSPDFKit either as a customer or by signing up for
-a [free trial](https://pspdfkit.com/try/).
+Make sure you have access to PSPDFKit either as a customer or by signing up for a [free trial](https://pspdfkit.com/try/).
 
 ### Using CocoaPods
 
 We assume you are familiar with [CocoaPods](https://cocoapods.org), otherwise
-please consult the documentation first. You'll have to add PSPDFKitSwift and PSPDFKit as a dependency to your `Podfile`. You need to add `post_install` action to install additional resources.
+please consult the documentation first. You'll have to add `PSPDFKitSwift` and `PSPDFKit` as dependancies to your `Podfile`. You also need to add a `post_install` action to install additional resources.
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
@@ -51,7 +50,7 @@ without errors.
 
 ### Manual Set-Up
 
-**Note:** manual set-up is only for experts, we assume you know what you are
+**Note:** Manual set-up is only for experts, we assume you know what you are
 doing. If you are unsure, please use CocoaPods or Carthage instead.
 
 First, build the PSPDFKitSwift framework:
@@ -75,7 +74,7 @@ the `PSPDFKit.framework`,`PSPDFKitUI.framework` and `PDFFKitSwift.framework` to 
 
 You should now be able to build & run your app.
 
-**Important:** Link against frameworks from the `Frameworks` directory as those are patched bundles.
+**Important:** Link against frameworks from the `Frameworks` directory as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding `.apinotes` files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will no longer work without that additional library.
 
 ## Limitations
 
@@ -96,12 +95,12 @@ Technical notes:
 
 * All PSPDFKitSwift source files live in the `Sources` directory.
 * PSPDFKit and PSPDFKitUI modules are re-exported automatically.
-* `PSPDFKit.apinotes` is a textile file that adjust the API visibility.
+* `PSPDFKit.apinotes` and `PSPDFKitUI.apinotes` are textile files that adjust the API visibility.
 
 ## Known Issues
 
 **Linker warning when building without Carthage**. In order to support Carthage
-out-of-the-box with per-customer PSPDFKit URL, we've added the _parent_
+out-of-the-box with per-customer PSPDFKit URLs, we've added the _parent_
 Carthage build folder to the "Framework Search Paths". When building without
 Carthage, this produces the following warning:
 
