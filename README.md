@@ -28,8 +28,9 @@ Make sure you have access to PSPDFKit either as a customer or by signing up for 
 
 ### Using CocoaPods
 
-We assume you are familiar with [CocoaPods](https://cocoapods.org), otherwise
-please consult the documentation first. You'll have to add `PSPDFKitSwift` and `PSPDFKit` as dependancies to your `Podfile`. You also need to add a `post_install` action to install additional resources.
+We assume you are familiar with [CocoaPods](https://cocoapods.org), otherwise please consult the documentation first. 
+
+All it takes is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you have an existing [PSPDFKit cocoapods integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/) simply replace `PSPDFKit` with the `PSPDFKit/Swift` subspec.
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
