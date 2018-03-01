@@ -1,12 +1,12 @@
 # PSPDFKitSwift
 
-**Note**: [PSPDFKit](http://pspdfkit.com) is a *commercial* product and requires
+**Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires
 a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try)
 to receive an evaluation license if you haven't a production license yet.
 
 ## Introduction
 
-`PSPDFKitSwift.framework` is a set of wrappers and extenstions to the PSPDFKit frameworks to improve the Swift experience.
+`PSPDFKitSwift.framework` is a set of wrappers and extensions for PSPDFKit for iOS to improve the Swift experience.
 
 ## Usage
 
@@ -111,5 +111,4 @@ ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDF
 
 ## License
 
-The PSPDFKitSwift wrapper is released under a modified version of the BSD license, see
-[LICENSE.md](LICENSE.md) found at the root of this git repo.
+PSPDFKitSwift is released under a modified version of the BSD license, see [LICENSE.md](LICENSE.md).
