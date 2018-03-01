@@ -22,12 +22,11 @@ Pod::Spec.new do |spec|
   spec.platform = :ios, "11.0"
   spec.ios.deployment_target = "9.0"
   
-  spec.swift_version = "4.0"
+  spec.swift_version = "4.0.3"
   spec.cocoapods_version = '>= 1.4.0'
 
   spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git" }
-  spec.source_files = "Sources", "Sources/**/*.{h,m,swift}"
-  spec.public_header_files = "Sources/**/*.h"
+  spec.source_files = "Sources", "Sources/**/*.swift"
 
   spec.requires_arc = true
 
