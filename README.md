@@ -1,3 +1,7 @@
+<img src="art/pspdfkit-swift.png" width="200">
+
+
+
 # PSPDFKitSwift
 
 **Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires
