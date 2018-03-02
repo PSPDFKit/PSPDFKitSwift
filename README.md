@@ -62,7 +62,7 @@ First, build the PSPDFKitSwift framework:
 * Open the terminal and `cd` into the `PSPDFKitSwift` directory
 * Run `rake compile`
 
-You should now have the `PDFFKitSwift.framework` in the `Build` folder. Next, add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PDFFKitSwift.framework` to your project:
+You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PDFFKitSwift.framework` to your project:
 
 * Follow the [Getting Started](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/) instructions for PSPDFKit.
 
@@ -76,7 +76,7 @@ You should now be able to build and run your app.
 
 ## Limitations
 
-We plan to further evolve PSPDFKitSwift and do not yet guarantee API stability. However, this shouldn’t stop you from using it, as changes will usually be easy to adopt.
+PSPDFKitSwift is a work in progress, and we have more plans for improving upon it in the future. As such, we do not yet guarantee API stability. However, this shouldn’t stop you from using it, as changes will usually be easy to adopt.
 
 ## Contributing
 
