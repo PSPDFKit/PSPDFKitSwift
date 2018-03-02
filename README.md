@@ -2,22 +2,19 @@
 
 # PSPDFKitSwift
 
-`PSPDFKitSwift.framework` is a set of wrappers and extensions which improve the Swift experience with PSPDFKit for iOS.
-Our blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits and methods used in this project.
+`PSPDFKitSwift.framework` is a set of wrappers and extensions that improve the Swift experience with PSPDFKit for iOS. The blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits of and methods used in this project.
 
-**Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires
-a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try)
-to receive an evaluation license if you haven't a production license yet.
+**Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try) to receive an evaluation license if you don’t yet have a production license.
 
 ## Usage
 
-To use the Swift wrappers and extensions, you need to import the `PSPDFKitSwift` module.
+To use the Swift wrappers and extensions, you need to import the `PSPDFKitSwift` module:
 
 ```swift
 import PSPDFKitSwift
 ```
 
-From now on you can work with the PSPDFKit and PSPDFKitUI frameworks like usually. The only change you will notice are several improvements to the framework APIs when working from Swift. Check the [documentation](./docs) to discover all the wrapped APIs you may want to adopt in your code.
+Once this is done, you can work with the PSPDFKit and PSPDFKitUI frameworks as usual. The only change you will notice are several improvements to the framework APIs when working from Swift. Check out the [documentation](./docs) to discover all the wrapped APIs you may want to adopt in your code.
 
 **Note:** There is no need to import the `PSPDFKit` module separately.
 
@@ -27,9 +24,9 @@ Make sure you have access to PSPDFKit either as a customer or by signing up for 
 
 ### Using CocoaPods
 
-We assume you are familiar with [CocoaPods](https://cocoapods.org), otherwise please consult the documentation first. 
+We assume you are familiar with [CocoaPods](https://cocoapods.org). If not, please consult the documentation first. 
 
-All it takes is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you have an existing [PSPDFKit cocoapods integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/) simply replace `PSPDFKit` with the `PSPDFKit/Swift` subspec.
+All it takes is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you have an existing [PSPDFKit CocoaPods integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/), simply replace `PSPDFKit` with the `PSPDFKit/Swift` subspec:
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
@@ -44,21 +41,18 @@ target :YourAppName do
 end
 ```
 
-**Note:** `PSPDFKitSwift` is not published in public [the CocoaPods specs](https://github.com/CocoaPods/Specs), you have to reference the pod with the git repository: `pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.0.0'`
+**Note:** `PSPDFKitSwift` is not published in public [the CocoaPods specs](https://github.com/CocoaPods/Specs); you have to reference the pod with the git repository: `pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.0.0'`
 
 **Note:** make sure to replace `YourAppName` with your app name and
 `YOUR_COCOAPODS_KEY` with your own key provided by PSPDFKit GmbH. You can find
-your key either in [customer portal](https://customers.pspdfkit.com/) or by
+your key either in the [customer portal](https://customers.pspdfkit.com/) or by
 requesting an [evaluation license](https://pspdfkit.com/try/).
 
+Now run `pod install`. Afterward, you should be able to build and run your project without errors.
 
-Now run `pod install`. Afterwards you should be able to build & run your project
-without errors.
+### Manual Setup
 
-### Manual Set-Up
-
-**Note:** Manual set-up is only for experts, we assume you know what you are
-doing. If you are unsure, please use CocoaPods or Carthage instead.
+**Note:** Manual setup is only for experts, and we assume you know what you are doing. If you are unsure of what to do, please use CocoaPods or Carthage instead.
 
 First, build the PSPDFKitSwift framework:
 
@@ -68,24 +62,21 @@ First, build the PSPDFKitSwift framework:
 * Open the terminal and `cd` into the `PSPDFKitSwift` directory
 * Run `rake compile`
 
-You should now have the `PDFFKitSwift.framework` in the `Build` folder. Next, add
-the `PSPDFKit.framework`,`PSPDFKitUI.framework` and `PDFFKitSwift.framework` to your project:
+You should now have the `PDFFKitSwift.framework` in the `Build` folder. Next, add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PDFFKitSwift.framework` to your project:
 
-* Follow the [*Getting Started*](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/) instructions for PSPDFKit.
+* Follow the [Getting Started](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/) instructions for PSPDFKit.
 
-* Perform steps (1) and (2) from the above *Getting Started* guide, Section
-  [Integrating the Dynamic Framework](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_integrating-the-dynamic-framework),
-  and add PSPDFKitSwift to your app similar to how you did it with PSPDFKit above. You
-  may also want to set up your [test targets](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_test-targets) accordingly.
-  **Note:** make sure to adapt the path for the "Run Script" build phase for PSPDFKitSwift.
+* Perform the first two steps from the above Getting Started guide in the [Integrating the Dynamic Framework](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_integrating-the-dynamic-framework) section,
+  and add PSPDFKitSwift to your app, similar to how you did it with PSPDFKit above. You
+  may also want to set up your [test targets](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_test-targets) accordingly. Be sure to adapt the path for the “Run Script” build phase for PSPDFKitSwift.
 
-You should now be able to build & run your app.
+You should now be able to build and run your app.
 
-**Important:** Link against frameworks from the `Frameworks` directory as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will no longer work without that additional library.
+**Important:** Link against frameworks from the `Frameworks` directory, as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will cease to work without that additional library.
 
 ## Limitations
 
-We plan to further evolve PSPDFKitSwift and do not yet guarantee API stability. This shouldn't stop you from using it, as changes will usually be easy to adopt.
+We plan to further evolve PSPDFKitSwift and do not yet guarantee API stability. However, this shouldn’t stop you from using it, as changes will usually be easy to adopt.
 
 ## Contributing
 
@@ -106,10 +97,7 @@ Technical notes:
 
 ## Known Issues
 
-**Linker warning when building without Carthage**. In order to support Carthage
-out-of-the-box with per-customer PSPDFKit URLs, we've added the _parent_
-Carthage build folder to the "Framework Search Paths". When building without
-Carthage, this produces the following warning:
+**Linker warning when building without Carthage**: In order to support Carthage out of the box with per-customer PSPDFKit URLs, we’ve added the _parent_ Carthage build folder to the “Framework Search Paths.” When building without Carthage, this produces the following warning:
 
 ```
 ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
@@ -117,4 +105,4 @@ ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDF
 
 ## License
 
-PSPDFKitSwift is released under a modified version of the BSD license, see [LICENSE.md](LICENSE.md).
+PSPDFKitSwift is released under a modified version of the BSD license — see [LICENSE.md](LICENSE.md).
