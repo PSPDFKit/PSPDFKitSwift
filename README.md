@@ -2,7 +2,7 @@
 
 # PSPDFKitSwift
 
-`PSPDFKitSwift.framework` is a set of wrappers and extensions that improve the Swift experience with PSPDFKit for iOS. The blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits of and methods used in this project.
+`PSPDFKitSwift.framework` is a set of wrappers and extensions that improve the Swift experience when working with PSPDFKit for iOS. The blog post [First-Class Swift API for Objective-C Frameworks](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) explains the benefits of and methods used in this project.
 
 **Note**: [PSPDFKit for iOS](https://pspdfkit.com/pdf-sdk/ios/) is a commercial product and requires a [paid license](https://pspdfkit.com/sales/). Please sign up for a [free trial](http://pspdfkit.com/try) to receive an evaluation license if you don’t yet have a production license.
 
@@ -26,7 +26,7 @@ Make sure you have access to PSPDFKit either as a customer or by signing up for 
 
 We assume you are familiar with [CocoaPods](https://cocoapods.org). If not, please consult the documentation first. 
 
-All it takes is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you have an existing [PSPDFKit CocoaPods integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/), simply replace `PSPDFKit` with the `PSPDFKit/Swift` subspec:
+All you need to do to get CocoaPods up and running is to add a `PSPDFKit/Swift` dependency to your `Podfile`. If you have an existing [PSPDFKit CocoaPods integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/), simply replace `PSPDFKit` with the `PSPDFKit/Swift` subspec:
 
 ``` Ruby
 # Replace `YourAppName` with your app's target name.
