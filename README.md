@@ -49,7 +49,7 @@ Now run `pod install`. Afterward, you should be able to build and run your proje
 
 ### Manual Setup
 
-**Note:** Manual setup is only for experts, and you should know what you are doing. If you are unsure of what to do, please use CocoaPods or Carthage instead.
+**Note:** Manual setup is only for experts, so you should know what you are doing. If you are unsure of what to do, please use CocoaPods or Carthage instead.
 
 First, build the PSPDFKitSwift framework:
 
