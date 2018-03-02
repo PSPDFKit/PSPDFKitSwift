@@ -56,7 +56,7 @@ First, build the PSPDFKitSwift framework:
 * Clone `git@github.com:PSPDFKit/PSPDFKitSwift.git`
 * Copy `PSPDFKit.framework` into `PSPDFKitSwift/Frameworks`
 * Copy `PSPDFKitUI.framework` into `PSPDFKitSwift/Frameworks`
-* Open the terminal and `cd` into the `PSPDFKitSwift` directory
+* Open the terminal and navigate to the `PSPDFKitSwift` directory
 * Run `rake compile`
 
 You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PSPDFKitSwift.framework` to your project:
@@ -92,7 +92,7 @@ Technical notes:
 
 ## Known Issues
 
-**Linker warning when building without Carthage**: In order to support Carthage out of the box with per-customer PSPDFKit URLs, we’ve added the _parent_ Carthage build folder to the “Framework Search Paths.” When building without Carthage, this produces the following warning:
+**Linker warning when building without Carthage**: In order to support Carthage out of the box with per-customer PSPDFKit URLs, we’ve added the _parent_ Carthage build folder to “Framework Search Paths.” When building without Carthage, this produces the following warning:
 
 ```
 ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
