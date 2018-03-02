@@ -30,7 +30,7 @@ To get a CocoaPods-based integration up and running, you need to add `PSPDFKitSw
 
 Your `Podfile` should look like this:
 
-``` Ruby
+```ruby
 # Replace `YourAppName` with your app's target name.
 
 pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.0.0'
@@ -94,7 +94,7 @@ Technical notes:
 
 **Linker warning when building without Carthage**: In order to support Carthage out of the box with per-customer PSPDFKit URLs, we’ve added the _parent_ Carthage build folder to “Framework Search Paths.” When building without Carthage, this produces the following warning:
 
-```
+```sh
 ld: warning: directory not found for option '-F/Users/desktopuser/Projects/PSPDFKit/PSPDFKitSwift/../../../Carthage/Build/iOS'
 ```
 
