@@ -26,7 +26,7 @@ Make sure you have access to PSPDFKit either as a customer or by signing up for 
 
 We assume you are familiar with [CocoaPods](https://cocoapods.org). If not, please consult the [CocoaPods documentation](https://guides.cocoapods.org/) first. 
 
-To get a CocoaPods-based integration up and running, you need to add `PSPDFKitSwift` as a dependency, and then modify your existing [PSPDFKit integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/) to use the `PSPDFKit/Swift` subspec.
+To get a CocoaPods-based integration up and running, you need to add `PSPDFKitSwift` as a dependency, and then modify your existing [PSPDFKit integration](https://pspdfkit.com/guides/ios/current/getting-started/using-cocoapods/) to use the `PSPDFKit/Swift` subspec.
 
 Your `Podfile` should look like this:
 
@@ -43,7 +43,7 @@ target :YourAppName do
 end
 ```
 
-**Note:** `PSPDFKitSwift` is not published in the public [CocoaPods Specs](https://github.com/CocoaPods/Specs). You have to reference the pod with the Git repository, as shown in the example above. Also, make sure to replace `YourAppName` with your app name and `YOUR_COCOAPODS_KEY` with your own key provided by PSPDFKit GmbH. You can find your key either in the [customer portal](https://customers.pspdfkit.com/) or by requesting an [evaluation license](https://pspdfkit.com/try/).
+**Note:** `PSPDFKitSwift` is not published in the public [CocoaPods Specs](https://github.com/CocoaPods/Specs). You have to reference the pod with the Git repository, as shown in the example above. Also, make sure to replace `YourAppName` with your app name and `YOUR_COCOAPODS_KEY` with your own key provided by PSPDFKit GmbH. If you are an existing customer, you can find your key in the [customer portal](https://customers.pspdfkit.com/). Otherwise, you can request an [evaluation license](https://pspdfkit.com/try/).
 
 Now run `pod install`. Afterward, you should be able to build and run your project without errors.
 
@@ -67,7 +67,7 @@ You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, a
 
 You should now be able to build and run your app.
 
-**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will cease to work without that additional library.
+**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will cease to work without it.
 
 ## Limitations
 
