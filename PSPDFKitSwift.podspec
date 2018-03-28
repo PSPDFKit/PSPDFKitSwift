@@ -17,17 +17,20 @@ Pod::Spec.new do |spec|
   spec.author = { "PSPDFKit GmbH" => "info@pspdfkit.com" }
   spec.social_media_url = "http://twitter.com/pspdfkit"
 
-  spec.platform = :ios, "11.0"
+  spec.ios.platform = :ios, "11.0"
   spec.ios.deployment_target = "9.0"
+  
+  spec.osx.platform = :osx, "10.13"
+  spec.osx.deployment_target = "10.12"
   
   spec.swift_version = "4.0.3"
   spec.cocoapods_version = '>= 1.4.0'
 
-  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git", :tag => '1.0.0' }
+  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git", :tag => '1.0.1' }
   spec.source_files = "Sources", "Sources/**/*.swift"
 
   spec.requires_arc = true
 
   spec.module_name = 'PSPDFKitSwift'
-  spec.dependency "PSPDFKit/Swift", "~> 7.4"
+  spec.dependency "PSPDFKit/Swift", "~> 7.5"
 end
