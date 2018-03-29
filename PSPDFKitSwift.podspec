@@ -16,11 +16,9 @@ Pod::Spec.new do |spec|
 
   spec.author = { "PSPDFKit GmbH" => "info@pspdfkit.com" }
   spec.social_media_url = "http://twitter.com/pspdfkit"
-
-  spec.ios.platform = :ios, "11.0"
-  spec.ios.deployment_target = "9.0"
   
-  spec.osx.platform = :osx, "10.13"
+  spec.platform = :ios, "11.0", :osx, "10.13"
+  spec.ios.deployment_target = "9.0"
   spec.osx.deployment_target = "10.12"
   
   spec.swift_version = "4.0.3"
