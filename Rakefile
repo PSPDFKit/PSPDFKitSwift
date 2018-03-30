@@ -53,9 +53,13 @@ VERBOSE = ENV['verbose'] || false
 
 CONFIGURATION = "Release"
 DERIVED_DATA = "#{DIRECTORY}/Xcode"
-SDK_SIM = "iphonesimulator11.2"
-SDK_IOS = "iphoneos11.2"
-XCODE_FLAGS = "-configuration #{CONFIGURATION} -scheme PSPDFKitSwift -derivedDataPath \"#{DERIVED_DATA}\""
+SDK_SIM = "iphonesimulator11.3"
+SDK_IOS = "iphoneos11.3"
+SDK_MACOS = "macosx10.13"
+SCHEME_IOS = "PSPDFKitSwift"
+SCHEME_MACOS = "PSPDFKitSwift-macOS"
+XCODE_FLAGS_IOS = "-configuration #{CONFIGURATION} -scheme #{SCHEME_IOS} -derivedDataPath \"#{DERIVED_DATA}\""
+XCODE_FLAGS_MACOS = "-configuration #{CONFIGURATION} -scheme #{SCHEME_MACOS} -derivedDataPath \"#{DERIVED_DATA}\""
 
 # ---------------------------------------------------------------- Colors ------
 
@@ -100,16 +104,32 @@ task :check do
   """
 end
 
+task 'check:macos' do
+  tell "Checking whether PSPDFKit.framework present"
+  assert File.directory?("Frameworks/PSPDFKit.framework"), """
+    #{ERROR} couldn't find #{BOLD}PSPDFKit.framework#{RESET}. Please download the
+    PSPDFKit framework and copy it into the #{BOLD}Frameworks/#{RESET} folder.
+    https://pspdfkit.com
+  """
+  
+  tell "Checking whether macOS SDK 10.13 present"
+  assert `xcrun xcodebuild -showsdks | grep macosx10.13`.to_s.strip.length > 0, """
+  #{ERROR} couldn't find macOS 10.13 SDK. Please make sure you have the appropriate
+  version of Xcode installed and use xcode-select to make it the default on
+  the command line.
+  """
+end
+
 desc "Compile PSPDFKitSwift framework (simulator)"
 task 'compile:simulator' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (simulator)"
-  run "xcrun xcodebuild -sdk #{SDK_SIM} #{XCODE_FLAGS}", :time => true, :quiet => true
+  run "xcrun xcodebuild -sdk #{SDK_SIM} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
 end
 
 desc "Compile PSPDFKitSwift framework (device)"
 task 'compile:device' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (device)"
-  run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS}", :time => true, :quiet => true
+  run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
 end
 
 desc "Copying univeral PSPDFKitSwift framework"
@@ -129,6 +149,11 @@ task :compile => ['compile:simulator', 'compile:device', 'install:simulator', 'i
   run "cp -R #{DIRECTORY}/PSPDFKitSwift.framework Frameworks/"
 end
 
+desc "Compile PSPDFKitSwift framework for macOS"
+task 'compile:macos' => ['check:macos', 'prepare:macos'] do
+  tell "Framework is ready at Frameworks/PSPDFKitSwift.framework"
+  run "xcrun xcodebuild -sdk #{SDK_MACOS} #{XCODE_FLAGS_MACOS}", :time => true, :quiet => true
+end
 
 desc "show help"
 task :help do
@@ -146,6 +171,13 @@ task :prepare do
   tell "Copying API Notes"
   run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
   run "cp PSPDFKitUI.apinotes Frameworks/PSPDFKitUI.framework/Headers/"
+end
+
+task 'prepare:macos' do
+  tell "Preparing"
+  run "mkdir -p #{DIRECTORY}", :log => false
+  tell "Copying API Notes"
+  run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
 end
 
 # ----------------------------------------------------------- Functions ------
