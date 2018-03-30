@@ -7,12 +7,11 @@
 //
 
 import Foundation
-@_exported import PSPDFKit //Clang module
+@_exported import PSPDFKit // Clang module
 
 public typealias StampAnnotation = PSPDFStampAnnotation
 
 extension PSPDFStampAnnotation {
-
     /// Parses the AP stream, searches for an image and loads it.
     /// This can return nil if the `image` has been set manually.
     /// @note This will not update `image` or `imageTransform` - do that manually if required.

@@ -7,12 +7,11 @@
 //
 
 import Foundation
-@_exported import PSPDFKit //Clang module
+@_exported import PSPDFKit // Clang module
 
 public typealias PDFAnnotation = PSPDFAnnotation
 
 extension PSPDFAnnotation {
-
     /// Additional action types.
     public var additionalActions: [PSPDFAnnotationTriggerEvent: PSPDFAction]? {
         get {
@@ -57,12 +56,12 @@ extension PSPDFAnnotation {
     public var rects: [CGRect]? {
         get {
             return __rects?.map { value -> CGRect in
-                value.cgRectValue
+                value.rectValue
             }
         }
         set {
             __rects = newValue?.map { cgRect -> NSValue in
-                NSValue(cgRect: cgRect)
+                NSValue(rect: cgRect)
             }
         }
     }
@@ -76,12 +75,12 @@ extension PSPDFAnnotation {
     public var points: [CGPoint]? {
         get {
             return __points?.map { value -> CGPoint in
-                value.cgPointValue
+                value.pointValue
             }
         }
         set {
             __points = newValue?.map { cgPoint -> NSValue in
-                NSValue(cgPoint: cgPoint)
+                NSValue(point: cgPoint)
             }
         }
     }

@@ -70,7 +70,9 @@ public enum RenderOption: RawRepresentable, Equatable {
     /// Controls if the "Sign here" overlay should be shown on unsigned signature fields.
     case drawSignHereOverlay(Bool)
     /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
+    #if PSPDF_SUPPORTS_CIFILTER
     case ciFilters([CIFilter])
+    #endif
 
     // swiftlint:disable:next function_body_length cyclomatic_complexity
     public init?(rawValue: RawValue) {
@@ -113,8 +115,10 @@ public enum RenderOption: RawRepresentable, Equatable {
                 self = .draw(closure)
             case .drawSignHereOverlay:
                 self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
+            #if PSPDF_SUPPORTS_CIFILTER
             case .ciFilterKey:
                 self = .ciFilters(value as? [CIFilter] ?? [])
+            #endif
             default:
                 fatalError("Unknown option")
             }
@@ -158,12 +162,14 @@ public enum RenderOption: RawRepresentable, Equatable {
             return [.drawBlockKey: unsafeBitCast(closure, to: AnyObject.self)]
         case .drawSignHereOverlay(let value):
             return [.drawSignHereOverlay: NSNumber(value: value)]
+        #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilters(let filters):
             return [.ciFilterKey: filters]
+        #endif
         }
     }
 
-    // swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable:next function_body_length cyclomatic_complexity
     public static func == (lhs: RenderOption, rhs: RenderOption) -> Bool {
         switch (lhs, rhs) {
         case (.preserveAspectRatio(let l), .preserveAspectRatio(let r)):
@@ -203,8 +209,10 @@ public enum RenderOption: RawRepresentable, Equatable {
             return true
         case (.drawSignHereOverlay(let l), .drawSignHereOverlay(let r)):
             return l == r
+        #if PSPDF_SUPPORTS_CIFILTER
         case (.ciFilters(let l), .ciFilters(let r)):
             return l == r
+        #endif
         default:
             return false
         }
@@ -357,7 +365,7 @@ extension Array where Element == RenderOption {
         }
         return false
     }
-
+    #if PSPDF_SUPPORTS_CIFILTER
     public var ciFilters: [CIFilter] {
         for option in self {
             if case .ciFilters(let filters) = option {
@@ -366,6 +374,7 @@ extension Array where Element == RenderOption {
         }
         return []
     }
+    #endif
 }
 
 internal class RenderRequestTests {
