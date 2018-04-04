@@ -32,5 +32,5 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.module_name = 'PSPDFKitSwift'
-  spec.dependency "PSPDFKit/Swift", "~> 7.5"
+  spec.dependency "PSPDFKit/Swift"
 end
