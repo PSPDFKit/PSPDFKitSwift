@@ -12,13 +12,13 @@ TVOS_DEPLOYMENT_TARGET = 9.0
 WATCHOS_DEPLOYMENT_TARGET = 3.0
 
 // Toolchain
-SDKROOT[sdk=iphoneos*] = iphoneos
+SDKROOT = iphoneos
 SDKROOT[sdk=macosx*] = macosx
 
 // Generating dSYM files is super slow, so skip during debug builds.
 DEBUG_INFORMATION_FORMAT = dwarf;
 
-INFOPLIST_FILE[sdk=iphoneos*]  = $(PROJECT_DIR)/Sources/PSPDFKitSwift/Info.plist
+INFOPLIST_FILE = $(PROJECT_DIR)/Sources/PSPDFKitSwift/Info.plist
 INFOPLIST_FILE[sdk=macosx*] = $(PROJECT_DIR)/Sources/PSPDFKitSwift/PSPDFKitSwift-mac-Info.plist
 
 // Swift
