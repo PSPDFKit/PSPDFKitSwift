@@ -108,6 +108,7 @@ Technical notes:
 * All PSPDFKitSwift source files live in the `Sources` directory.
 * PSPDFKit and PSPDFKitUI modules are re-exported automatically.
 * `PSPDFKit.apinotes` and `PSPDFKitUI.apinotes` are textile files that adjust the API visibility.
+* `PSPDFKitSwift-Private.xcodeproj` is used internally by the PSPDFKit Team. Always use `PSPDFKitSwift.xcodeproj`.
 
 ## Known Issues
 
