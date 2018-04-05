@@ -152,8 +152,12 @@ end
 
 desc "Compile PSPDFKitSwift framework for macOS"
 task 'compile:macos' => ['check:macos', 'prepare:macos'] do
-  tell "Framework is ready at Frameworks/PSPDFKitSwift.framework"
   run "xcrun xcodebuild -project #{XCODE_PROJECT} -sdk #{SDK_MACOS} #{XCODE_FLAGS_MACOS}", :time => true, :quiet => true
+  run "rm -rf #{DIRECTORY}/PSPDFKitSwift.framework"
+  run "cp -R #{DERIVED_DATA}/Build/Products/#{CONFIGURATION}/PSPDFKitSwift.framework #{DIRECTORY}/"
+  tell "Framework is ready at Frameworks/PSPDFKitSwift.framework"
+  run "rm -rf Frameworks/PSPDFKitSwift.framework"
+  run "cp -R #{DIRECTORY}/PSPDFKitSwift.framework Frameworks/"
 end
 
 desc "show help"
