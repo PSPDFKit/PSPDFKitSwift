@@ -23,11 +23,8 @@ private func ConvertToValueArray(pdfLines: [PDFLine]) -> [[NSValue]] {
 
 extension PSPDFInkAnnotation {
 
-    public convenience init(lines: [PSPDFDrawingPoint]) {
-        self.init(__lines: lines.map { value in
-            var value = value
-            return [NSValue(bytes: &value, objCType: _getObjCTypeEncoding(PSPDFDrawingPoint.self))]
-        })
+    public convenience init(lines: [PDFLine]) {
+        self.init(__lines: ConvertToValueArray(pdfLines: lines))
     }
 
     public var lines: [PDFLine]? {
