@@ -60,6 +60,7 @@ SCHEME_IOS = "PSPDFKitSwift"
 SCHEME_MACOS = "PSPDFKitSwift-macOS"
 XCODE_FLAGS_IOS = "-configuration #{CONFIGURATION} -scheme #{SCHEME_IOS} -derivedDataPath \"#{DERIVED_DATA}\""
 XCODE_FLAGS_MACOS = "-configuration #{CONFIGURATION} -scheme #{SCHEME_MACOS} -derivedDataPath \"#{DERIVED_DATA}\""
+XCODE_PROJECT = "PSPDFKitSwift.xcodeproj"
 
 # ---------------------------------------------------------------- Colors ------
 
@@ -123,13 +124,13 @@ end
 desc "Compile PSPDFKitSwift framework (simulator)"
 task 'compile:simulator' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (simulator)"
-  run "xcrun xcodebuild -sdk #{SDK_SIM} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
+  run "xcrun xcodebuild -project #{XCODE_PROJECT} -sdk #{SDK_SIM} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
 end
 
 desc "Compile PSPDFKitSwift framework (device)"
 task 'compile:device' => [:check, :prepare] do
   tell "Compiling PSPDFKitSwift framework (device)"
-  run "xcrun xcodebuild -sdk #{SDK_IOS} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
+  run "xcrun xcodebuild -project #{XCODE_PROJECT} -sdk #{SDK_IOS} #{XCODE_FLAGS_IOS}", :time => true, :quiet => true
 end
 
 desc "Copying univeral PSPDFKitSwift framework"
@@ -152,7 +153,7 @@ end
 desc "Compile PSPDFKitSwift framework for macOS"
 task 'compile:macos' => ['check:macos', 'prepare:macos'] do
   tell "Framework is ready at Frameworks/PSPDFKitSwift.framework"
-  run "xcrun xcodebuild -sdk #{SDK_MACOS} #{XCODE_FLAGS_MACOS}", :time => true, :quiet => true
+  run "xcrun xcodebuild -project #{XCODE_PROJECT} -sdk #{SDK_MACOS} #{XCODE_FLAGS_MACOS}", :time => true, :quiet => true
 end
 
 desc "show help"
