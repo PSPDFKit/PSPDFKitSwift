@@ -11,23 +11,26 @@ Pod::Spec.new do |spec|
   spec.version = "1.0.0"
   spec.summary = "A set of wrappers and extensions to the PSPDFKit frameworks to improve the Swift experience."
 
-  spec.homepage = "http://github.com/PSPDFKit/PSPDFKit.swift"
+  spec.homepage = "http://github.com/PSPDFKit/PSPDFKitSwift"
   spec.license = { :type => "BSD (modified)", :file => "LICENSE.md" }
 
   spec.author = { "PSPDFKit GmbH" => "info@pspdfkit.com" }
   spec.social_media_url = "http://twitter.com/pspdfkit"
-
-  spec.platform = :ios, "11.0"
+  
+  spec.platform = :ios, "11.0", :osx, "10.13"
   spec.ios.deployment_target = "9.0"
+  spec.osx.deployment_target = "10.12"
   
   spec.swift_version = "4.0.3"
   spec.cocoapods_version = '>= 1.4.0'
 
-  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKit.swift.git", :tag => '1.0.0' }
+  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKitSwift.git", :tag => '1.0.1' }
   spec.source_files = "Sources", "Sources/**/*.swift"
+  spec.ios.exclude_files = 'Sources/**/*+macOS.swift'
+  spec.osx.exclude_files = 'Sources/**/*+iOS.swift'
 
   spec.requires_arc = true
 
   spec.module_name = 'PSPDFKitSwift'
-  spec.dependency "PSPDFKit/Swift", "~> 7.4"
+  spec.dependency "PSPDFKit/Swift"
 end

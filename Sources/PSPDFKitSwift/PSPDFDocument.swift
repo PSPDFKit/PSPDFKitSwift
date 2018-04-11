@@ -46,8 +46,6 @@ extension PSPDFDocument {
         case animateView(Bool)
         /// Prevents the insertion or removal notifications from being sent.
         case suppressNotifications(Bool)
-        /// Marks the inserted annotations as being user created
-        case userCreated
 
         public typealias RawValue = [PSPDFAnnotationOption: Any]
 
@@ -58,8 +56,8 @@ extension PSPDFDocument {
                     self = .animateView((value as? NSNumber)?.boolValue ?? false)
                 case PSPDFAnnotationOption.suppressNotificationsKey:
                     self = .suppressNotifications((value as? NSNumber)?.boolValue ?? false)
-                case PSPDFAnnotationOption.userCreatedKey:
-                    self = .userCreated
+                default:
+                    return nil
                 }
             }
             return nil
@@ -71,8 +69,6 @@ extension PSPDFDocument {
                 return [PSPDFAnnotationOption.animateViewKey: NSNumber(value: value)]
             case .suppressNotifications(let value):
                 return [PSPDFAnnotationOption.suppressNotificationsKey: NSNumber(value: value)]
-            case .userCreated:
-                return [PSPDFAnnotationOption.userCreatedKey: NSNumber(value: true)]
             }
         }
     }

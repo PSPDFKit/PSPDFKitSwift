@@ -23,11 +23,8 @@ private func ConvertToValueArray(pdfLines: [PDFLine]) -> [[NSValue]] {
 
 extension PSPDFInkAnnotation {
 
-    public convenience init(lines: [PSPDFDrawingPoint]) {
-        self.init(__lines: lines.map { value in
-            var value = value
-            return [NSValue(bytes: &value, objCType: _getObjCTypeEncoding(PSPDFDrawingPoint.self))]
-        })
+    public convenience init(lines: [PDFLine]) {
+        self.init(__lines: ConvertToValueArray(pdfLines: lines))
     }
 
     public var lines: [PDFLine]? {
@@ -49,7 +46,7 @@ public typealias ViewLine = [CGPoint]
 /// bounds should be the size of the view.
 // swiftlint:disable:next identifier_name
 public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: Int, bounds: CGRect) -> [PDFLine] {
-    let lines = viewLines.map { $0.map({ NSValue(cgPoint: $0) }) }
+    let lines = viewLines.map { $0.map({ NSValue(point: $0) }) }
     let convertedBoxedLines = __PSPDFConvertViewLinesToPDFLines(lines, cropBox, UInt(rotation), bounds)
     return ConvertToDrawingPointArray(valueArray: convertedBoxedLines)
 }
@@ -57,7 +54,7 @@ public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: 
 /// Converts a single line of boxed `CGPoint`.
 // swiftlint:disable:next identifier_name
 public func ConvertToPDFLine(viewLine: ViewLine, cropBox: CGRect, rotation: Int, bounds: CGRect) -> PDFLine {
-    let line = viewLine.map { NSValue(cgPoint: $0) }
+    let line = viewLine.map { NSValue(point: $0) }
 
     return __PSPDFConvertViewLineToPDFLines(line, cropBox, UInt(rotation), bounds).map { $0.pspdf_drawingPointValue }
 }

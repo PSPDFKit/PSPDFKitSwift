@@ -70,7 +70,9 @@ public enum RenderOption: RawRepresentable, Equatable {
     /// Controls if the "Sign here" overlay should be shown on unsigned signature fields.
     case drawSignHereOverlay(Bool)
     /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
+    #if PSPDF_SUPPORTS_CIFILTER
     case ciFilters([CIFilter])
+    #endif
 
     // swiftlint:disable:next function_body_length cyclomatic_complexity
     public init?(rawValue: RawValue) {
@@ -113,8 +115,10 @@ public enum RenderOption: RawRepresentable, Equatable {
                 self = .draw(closure)
             case .drawSignHereOverlay:
                 self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
+            #if PSPDF_SUPPORTS_CIFILTER
             case .ciFilterKey:
                 self = .ciFilters(value as? [CIFilter] ?? [])
+            #endif
             default:
                 fatalError("Unknown option")
             }
@@ -158,53 +162,57 @@ public enum RenderOption: RawRepresentable, Equatable {
             return [.drawBlockKey: unsafeBitCast(closure, to: AnyObject.self)]
         case .drawSignHereOverlay(let value):
             return [.drawSignHereOverlay: NSNumber(value: value)]
+        #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilters(let filters):
             return [.ciFilterKey: filters]
+        #endif
         }
     }
 
-    // swiftlint:disable:next cyclomatic_complexity
+    // swiftlint:disable:next function_body_length cyclomatic_complexity
     public static func == (lhs: RenderOption, rhs: RenderOption) -> Bool {
         switch (lhs, rhs) {
-        case (.preserveAspectRatio(let l), .preserveAspectRatio(let r)):
-            return l == r
-        case (.ignoreDisplaySettings(let l), .ignoreDisplaySettings(let r)):
-            return l == r
-        case (.pageColor(let l), .pageColor(let r)):
-            return l == r
-        case (.inverted(let l), .inverted(let r)):
-            return l == r
-        case (.filters(let l), .filters(let r)):
-            return l == r
-        case (.interpolationQuality(let l), .interpolationQuality(let r)):
-            return l == r
-        case (.skipPageContent(let l), .skipPageContent(let r)):
-            return l == r
-        case (.overlayAnnotations(let l), .overlayAnnotations(let r)):
-            return l == r
-        case (.skipAnnotations(let l), .skipAnnotations(let r)):
-            return l == r
-        case (.ignorePageClip(let l), .ignorePageClip(let r)):
-            return l == r
-        case (.allowAntiAliasing(let l), .allowAntiAliasing(let r)):
-            return l == r
-        case (.backgroundFillColor(let l), .backgroundFillColor(let r)):
-            return l == r
-        case (.textRenderingUseCoreGraphics(let l), .textRenderingUseCoreGraphics(let r)):
-            return l == r
-        case (.textRenderingClearTypeEnabled(let l), .textRenderingClearTypeEnabled(let r)):
-            return l == r
-        case (.interactiveFormFillColor(let l), .interactiveFormFillColor(let r)):
-            return l == r
+        case (.preserveAspectRatio(let left), .preserveAspectRatio(let right)):
+            return left == right
+        case (.ignoreDisplaySettings(let left), .ignoreDisplaySettings(let right)):
+            return left == right
+        case (.pageColor(let left), .pageColor(let right)):
+            return left == right
+        case (.inverted(let left), .inverted(let right)):
+            return left == right
+        case (.filters(let left), .filters(let right)):
+            return left == right
+        case (.interpolationQuality(let left), .interpolationQuality(let right)):
+            return left == right
+        case (.skipPageContent(let left), .skipPageContent(let right)):
+            return left == right
+        case (.overlayAnnotations(let left), .overlayAnnotations(let right)):
+            return left == right
+        case (.skipAnnotations(let left), .skipAnnotations(let right)):
+            return left == right
+        case (.ignorePageClip(let left), .ignorePageClip(let right)):
+            return left == right
+        case (.allowAntiAliasing(let left), .allowAntiAliasing(let right)):
+            return left == right
+        case (.backgroundFillColor(let left), .backgroundFillColor(let right)):
+            return left == right
+        case (.textRenderingUseCoreGraphics(let left), .textRenderingUseCoreGraphics(let right)):
+            return left == right
+        case (.textRenderingClearTypeEnabled(let left), .textRenderingClearTypeEnabled(let right)):
+            return left == right
+        case (.interactiveFormFillColor(let left), .interactiveFormFillColor(let right)):
+            return left == right
         // swiftlint:disable:next empty_enum_arguments
         case (.draw(_), .draw(_)):
             // Can't check if the closure is equal,
             // instead just check if draw closure is set
             return true
-        case (.drawSignHereOverlay(let l), .drawSignHereOverlay(let r)):
-            return l == r
-        case (.ciFilters(let l), .ciFilters(let r)):
-            return l == r
+        case (.drawSignHereOverlay(let left), .drawSignHereOverlay(let right)):
+            return left == right
+        #if PSPDF_SUPPORTS_CIFILTER
+        case (.ciFilters(let left), .ciFilters(let right)):
+            return left == right
+        #endif
         default:
             return false
         }
@@ -357,7 +365,7 @@ extension Array where Element == RenderOption {
         }
         return false
     }
-
+    #if PSPDF_SUPPORTS_CIFILTER
     public var ciFilters: [CIFilter] {
         for option in self {
             if case .ciFilters(let filters) = option {
@@ -366,6 +374,7 @@ extension Array where Element == RenderOption {
         }
         return []
     }
+    #endif
 }
 
 internal class RenderRequestTests {
