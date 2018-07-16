@@ -26,8 +26,8 @@ Pod::Spec.new do |spec|
 
   spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKitSwift.git", :tag => '1.0.2' }
   spec.source_files = "Sources", "Sources/**/*.swift"
-  spec.ios.exclude_files = 'Sources/**/*+macOS.swift'
-  spec.osx.exclude_files = 'Sources/**/*+iOS.swift'
+  spec.ios.exclude_files = "Sources/**/*+macOS.swift"
+  spec.osx.exclude_files = "Sources/**/*+iOS.swift", "Sources/**/PSPDFViewController.swift"
 
   spec.requires_arc = true
 
