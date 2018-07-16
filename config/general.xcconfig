@@ -7,7 +7,7 @@ TARGETED_DEVICE_FAMILY = 1,2,3,4
 
 // Deployment targets
 MACOSX_DEPLOYMENT_TARGET = 10.12
-IPHONEOS_DEPLOYMENT_TARGET = 9.0
+IPHONEOS_DEPLOYMENT_TARGET = 10.0
 TVOS_DEPLOYMENT_TARGET = 9.0
 WATCHOS_DEPLOYMENT_TARGET = 3.0
 
@@ -20,6 +20,10 @@ DEBUG_INFORMATION_FORMAT = dwarf;
 
 INFOPLIST_FILE = $(PROJECT_DIR)/Sources/PSPDFKitSwift/Info.plist
 INFOPLIST_FILE[sdk=macosx*] = $(PROJECT_DIR)/Sources/PSPDFKitSwift/PSPDFKitSwift-mac-Info.plist
+
+// Enable bitcode is YES by default on iOS. Mac doesn't support it, so setting that flag would break Mac.
+ENABLE_BITCODE = NO
+ENABLE_BITCODE[sdk=iphoneos*] = YES
 
 // Swift
 SWIFT_VERSION = 4.0
@@ -38,4 +42,3 @@ PRODUCT_MODULE_NAME = PSPDFKitSwift
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(CONFIGURATION_BUILD_DIR) $(PROJECT_DIR)/Frameworks
 
 DEFINES_MODULE = NO
-

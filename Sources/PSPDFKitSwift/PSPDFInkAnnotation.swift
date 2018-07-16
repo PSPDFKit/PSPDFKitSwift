@@ -24,16 +24,16 @@ private func ConvertToValueArray(pdfLines: [PDFLine]) -> [[NSValue]] {
 extension PSPDFInkAnnotation {
 
     public convenience init(lines: [PDFLine]) {
-        self.init(__lines: ConvertToValueArray(pdfLines: lines))
+        self.init(lines: ConvertToValueArray(pdfLines: lines))
     }
 
-    public var lines: [PDFLine]? {
+    public var linesTyped: [PDFLine]? {
         get {
-            guard let valueLines = __lines else { return nil }
+            guard let valueLines = lines else { return nil }
             return ConvertToDrawingPointArray(valueArray: valueLines)
         }
         set {
-            __lines = newValue != nil ? ConvertToValueArray(pdfLines: newValue!) : nil
+            lines = newValue != nil ? ConvertToValueArray(pdfLines: newValue!) : nil
         }
     }
 }
@@ -47,7 +47,7 @@ public typealias ViewLine = [CGPoint]
 // swiftlint:disable:next identifier_name
 public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: Int, bounds: CGRect) -> [PDFLine] {
     let lines = viewLines.map { $0.map({ NSValue(point: $0) }) }
-    let convertedBoxedLines = __PSPDFConvertViewLinesToPDFLines(lines, cropBox, UInt(rotation), bounds)
+    let convertedBoxedLines = PSPDFConvertViewLinesToPDFLines(lines, cropBox, UInt(rotation), bounds)
     return ConvertToDrawingPointArray(valueArray: convertedBoxedLines)
 }
 
@@ -56,11 +56,11 @@ public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: 
 public func ConvertToPDFLine(viewLine: ViewLine, cropBox: CGRect, rotation: Int, bounds: CGRect) -> PDFLine {
     let line = viewLine.map { NSValue(point: $0) }
 
-    return __PSPDFConvertViewLineToPDFLines(line, cropBox, UInt(rotation), bounds).map { $0.pspdf_drawingPointValue }
+    return PSPDFConvertViewLineToPDFLines(line, cropBox, UInt(rotation), bounds).map { $0.pspdf_drawingPointValue }
 }
 
 /// Calculates the bounding box from lines.
 // swiftlint:disable:next identifier_name
 public func BoundingBoxFromLines(_ lines: [PSPDFDrawingPoint], width: Double) {
-    __PSPDFBoundingBoxFromLines(lines, CGFloat(width))
+    PSPDFBoundingBoxFromLines(lines, CGFloat(width))
 }

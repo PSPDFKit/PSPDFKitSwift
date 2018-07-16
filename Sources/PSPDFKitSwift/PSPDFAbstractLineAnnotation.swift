@@ -10,7 +10,7 @@ import Foundation
 @_exported import PSPDFKit //Clang module
 
 extension PSPDFAbstractLineAnnotation {
-    public convenience init(points: [CGPoint]) {
-        self.init(__points: points.map { NSValue(point: $0) })
+    public convenience init(pointsTyped: [CGPoint]) {
+        self.init(points: pointsTyped.map { NSValue(point: $0) })
     }
 }

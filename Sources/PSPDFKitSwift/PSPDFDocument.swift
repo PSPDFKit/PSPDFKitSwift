@@ -78,12 +78,12 @@ extension PSPDFDocument {
      AP (Appearance Stream) generation takes more time but will maximize compatibility with PDF Viewers that don't implement the complete spec for annotations.
      The default value for this dict is `[.generateAppearanceStreamForTypeKey: [.freeText, .ink, .polygon, .polyLine, .line, .square, .circle, .stamp, .widget]]`
      */
-    public var annotationWritingOptions: [PSPDFAnnotationWriteOptions: AnnotationType]? {
+    public var annotationWritingOptionsTyped: [PSPDFAnnotationWriteOptions: AnnotationType]? {
         get {
-            return __annotationWritingOptions?.mapValues { AnnotationType(rawValue: UInt(truncating: $0)) }
+            return annotationWritingOptions?.mapValues { AnnotationType(rawValue: UInt(truncating: $0)) }
         }
         set {
-            __annotationWritingOptions = newValue?.mapValues { $0.rawValue as NSNumber }
+            annotationWritingOptions = newValue?.mapValues { $0.rawValue as NSNumber }
         }
     }
 
@@ -95,7 +95,7 @@ extension PSPDFDocument {
      @warning Might change the `page` property if multiple documentProviders are set.
      */
     @discardableResult
-    public func add(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
+    public func add(annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
         var internalOptions = [PSPDFAnnotationOption: Any]()
         options.forEach { option in
             let rawOptions = option.rawValue
@@ -104,7 +104,7 @@ extension PSPDFDocument {
             })
         }
 
-        return __add(annotations, options: internalOptions)
+        return add(annotations, options: internalOptions)
     }
 
     /**
@@ -115,7 +115,7 @@ extension PSPDFDocument {
      This might be the case for form annotations or other objects that return NO for `isDeletable`.
      */
     @discardableResult
-    public func remove(_ annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
+    public func remove(annotations: [PSPDFAnnotation], options: [AnnotationOption] = []) -> Bool {
         var internalOptions = [PSPDFAnnotationOption: Any]()
         options.forEach { option in
             let rawOptions = option.rawValue
@@ -124,7 +124,7 @@ extension PSPDFDocument {
             })
         }
 
-        return __remove(annotations, options: internalOptions)
+        return remove(annotations, options: internalOptions)
     }
 }
 
@@ -172,8 +172,8 @@ extension PSPDFDocument {
     ///
     /// - Parameter options: See `SaveOption` documentation for more details.
     /// - Throws: NSInternalInconsistencyException if save options are not valid.
-    public func save(options: [SaveOption] = []) throws {
-        try __save(options: SaveOption.mapToDictionary(options: options))
+    public func save(options: [SaveOption]) throws {
+        try save(options: SaveOption.mapToDictionary(options: options))
     }
 
     /// Saves the document and all of its linked data, including bookmarks and
@@ -183,7 +183,7 @@ extension PSPDFDocument {
     ///   - options: See `SaveOption` documentation for more details.
     ///   - completion: Called on the *main thread* after the save operation finishes.
     public func save(options: [SaveOption], completion: @escaping (Result<[PSPDFAnnotation], AnyError>) -> Void) {
-        __save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
+        save(options: SaveOption.mapToDictionary(options: options), completionHandler: { error, annotations in
             if let error = error {
                 completion(Result.failure(AnyError(error)))
                 return
@@ -213,9 +213,9 @@ extension PSPDFDocument {
      *  `PSPDFRenderBackgroundFillColorKey` to `UIColor.blackColor` to work around
      *  white/gray hairlines at document borders.
      */
-    public func setRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
+    public func setRenderOptionsTyped(_ options: [RenderOption] = [], type: RenderType) {
         let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
-        self.__setRenderOptions(optionsDict, type: type)
+        self.setRenderOptions(optionsDict, type: type)
     }
 
     /**
@@ -226,7 +226,7 @@ extension PSPDFDocument {
      */
     public func updateRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
         let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
-        self.__updateRenderOptions(optionsDict, type: type)
+        self.updateRenderOptions(optionsDict, type: type)
     }
 
     /**
@@ -238,8 +238,8 @@ extension PSPDFDocument {
      *
      *  @return The render dictionary. Guaranteed to always return a dictionary.
      */
-    public func renderOptions(for type: RenderType, context: Any?) -> [RenderOption] {
-        return self.__renderOptions(for: type, context: context).compactMap({ (entry) -> RenderOption? in
+    public func renderOptionsTyped(for type: RenderType, context: Any?) -> [RenderOption] {
+        return self.renderOptions(for: type, context: context).compactMap({ (entry) -> RenderOption? in
             RenderOption(rawValue: [entry.key: entry.value])
         })
     }
@@ -250,7 +250,7 @@ internal class PDFDocumentTests {
     static func test() throws {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
-        document.add([ /* TODO: */ ], options: [.animateView(true), .suppressNotifications(false)])
+        document.add(annotations: [ /* TODO: */ ], options: [.animateView(true), .suppressNotifications(false)])
         try document.save(options: [.security(securityOptions), .forceRewrite])
         document.save(options: [.security(securityOptions), .forceRewrite]) { result in
             _ = try! result.dematerialize()
