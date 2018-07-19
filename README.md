@@ -69,8 +69,6 @@ You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, a
 
 You should now be able to build and run your app.
 
-**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles.
-
 #### macOS
 
 First, build the PSPDFKitSwift framework:
@@ -85,8 +83,6 @@ You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, a
 * Follow the [Getting Started](https://pspdfkit.com/guides/macos/current/getting-started/integrating-pspdfkit/) instructions for PSPDFKit. You may also want to set up your [test targets](https://pspdfkit.com/guides/ios/current/getting-started/integrating-pspdfkit/#toc_test-targets) accordingly. Be sure to adapt the path for the “Run Script” build phase for PSPDFKitSwift.
 
 You should now be able to build and run your app.
-
-**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles.
 
 ## Limitations
 
