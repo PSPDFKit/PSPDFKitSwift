@@ -18,7 +18,7 @@ extension PSPDFPolygonAnnotation {
     /// - Parameters:
     ///   - points: Polygon points.
     ///   - intentType: Annotation intent.
-    public convenience init(points: [CGPoint], intentType: PSPDFPolygonAnnotationIntent = .none) {
-        self.init(__points: points.map { NSValue(point: $0) }, intentType: intentType)
+    public convenience init(pointsTyped: [CGPoint], intentType: PSPDFPolygonAnnotationIntent = .none) {
+        self.init(points: pointsTyped.map { NSValue(point: $0) }, intentType: intentType)
     }
 }

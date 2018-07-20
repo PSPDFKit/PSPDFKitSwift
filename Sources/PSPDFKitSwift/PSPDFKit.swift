@@ -14,7 +14,7 @@ extension PSPDFKitObject {
     /**
      Custom log handler to forward logging to a different system.
 
-     PSPDFKit uses `os_log` or falls back to `NSLog` on older OS versions (iOS 9)
+     PSPDFKit uses `os_log`
      Setting this to NULL will reset the default behavior.
 
      @note Usage example:

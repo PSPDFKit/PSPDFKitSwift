@@ -53,8 +53,8 @@ VERBOSE = ENV['verbose'] || false
 
 CONFIGURATION = "Release"
 DERIVED_DATA = "#{DIRECTORY}/Xcode"
-SDK_SIM = "iphonesimulator11.3"
-SDK_IOS = "iphoneos11.3"
+SDK_SIM = "iphonesimulator11.4"
+SDK_IOS = "iphoneos11.4"
 SDK_MACOS = "macosx10.13"
 SCHEME_IOS = "PSPDFKitSwift"
 SCHEME_MACOS = "PSPDFKitSwift-macOS"
@@ -173,16 +173,11 @@ end
 task :prepare do
   tell "Preparing"
   run "mkdir -p #{DIRECTORY}", :log => false
-  tell "Copying API Notes"
-  run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
-  run "cp PSPDFKitUI.apinotes Frameworks/PSPDFKitUI.framework/Headers/"
 end
 
 task 'prepare:macos' do
   tell "Preparing"
   run "mkdir -p #{DIRECTORY}", :log => false
-  tell "Copying API Notes"
-  run "cp PSPDFKit.apinotes Frameworks/PSPDFKit.framework/Headers/"
 end
 
 # ----------------------------------------------------------- Functions ------

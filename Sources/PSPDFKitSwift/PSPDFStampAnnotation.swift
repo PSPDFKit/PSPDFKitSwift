@@ -17,7 +17,7 @@ extension PSPDFStampAnnotation {
     /// @note This will not update `image` or `imageTransform` - do that manually if required.
     public func loadImage(with transform: inout CGAffineTransform) throws -> UIImage {
         return try withUnsafeMutablePointer(to: &transform) { [unowned self] (pointer) -> UIImage in
-            try self.__loadImage(with: pointer)
+            try self.loadImage(with: pointer)
         }
     }
 }

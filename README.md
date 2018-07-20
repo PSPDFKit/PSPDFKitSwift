@@ -33,7 +33,7 @@ Your `Podfile` should look like this:
 ```ruby
 # Replace `YourAppName` with your app's target name.
 
-pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.0.0'
+pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.0.2'
 
 target :YourAppName do
   use_frameworks!
@@ -69,8 +69,6 @@ You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, a
 
 You should now be able to build and run your app.
 
-**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` and `PSPDFKitUI.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will cease to work without it.
-
 #### macOS
 
 First, build the PSPDFKitSwift framework:
@@ -86,8 +84,6 @@ You should now have the `PSPDFKitSwift.framework` in the `Build` folder. Next, a
 
 You should now be able to build and run your app.
 
-**Important:** Be sure to link against frameworks from the `Frameworks` directory, as those are patched bundles. Compiling PSPDFKitSwift modifies `PSPDFKit.framework` by adding [`.apinotes`](https://pspdfkit.com/blog/2018/first-class-swift-api-for-objective-c-frameworks/) files to both. If you copy those modified frameworks to any other Swift projects, be sure to also include PSPDFKitSwift, as they will cease to work without it.
-
 ## Limitations
 
 PSPDFKitSwift is a work in progress, and we have more plans for improving upon it in the future. As such, we do not yet guarantee API stability. However, this shouldn’t stop you from using it, as changes will usually be easy to adopt.
@@ -99,7 +95,7 @@ If you want to work on PSPDFKitSwift, perform the following steps:
 * Clone `git@github.com:PSPDFKit/PSPDFKitSwift.git`
 * Copy `PSPDFKit.framework` into `PSPDFKitSwift/Frameworks`
 * Copy `PSPDFKitUI.framework` into `PSPDFKitSwift/Frameworks` (iOS only)
-* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 9.3
+* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 9.4.1
 
 Please [sign our CLA agreement](https://pspdfkit.com/guides/web/current/miscellaneous/contributing/) so we can accept your pull requests.
 

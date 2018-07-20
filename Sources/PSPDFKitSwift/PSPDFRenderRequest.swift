@@ -14,8 +14,8 @@ public typealias RenderType = PSPDFRenderType
 public typealias RenderFilter = PSPDFRenderFilter
 
 // Replaces original Objective-C `PSPDFRenderDrawBlock`. See https://bugs.swift.org/browse/SR-6873
-public typealias PSPDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void
-public typealias RenderDrawHandler = PSPDFRenderDrawBlock
+public typealias PDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void
+public typealias RenderDrawHandler = PDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
 public enum RenderOption: RawRepresentable, Equatable {
@@ -111,7 +111,7 @@ public enum RenderOption: RawRepresentable, Equatable {
             case .interactiveFormFillColorKey:
                 self = .interactiveFormFillColor(value as? UIColor ?? .black)
             case .drawBlockKey:
-                let closure: PSPDFRenderDrawBlock = unsafeBitCast(value, to: PSPDFRenderDrawBlock.self)
+                let closure: PDFRenderDrawBlock = unsafeBitCast(value, to: PSPDFRenderDrawBlock.self)
                 self = .draw(closure)
             case .drawSignHereOverlay:
                 self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
@@ -137,7 +137,7 @@ public enum RenderOption: RawRepresentable, Equatable {
         case .inverted(let value):
             return [.invertedKey: NSNumber(value: value)]
         case .filters(let filters):
-            return [.filtersKey: filters]
+            return [.filtersKey: NSNumber(value: filters.rawValue)]
         case .interpolationQuality(let value):
             return [.interpolationQualityKey: value.rawValue]
         case .skipPageContent(let value):

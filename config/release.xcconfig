@@ -1,0 +1,4 @@
+#include "general.xcconfig"
+
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+BITCODE_GENERATION_MODE[sdk=iphoneos*] = bitcode
