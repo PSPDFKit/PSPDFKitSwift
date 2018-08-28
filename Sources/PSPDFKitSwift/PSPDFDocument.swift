@@ -214,7 +214,9 @@ extension PSPDFDocument {
      *  white/gray hairlines at document borders.
      */
     public func setRenderOptionsTyped(_ options: [RenderOption] = [], type: RenderType) {
-        let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
+        let optionsDict = options.reduce(into: [:]) { result, option in
+            result[option.rawValue.renderOption] = option.rawValue.value
+        }
         self.setRenderOptions(optionsDict, type: type)
     }
 
@@ -225,7 +227,9 @@ extension PSPDFDocument {
      *  @param type    The type you want to change.
      */
     public func updateRenderOptions(_ options: [RenderOption] = [], type: RenderType) {
-        let optionsDict = options.map({ $0.rawValue }).reduce([:]) { $0.merging($1) { _, new in new } }
+        let optionsDict = options.reduce(into: [:]) { result, option in
+            result[option.rawValue.renderOption] = option.rawValue.value
+        }
         self.updateRenderOptions(optionsDict, type: type)
     }
 
@@ -239,9 +243,9 @@ extension PSPDFDocument {
      *  @return The render dictionary. Guaranteed to always return a dictionary.
      */
     public func renderOptionsTyped(for type: RenderType, context: Any?) -> [RenderOption] {
-        return self.renderOptions(for: type, context: context).compactMap({ (entry) -> RenderOption? in
-            RenderOption(rawValue: [entry.key: entry.value])
-        })
+        return self.renderOptions(for: type, context: context).map { entry in
+            RenderOption(rawValue: (entry.key, entry.value))
+        }
     }
 
 }

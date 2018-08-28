@@ -19,7 +19,7 @@ public typealias RenderDrawHandler = PDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
 public enum RenderOption: RawRepresentable, Equatable {
-    public typealias RawValue = [PSPDFRenderOption: Any]
+    public typealias RawValue = (renderOption: PSPDFRenderOption, value: Any)
 
     /// Changes the rendering to preserve the aspect ratio of the image.
     case preserveAspectRatio(Bool)
@@ -75,96 +75,94 @@ public enum RenderOption: RawRepresentable, Equatable {
     #endif
 
     // swiftlint:disable:next function_body_length cyclomatic_complexity
-    public init?(rawValue: RawValue) {
-        for (key, value) in rawValue {
-            switch key {
-            case .preserveAspectRatioKey:
-                self = .preserveAspectRatio((value as? NSNumber)?.boolValue ?? false)
-            case .ignoreDisplaySettingsKey:
-                self = .ignoreDisplaySettings((value as? NSNumber)?.boolValue ?? false)
-            case .pageColorKey:
-                self = .pageColor(value as? UIColor ?? .white)
-            case .invertedKey:
-                self = .inverted((value as? NSNumber)?.boolValue ?? false)
-            case .filtersKey:
-                let rawValue = (value as? NSNumber)?.uintValue ?? .init(bitPattern: 0)
-                self = .filters(RenderFilter(rawValue: rawValue))
-            case .interpolationQualityKey:
-                let qualityValue = CGInterpolationQuality(rawValue: (value as? NSNumber)?.int32Value ?? CGInterpolationQuality.default.rawValue)
-                self = .interpolationQuality(qualityValue ?? CGInterpolationQuality.default)
-            case .skipPageContentKey:
-                self = .skipPageContent((value as? NSNumber)?.boolValue ?? false)
-            case .overlayAnnotationsKey:
-                self = .overlayAnnotations((value as? NSNumber)?.boolValue ?? false)
-            case .skipAnnotationArrayKey:
-                self = .skipAnnotations(value as? [PDFAnnotation] ?? [])
-            case .ignorePageClipKey:
-                self = .ignorePageClip((value as? NSNumber)?.boolValue ?? false)
-            case .allowAntiAliasingKey:
-                self = .allowAntiAliasing((value as? NSNumber)?.boolValue ?? false)
-            case .backgroundFillColorKey:
-                self = .backgroundFillColor(value as? UIColor ?? .black)
-            case .textRenderingUseCoreGraphicsKey:
-                self = .textRenderingUseCoreGraphics((value as? NSNumber)?.boolValue ?? false)
-            case .textRenderingClearTypeEnabledKey:
-                self = .textRenderingClearTypeEnabled((value as? NSNumber)?.boolValue ?? false)
-            case .interactiveFormFillColorKey:
-                self = .interactiveFormFillColor(value as? UIColor ?? .black)
-            case .drawBlockKey:
-                let closure: PDFRenderDrawBlock = unsafeBitCast(value, to: PSPDFRenderDrawBlock.self)
-                self = .draw(closure)
-            case .drawSignHereOverlay:
-                self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
-            #if PSPDF_SUPPORTS_CIFILTER
-            case .ciFilterKey:
-                self = .ciFilters(value as? [CIFilter] ?? [])
-            #endif
-            default:
-                fatalError("Unknown option")
-            }
+    public init(rawValue: RawValue) {
+        let (renderOption, value) = rawValue
+        switch renderOption {
+        case .preserveAspectRatioKey:
+            self = .preserveAspectRatio((value as? NSNumber)?.boolValue ?? false)
+        case .ignoreDisplaySettingsKey:
+            self = .ignoreDisplaySettings((value as? NSNumber)?.boolValue ?? false)
+        case .pageColorKey:
+            self = .pageColor(value as? UIColor ?? .white)
+        case .invertedKey:
+            self = .inverted((value as? NSNumber)?.boolValue ?? false)
+        case .filtersKey:
+            let rawValue = (value as? NSNumber)?.uintValue ?? .init(bitPattern: 0)
+            self = .filters(RenderFilter(rawValue: rawValue))
+        case .interpolationQualityKey:
+            let qualityValue = CGInterpolationQuality(rawValue: (value as? NSNumber)?.int32Value ?? CGInterpolationQuality.default.rawValue)
+            self = .interpolationQuality(qualityValue ?? CGInterpolationQuality.default)
+        case .skipPageContentKey:
+            self = .skipPageContent((value as? NSNumber)?.boolValue ?? false)
+        case .overlayAnnotationsKey:
+            self = .overlayAnnotations((value as? NSNumber)?.boolValue ?? false)
+        case .skipAnnotationArrayKey:
+            self = .skipAnnotations(value as? [PDFAnnotation] ?? [])
+        case .ignorePageClipKey:
+            self = .ignorePageClip((value as? NSNumber)?.boolValue ?? false)
+        case .allowAntiAliasingKey:
+            self = .allowAntiAliasing((value as? NSNumber)?.boolValue ?? false)
+        case .backgroundFillColorKey:
+            self = .backgroundFillColor(value as? UIColor ?? .black)
+        case .textRenderingUseCoreGraphicsKey:
+            self = .textRenderingUseCoreGraphics((value as? NSNumber)?.boolValue ?? false)
+        case .textRenderingClearTypeEnabledKey:
+            self = .textRenderingClearTypeEnabled((value as? NSNumber)?.boolValue ?? false)
+        case .interactiveFormFillColorKey:
+            self = .interactiveFormFillColor(value as? UIColor ?? .black)
+        case .drawBlockKey:
+            let closure: RenderDrawHandler = unsafeBitCast(value as AnyObject, to: RenderDrawHandler.self)
+            self = .draw(closure)
+        case .drawSignHereOverlay:
+            self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
+        #if PSPDF_SUPPORTS_CIFILTER
+        case .ciFilterKey:
+            self = .ciFilters(value as? [CIFilter] ?? [])
+        #endif
+        default:
+            fatalError("Unknown option")
         }
-        return nil
     }
 
     public var rawValue: RawValue {
         switch self {
         case .preserveAspectRatio(let value):
-            return [.preserveAspectRatioKey: NSNumber(value: value)]
+            return (.preserveAspectRatioKey, NSNumber(value: value))
         case .ignoreDisplaySettings(let value):
-            return [.ignoreDisplaySettingsKey: NSNumber(value: value)]
+            return (.ignoreDisplaySettingsKey, NSNumber(value: value))
         case .pageColor(let value):
-            return [.pageColorKey: value]
+            return (.pageColorKey, value)
         case .inverted(let value):
-            return [.invertedKey: NSNumber(value: value)]
+            return (.invertedKey, NSNumber(value: value))
         case .filters(let filters):
-            return [.filtersKey: NSNumber(value: filters.rawValue)]
+            return (.filtersKey, NSNumber(value: filters.rawValue))
         case .interpolationQuality(let value):
-            return [.interpolationQualityKey: value.rawValue]
+            return (.interpolationQualityKey, value.rawValue)
         case .skipPageContent(let value):
-            return [.skipPageContentKey: NSNumber(value: value)]
+            return (.skipPageContentKey, NSNumber(value: value))
         case .overlayAnnotations(let value):
-            return [.overlayAnnotationsKey: NSNumber(value: value)]
+            return (.overlayAnnotationsKey, NSNumber(value: value))
         case .skipAnnotations(let annotations):
-            return [.skipAnnotationArrayKey: annotations]
+            return (.skipAnnotationArrayKey, annotations)
         case .ignorePageClip(let value):
-            return [.ignorePageClipKey: NSNumber(value: value)]
+            return (.ignorePageClipKey, NSNumber(value: value))
         case .allowAntiAliasing(let value):
-            return [.skipPageContentKey: NSNumber(value: value)]
+            return (.skipPageContentKey, NSNumber(value: value))
         case .backgroundFillColor(let color):
-            return [.backgroundFillColorKey: color]
+            return (.backgroundFillColorKey, color)
         case .textRenderingUseCoreGraphics(let value):
-            return [.skipPageContentKey: NSNumber(value: value)]
+            return (.skipPageContentKey, NSNumber(value: value))
         case .textRenderingClearTypeEnabled(let value):
-            return [.textRenderingClearTypeEnabledKey: NSNumber(value: value)]
+            return (.textRenderingClearTypeEnabledKey, NSNumber(value: value))
         case .interactiveFormFillColor(let color):
-            return [.interactiveFormFillColorKey: color]
+            return (.interactiveFormFillColorKey, color)
         case .draw(let closure):
-            return [.drawBlockKey: unsafeBitCast(closure, to: AnyObject.self)]
+            return (.drawBlockKey, unsafeBitCast(closure, to: AnyObject.self))
         case .drawSignHereOverlay(let value):
-            return [.drawSignHereOverlay: NSNumber(value: value)]
+            return (.drawSignHereOverlay, NSNumber(value: value))
         #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilters(let filters):
-            return [.ciFilterKey: filters]
+            return (.ciFilterKey, filters)
         #endif
         }
     }
