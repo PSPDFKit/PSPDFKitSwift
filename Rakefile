@@ -53,9 +53,9 @@ VERBOSE = ENV['verbose'] || false
 
 CONFIGURATION = "Release"
 DERIVED_DATA = "#{DIRECTORY}/Xcode"
-SDK_SIM = "iphonesimulator11.4"
-SDK_IOS = "iphoneos11.4"
-SDK_MACOS = "macosx10.13"
+SDK_SIM = "iphonesimulator12.0"
+SDK_IOS = "iphoneos12.0"
+SDK_MACOS = "macosx10.14"
 SCHEME_IOS = "PSPDFKitSwift"
 SCHEME_MACOS = "PSPDFKitSwift-macOS"
 XCODE_FLAGS_IOS = "-configuration #{CONFIGURATION} -scheme #{SCHEME_IOS} -derivedDataPath \"#{DERIVED_DATA}\""
@@ -97,9 +97,9 @@ task :check do
     https://pspdfkit.com
   """
 
-  tell "Checking whether iOS SDK 11 present"
-  assert `xcrun xcodebuild -showsdks | grep iphoneos11`.to_s.strip.length > 0, """
-  #{ERROR} couldn't find iOS 11 SDK. Please make sure you have the appropriate
+  tell "Checking whether iOS SDK 12 present"
+  assert `xcrun xcodebuild -showsdks | grep iphoneos12`.to_s.strip.length > 0, """
+  #{ERROR} couldn't find iOS 12 SDK. Please make sure you have the appropriate
   version of Xcode installed and use xcode-select to make it the default on
   the command line.
   """
@@ -113,9 +113,9 @@ task 'check:macos' do
     https://pspdfkit.com
   """
   
-  tell "Checking whether macOS SDK 10.13 present"
-  assert `xcrun xcodebuild -showsdks | grep macosx10.13`.to_s.strip.length > 0, """
-  #{ERROR} couldn't find macOS 10.13 SDK. Please make sure you have the appropriate
+  tell "Checking whether macOS SDK 10.14 present"
+  assert `xcrun xcodebuild -showsdks | grep macosx10.14`.to_s.strip.length > 0, """
+  #{ERROR} couldn't find macOS 10.14 SDK. Please make sure you have the appropriate
   version of Xcode installed and use xcode-select to make it the default on
   the command line.
   """
