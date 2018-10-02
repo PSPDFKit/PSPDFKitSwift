@@ -69,6 +69,11 @@ public enum RenderOption: RawRepresentable, Equatable {
     case draw(RenderDrawHandler)
     /// Controls if the "Sign here" overlay should be shown on unsigned signature fields.
     case drawSignHereOverlay(Bool)
+    /**
+     Controls if redaction annotations should be drawn in their redacted state, to preview the appearance of how
+     they would look if applied. By default redactions are rendered in their marked state.
+    */
+    case drawRedactionsAsRedacted(Bool)
     /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
     #if PSPDF_SUPPORTS_CIFILTER
     case ciFilters([CIFilter])
@@ -115,6 +120,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             self = .draw(closure)
         case .drawSignHereOverlay:
             self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
+        case .drawRedactionsAsRedacted:
+            self = .drawRedactionsAsRedacted((value as? NSNumber)?.boolValue ?? false)
         #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilterKey:
             self = .ciFilters(value as? [CIFilter] ?? [])
@@ -160,6 +167,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             return (.drawBlockKey, unsafeBitCast(closure, to: AnyObject.self))
         case .drawSignHereOverlay(let value):
             return (.drawSignHereOverlay, NSNumber(value: value))
+        case .drawRedactionsAsRedacted(let value):
+            return (.drawRedactionsAsRedacted, NSNumber(value: value))
         #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilters(let filters):
             return (.ciFilterKey, filters)
@@ -206,6 +215,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             // instead just check if draw closure is set
             return true
         case (.drawSignHereOverlay(let left), .drawSignHereOverlay(let right)):
+            return left == right
+        case (.drawRedactionsAsRedacted(let left), .drawRedactionsAsRedacted(let right)):
             return left == right
         #if PSPDF_SUPPORTS_CIFILTER
         case (.ciFilters(let left), .ciFilters(let right)):
@@ -363,6 +374,16 @@ extension Array where Element == RenderOption {
         }
         return false
     }
+
+    public var drawRedactionsAsRedacted: Bool {
+        for option in self {
+            if case .drawRedactionsAsRedacted(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
     #if PSPDF_SUPPORTS_CIFILTER
     public var ciFilters: [CIFilter] {
         for option in self {
