@@ -42,21 +42,21 @@ public typealias PDFLine = [PSPDFDrawingPoint]
 public typealias ViewLine = [CGPoint]
 
 /// Will convert view lines to PDF lines (operates on every point)
-/// Get the `cropBox` and rotation from `PSPDFPageInfo`.
+/// Get the `pageRect` from `PSPDFPageInfo`.
 /// bounds should be the size of the view.
 // swiftlint:disable:next identifier_name
-public func ConvertToPDFLines(viewLines: [ViewLine], cropBox: CGRect, rotation: Int, bounds: CGRect) -> [PDFLine] {
+public func ConvertToPDFLines(viewLines: [ViewLine], pageInfo: PSPDFPageInfo, viewBounds: CGRect) -> [PDFLine] {
     let lines = viewLines.map { $0.map({ NSValue(point: $0) }) }
-    let convertedBoxedLines = PSPDFConvertViewLinesToPDFLines(lines, cropBox, UInt(rotation), bounds)
+    let convertedBoxedLines = PSPDFConvertViewLinesToPDFLines(lines, pageInfo, viewBounds)
     return ConvertToDrawingPointArray(valueArray: convertedBoxedLines)
 }
 
 /// Converts a single line of boxed `CGPoint`.
 // swiftlint:disable:next identifier_name
-public func ConvertToPDFLine(viewLine: ViewLine, cropBox: CGRect, rotation: Int, bounds: CGRect) -> PDFLine {
+public func ConvertToPDFLine(viewLine: ViewLine, pageInfo: PSPDFPageInfo, viewBounds: CGRect) -> PDFLine {
     let line = viewLine.map { NSValue(point: $0) }
 
-    return PSPDFConvertViewLineToPDFLines(line, cropBox, UInt(rotation), bounds).map { $0.pspdf_drawingPointValue }
+    return PSPDFConvertViewLineToPDFLines(line, pageInfo, viewBounds).map { $0.pspdf_drawingPointValue }
 }
 
 /// Calculates the bounding box from lines.

@@ -146,6 +146,10 @@ extension PSPDFDocument {
         /// A `SecurityOptions` instance, specifies the security options to
         /// use when saving the document.
         case forceRewrite
+        /// Applies all redactions in the document and removes the content underneath them.
+        /// Not passing this option means redactions are not
+        /// applied, and redaction annotations will stay in the document.
+        case applyRedactions
 
         internal var dictionary: [PSPDFDocumentSaveOption: Any] {
             switch self {
@@ -153,6 +157,8 @@ extension PSPDFDocument {
                 return [.securityOptions: securityOptions]
             case .forceRewrite:
                 return [.forceRewrite: NSNumber(value: true)]
+            case .applyRedactions:
+                return [.applyRedactions: NSNumber(value: true)]
             }
         }
 

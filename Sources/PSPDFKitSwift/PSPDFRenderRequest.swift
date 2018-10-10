@@ -14,7 +14,7 @@ public typealias RenderType = PSPDFRenderType
 public typealias RenderFilter = PSPDFRenderFilter
 
 // Replaces original Objective-C `PSPDFRenderDrawBlock`. See https://bugs.swift.org/browse/SR-6873
-public typealias PDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void
+public typealias PDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ pageIndex: PageIndex, _ pageRect: CGRect, _ unused: UInt, _ options: [PSPDFRenderOption: Any]?) -> Void
 public typealias RenderDrawHandler = PDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
@@ -400,7 +400,7 @@ internal class RenderRequestTests {
     static func test() throws {
         let document = PDFDocument()
 
-        let drawClosure = { (_: CGContext, page: UInt, cropBox: CGRect, _: UInt, _: [String: Any]?) -> Void in
+        let drawClosure = { (_: CGContext, page: PageIndex, cropBox: CGRect, _: UInt, _: [PSPDFRenderOption: Any]?) -> Void in
             let text = "PSPDF Live Watermark On Page \(page + 1)"
             let stringDrawingContext = NSStringDrawingContext()
 
