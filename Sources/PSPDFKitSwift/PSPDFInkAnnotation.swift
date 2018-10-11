@@ -41,9 +41,7 @@ extension PSPDFInkAnnotation {
 public typealias PDFLine = [PSPDFDrawingPoint]
 public typealias ViewLine = [CGPoint]
 
-/// Will convert view lines to PDF lines (operates on every point)
-/// Get the `pageRect` from `PSPDFPageInfo`.
-/// bounds should be the size of the view.
+/// Convert view lines to PDF lines.
 // swiftlint:disable:next identifier_name
 public func ConvertToPDFLines(viewLines: [ViewLine], pageInfo: PSPDFPageInfo, viewBounds: CGRect) -> [PDFLine] {
     let lines = viewLines.map { $0.map({ NSValue(point: $0) }) }
