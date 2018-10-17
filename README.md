@@ -95,7 +95,7 @@ If you want to work on PSPDFKitSwift, perform the following steps:
 * Clone `git@github.com:PSPDFKit/PSPDFKitSwift.git`
 * Copy `PSPDFKit.framework` into `PSPDFKitSwift/Frameworks`
 * Copy `PSPDFKitUI.framework` into `PSPDFKitSwift/Frameworks` (iOS only)
-* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 9.4.1
+* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 10
 
 Please [sign our CLA agreement](https://pspdfkit.com/guides/web/current/miscellaneous/contributing/) so we can accept your pull requests.
 

@@ -14,7 +14,7 @@ public typealias RenderType = PSPDFRenderType
 public typealias RenderFilter = PSPDFRenderFilter
 
 // Replaces original Objective-C `PSPDFRenderDrawBlock`. See https://bugs.swift.org/browse/SR-6873
-public typealias PDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ page: UInt, _ cropBox: CGRect, _ rotation: UInt, _ options: [String: Any]?) -> Void
+public typealias PDFRenderDrawBlock = @convention(block) (_ context: CGContext, _ pageIndex: PageIndex, _ pageRect: CGRect, _ unused: UInt, _ options: [PSPDFRenderOption: Any]?) -> Void
 public typealias RenderDrawHandler = PDFRenderDrawBlock
 
 /// Rendering options. Parameters of how an image should be rendered.
@@ -69,6 +69,11 @@ public enum RenderOption: RawRepresentable, Equatable {
     case draw(RenderDrawHandler)
     /// Controls if the "Sign here" overlay should be shown on unsigned signature fields.
     case drawSignHereOverlay(Bool)
+    /**
+     Controls if redaction annotations should be drawn in their redacted state, to preview the appearance of how
+     they would look if applied. By default redactions are rendered in their marked state.
+    */
+    case drawRedactionsAsRedacted(Bool)
     /// `CIFilter` that are applied to the rendered image before it is returned from the render pipeline.
     #if PSPDF_SUPPORTS_CIFILTER
     case ciFilters([CIFilter])
@@ -115,6 +120,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             self = .draw(closure)
         case .drawSignHereOverlay:
             self = .drawSignHereOverlay((value as? NSNumber)?.boolValue ?? false)
+        case .drawRedactionsAsRedacted:
+            self = .drawRedactionsAsRedacted((value as? NSNumber)?.boolValue ?? false)
         #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilterKey:
             self = .ciFilters(value as? [CIFilter] ?? [])
@@ -160,6 +167,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             return (.drawBlockKey, unsafeBitCast(closure, to: AnyObject.self))
         case .drawSignHereOverlay(let value):
             return (.drawSignHereOverlay, NSNumber(value: value))
+        case .drawRedactionsAsRedacted(let value):
+            return (.drawRedactionsAsRedacted, NSNumber(value: value))
         #if PSPDF_SUPPORTS_CIFILTER
         case .ciFilters(let filters):
             return (.ciFilterKey, filters)
@@ -206,6 +215,8 @@ public enum RenderOption: RawRepresentable, Equatable {
             // instead just check if draw closure is set
             return true
         case (.drawSignHereOverlay(let left), .drawSignHereOverlay(let right)):
+            return left == right
+        case (.drawRedactionsAsRedacted(let left), .drawRedactionsAsRedacted(let right)):
             return left == right
         #if PSPDF_SUPPORTS_CIFILTER
         case (.ciFilters(let left), .ciFilters(let right)):
@@ -363,6 +374,16 @@ extension Array where Element == RenderOption {
         }
         return false
     }
+
+    public var drawRedactionsAsRedacted: Bool {
+        for option in self {
+            if case .drawRedactionsAsRedacted(let value) = option {
+                return value
+            }
+        }
+        return false
+    }
+
     #if PSPDF_SUPPORTS_CIFILTER
     public var ciFilters: [CIFilter] {
         for option in self {
@@ -379,7 +400,7 @@ internal class RenderRequestTests {
     static func test() throws {
         let document = PDFDocument()
 
-        let drawClosure = { (_: CGContext, page: UInt, cropBox: CGRect, _: UInt, _: [String: Any]?) -> Void in
+        let drawClosure = { (_: CGContext, page: PageIndex, cropBox: CGRect, _: UInt, _: [PSPDFRenderOption: Any]?) -> Void in
             let text = "PSPDF Live Watermark On Page \(page + 1)"
             let stringDrawingContext = NSStringDrawingContext()
 
