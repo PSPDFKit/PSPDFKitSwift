@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2018 PSPDFKit GmbH. All rights reserved.
+//  Copyright © 2018-2019 PSPDFKit GmbH. All rights reserved.
 //
 //  The PSPDFKit Sample applications are licensed with a modified BSD license.
 //  Please see License for details. This notice may not be removed from
@@ -203,7 +203,7 @@ extension PSPDFDocument {
 extension PSPDFDocument {
 
     /**
-     *  Set custom render options. See  PSPDFRenderManager.h for a list of available keys.
+     *  Set custom render options. See  PSPDFRenderOption.h for a list of available keys.
      *
      *  @param options The render options to set. Will reset to defaults if set to nil.
      *  @param type    The type you want to change. There are different render operation types.

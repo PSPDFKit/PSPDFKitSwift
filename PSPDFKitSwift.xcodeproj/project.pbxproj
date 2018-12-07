@@ -10,9 +10,6 @@
 		75795719206BF4A500CEC540 /* UIImage+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75795718206BF4A500CEC540 /* UIImage+macOS.swift */; };
 		7579571B206BF50000CEC540 /* UIColor+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7579571A206BF4FF00CEC540 /* UIColor+macOS.swift */; };
 		78562AEA209921D100960757 /* PSPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78562AE9209921D100960757 /* PSPDFViewController.swift */; };
-		842F1F9520DA99ED0018D423 /* testing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 842F1F9020DA99ED0018D423 /* testing.xcconfig */; };
-		842F1F9620DA99ED0018D423 /* testing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 842F1F9020DA99ED0018D423 /* testing.xcconfig */; };
-		842F1F9720DA99ED0018D423 /* testing.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 842F1F9020DA99ED0018D423 /* testing.xcconfig */; };
 		84A6C1302061E61C00868DC8 /* ReExportedModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7528E9D8201681370040D8C0 /* ReExportedModules.swift */; };
 		84A6C1312061E61C00868DC8 /* PSPDFAnnotationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758DEF6F20323A12004D1ADE /* PSPDFAnnotationType.swift */; };
 		84A6C1352061E61C00868DC8 /* PSPDFAnnotationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758DEF7120323BA8004D1ADE /* PSPDFAnnotationString.swift */; };
@@ -269,7 +266,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					7541B88C1FFF98F90061EAA2 = {
 						CreatedOnToolsVersion = 9.2;
@@ -309,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842F1F9520DA99ED0018D423 /* testing.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +313,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842F1F9720DA99ED0018D423 /* testing.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +320,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842F1F9620DA99ED0018D423 /* testing.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
