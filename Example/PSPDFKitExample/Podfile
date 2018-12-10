@@ -8,7 +8,7 @@
 platform :ios, '11.0'
 use_frameworks!
 
-pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.1.0'
+pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKit.swift.git', :tag => '1.1.1'
 
 target 'PSPDFKitExample' do
 

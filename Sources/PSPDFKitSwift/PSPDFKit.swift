@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2018 PSPDFKit GmbH. All rights reserved.
+//  Copyright © 2018-2019 PSPDFKit GmbH. All rights reserved.
 //
 //  The PSPDFKit Sample applications are licensed with a modified BSD license.
 //  Please see License for details. This notice may not be removed from
@@ -41,8 +41,12 @@ extension PSPDFKitObject {
             }
         }
         set {
-            __logHandler = { (type: PSPDFLogLevelMask, tag: UnsafePointer<Int8>?, message: @escaping () -> String, file: UnsafePointer<Int8>, function: UnsafePointer<Int8>, line: UInt) in
-                newValue(type, tag == nil ? "" : String(cString: tag!), message, String(cString: file), String(cString: function), Int(line))
+            __logHandler = { (level: PSPDFLogLevelMask, tag: UnsafePointer<Int8>?, message: @escaping () -> String, file: UnsafePointer<Int8>?, function: UnsafePointer<Int8>?, line: UInt) in
+                let tagString: String = tag == nil ? "" : String(cString: tag!)
+                let fileString: String = file == nil ? "" : String(cString: file!)
+                let functionString: String = function == nil ? "" : String(cString: function!)
+
+                newValue(level, tagString, message, fileString, functionString, Int(line))
             }
         }
     }

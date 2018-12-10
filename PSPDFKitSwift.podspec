@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = "4.2"
   spec.cocoapods_version = '>= 1.5.3'
 
-  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKitSwift.git", :tag => '1.1.0' }
+  spec.source = { :git => "https://github.com/PSPDFKit/PSPDFKitSwift.git", :tag => '1.1.1' }
   spec.source_files = "Sources", "Sources/**/*.swift"
   spec.ios.exclude_files = "Sources/**/*+macOS.swift"
   spec.osx.exclude_files = "Sources/**/*+iOS.swift", "Sources/**/PSPDFViewController.swift"
