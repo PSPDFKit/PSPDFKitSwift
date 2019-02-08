@@ -133,6 +133,7 @@ extension PSPDFDocument {
 
     /// See `PSPDFDocumentSecurityOptions`
     public typealias SecurityOptions = PSPDFDocumentSecurityOptions
+    public typealias SaveStrategy = PSPDFDocumentSaveStrategy
 
     /// When saving a document, you can provide various save options.
     public enum SaveOption {
@@ -143,9 +144,11 @@ extension PSPDFDocument {
         /// space over time. Forcing a rewrite means the whole document file is rewritten
         /// from scratch leaving out all the outdated and unused parts.
         case security(SecurityOptions)
+        /// Document saving strategy
+        case strategy(SaveStrategy)
         /// A `SecurityOptions` instance, specifies the security options to
         /// use when saving the document.
-        case forceRewrite
+        case forceSaving
         /// Applies all redactions in the document and removes the content underneath them.
         /// Not passing this option means redactions are not
         /// applied, and redaction annotations will stay in the document.
@@ -155,8 +158,10 @@ extension PSPDFDocument {
             switch self {
             case .security(let securityOptions):
                 return [.securityOptions: securityOptions]
-            case .forceRewrite:
-                return [.forceRewrite: NSNumber(value: true)]
+            case .forceSaving:
+                return [.forceSaving: NSNumber(value: true)]
+            case .strategy(let saveStrategy):
+                return [.strategy: NSNumber(value: saveStrategy.rawValue)]
             case .applyRedactions:
                 return [.applyRedactions: NSNumber(value: true)]
             }
@@ -261,8 +266,8 @@ internal class PDFDocumentTests {
         let document = PDFDocument()
         let securityOptions = try PDFDocument.SecurityOptions(ownerPassword: "0123456789012345678901234567890123456789", userPassword: "0123456789012345678901234567890123456789", keyLength: 40, permissions: [.extract, .fillForms], encryptionAlgorithm: .AES)
         document.add(annotations: [ /* TODO: */ ], options: [.animateView(true), .suppressNotifications(false)])
-        try document.save(options: [.security(securityOptions), .forceRewrite])
-        document.save(options: [.security(securityOptions), .forceRewrite]) { result in
+        try document.save(options: [.security(securityOptions), .forceSaving])
+        document.save(options: [.security(securityOptions), .forceSaving]) { result in
             _ = try! result.dematerialize()
         }
     }
