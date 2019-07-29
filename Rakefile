@@ -53,8 +53,8 @@ VERBOSE = ENV['verbose'] || false
 
 CONFIGURATION = "Release"
 DERIVED_DATA = "#{DIRECTORY}/Xcode"
-SDK_SIM = "iphonesimulator12.2"
-SDK_IOS = "iphoneos12.2"
+SDK_SIM = "iphonesimulator12.4"
+SDK_IOS = "iphoneos12.4"
 SDK_MACOS = "macosx10.14"
 SCHEME_IOS = "PSPDFKitSwift"
 SCHEME_MACOS = "PSPDFKitSwift-macOS"
