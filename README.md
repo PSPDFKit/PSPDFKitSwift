@@ -33,7 +33,7 @@ Your `Podfile` should look like this:
 ```ruby
 # Replace `YourAppName` with your app's target name.
 
-pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.1.3'
+pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.1.4'
 
 target :YourAppName do
   use_frameworks!
