@@ -33,7 +33,7 @@ Your `Podfile` should look like this:
 ```ruby
 # Replace `YourAppName` with your app's target name.
 
-pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.1.3'
+pod 'PSPDFKitSwift', :git => 'https://github.com/PSPDFKit/PSPDFKitSwift.git', :tag => '1.1.4'
 
 target :YourAppName do
   use_frameworks!
@@ -95,7 +95,7 @@ If you want to work on PSPDFKitSwift, perform the following steps:
 * Clone `git@github.com:PSPDFKit/PSPDFKitSwift.git`
 * Copy `PSPDFKit.framework` into `PSPDFKitSwift/Frameworks`
 * Copy `PSPDFKitUI.framework` into `PSPDFKitSwift/Frameworks` (iOS only)
-* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 10.2
+* Open `PSPDFKitSwift.xcodeproj` in Xcode >= 10.3
 
 Please [sign our CLA agreement](https://pspdfkit.com/guides/web/current/miscellaneous/contributing/) so we can accept your pull requests.
 
