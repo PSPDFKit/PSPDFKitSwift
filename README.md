@@ -1,3 +1,5 @@
+**⚠️ IMPORTANT:** The introductions of ABI and module stability in the Swift 5.1 compiler enabled us to merge our PSPDFKitSwift wrapper into our main binary distribution. This standalone project **is now deprecated and should be removed from your project** when updating to PSPDFKit 9 for iOS. If you are using CocoaPods or Carthage, you should remove the `PSPDFKitSwift` dependency from your Podfile or Cartfile. Please follow our [migration guide](https://pspdfkit.com/guides/ios/current/migration-guides/pspdfkit-9-migration-guide/#pspdfkitswift-integration) for more details
+
 <img src="art/pspdfkit-swift.png" width="100">
 
 # PSPDFKitSwift
